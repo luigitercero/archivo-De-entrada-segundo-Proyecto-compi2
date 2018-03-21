@@ -95,9 +95,9 @@ clase Arbol{
         this.raiz.add(hijo);
     }
     
-    publico recorrer(Nodo principal, caracter espacio){
-        imprimir(principal.getNombre());
-        Nodo hijo = principal.childNode;
+    publico recorrer(Nodo raiz, caracter espacio){
+        imprimir(raiz.getNombre());
+        Nodo hijo = raiz.childNode;
         entero n = 0 ;
         repetir_mientras(hijo != nada){
             si(hijo.childNode(n) != nada){
@@ -107,7 +107,7 @@ clase Arbol{
                 }es_falso{
                  romper;
                 }
-            }
+            fin-si
         }
     }
     
