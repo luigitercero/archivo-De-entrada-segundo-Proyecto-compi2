@@ -69,5 +69,46 @@ clase perosna hereda_de miClase{
 		retornar operador1+operad2;
 	}
 
+}
 
+clase Nodo{
+    privado caracter nombre;
+    privado Lista childNode;
+     Nodo(caracter nombre){
+        este.nombre = nombre;
+        este. childNode = nuevo Lista (Nodo);
+    }
+    
+    Nodo getNombre(){
+        retornar este.nombre;
+    }
+}
+
+clase Arbol{
+    publico Nodo raiz;
+    
+    Arbol(Nodo raiz){
+        este.raiz = raiz;
+       
+    }
+    publico agregarHijo(Nodo hijo){
+        this.raiz.add(hijo);
+    }
+    
+    publico recorrer(Nodo principal, caracter espacio){
+        imprimir(principal.getNombre());
+        Nodo hijo = principal.childNode;
+        entero n = 0 ;
+        repetir_mientras(hijo != nada){
+            si(hijo.childNode(n) != nada){
+                es_verdadero{
+                    concatenar(espacio, " ");
+                    recorrer(hijo.childNode(n),espacio);
+                }es_falso{
+                 romper;
+                }
+            }
+        }
+    }
+    
 }
