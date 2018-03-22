@@ -20,18 +20,18 @@ clase curso hereda_de miClase{
 
 	publico vacio metodo(entero parametro){
 		este.atributo1 = parametro;
-		entero prueba = entero(1,2);
+		//entero prueba = entero(1,2);
 
 	}
 	
 	privado vacio metodo(entero parametro,entero parametro,entero parametro){
 		este.atributo1 = parametro;
-		retornar;
+		retorno;
 
 	}
 	publico entero suma(entero nu1, entero num2){
 
-		retornar operador1+operad2;
+		retorno operador1+operad2;
 	}
 
 
@@ -48,7 +48,7 @@ clase perosna hereda_de miClase{
 
 	publico vacio metodo(entero parametro){
 		este.atributo1 = parametro;
-		entero prueba = entero(1,2);
+		//entero prueba = entero(1,2);
 		cur =  a;
 		cur = nuevo cur(15);
 		Caracter perosna [20] =nada;
@@ -61,12 +61,12 @@ clase perosna hereda_de miClase{
 	@sobreescribir
 	privado vacio metodo(entero parametro,entero parametro,entero parametro){
 		este.atributo1 = parametro;
-		retornar;
+		retorno;
 
 	}
 	publico entero suma(entero nu1, entero num2){
 
-		retornar operador1+operad2;
+		retorno operador1+operad2;
 	}
 
 }
@@ -80,7 +80,7 @@ clase Nodo{
     }
     
     Nodo getNombre(){
-        retornar este.nombre;
+        retorno este.nombre;
     }
 }
 
