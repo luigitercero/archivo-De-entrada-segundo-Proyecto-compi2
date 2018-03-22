@@ -3,9 +3,9 @@ clase miClase{
 	protegido entero atributo3;
 	privado entero atributo2;
 	publico caracter atributoCadena = "cadenaInicio";
-
+    publico entero basicas = 1+2-3*4/5%6^8;
 	publico entero ss(entero parametro){
-	
+        entero basicas = 1+2-3*4/5%6^8 / 0.25;
 
 	}
 
