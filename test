@@ -3,6 +3,11 @@ clase miClase{
 	protegido entero atributo3;
 	privado entero atributo2;
 	publico caracter atributoCadena = "cadenaInicio";
+	publico entero b1 = 1+2;
+	publico caracter b2 = 'a'+'b';
+	publico entero b3 = true + true;
+	public decimal b4 = 1.0+1.0;
+ 	
     publico entero basicas = 1+2-3*4/5%6^8;
 	publico entero ss(entero parametro){
         entero basicas = 1+2-3*4/5%6^8 / 0.25;
@@ -20,7 +25,7 @@ clase curso hereda_de miClase{
 
 	publico vacio metodo(entero parametro){
 		este.atributo1 = parametro;
-		//entero prueba = entero(1,2);
+		entero prueba = entero(1,2);
 
 	}
 	
