@@ -6,9 +6,16 @@ clase miClase{
 	publico entero b1 = 1+2;
 	publico caracter b2 = 'a'+'b';
 	publico entero b3 = true + true;
-	public decimal b4 = 1.0+1.0;
- 	
-    publico entero basicas = 1+2-3*4/5%6^8;
+	publico decimal b4 = 1.0+1.0;
+    publico entero basicas = 7+8-9*10/11%12^13;
+    publico decimal negativo = 1*-1;
+    boolean a = true;
+    boolean b = !false;
+    boolean c = 5 >4;
+    boolean d = false || true ;
+    boolean e = true && false;
+    boolean f = 5>4 xor 7<5;
+    
 	publico entero ss(entero parametro){
         entero basicas = 1+2-3*4/5%6^8 / 0.25;
 
