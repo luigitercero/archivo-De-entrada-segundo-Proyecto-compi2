@@ -14,7 +14,8 @@ clase miClase{
     boolean c = 5 >4;
     boolean d = false || true ;
     boolean e = true && false;
-    boolean f = 5>4 xor 7<5;
+    boolean f = 5>4 ?? 7<5;
+    Objeto objeto [2][2] = {{nuevo Objeto(), nuevo Objeto()},{nuevo Objeto(), nuevo Objeto()}};
     
 	publico entero ss(entero parametro){
         entero basicas = 1+2-3*4/5%6^8 / 0.25;
