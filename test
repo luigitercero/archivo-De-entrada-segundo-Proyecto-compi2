@@ -8,17 +8,20 @@ clase miClase{
 	publico entero b3 = true + true;
 	publico decimal b4 = 1.0+1.0;
     publico entero basicas = 7+8-9*10/11%12^13;
-    publico decimal negativo = 1*-1;
+    publico decimal negativo = 10*-11 +4;
+    boolean m = 1>2||3>4 ||5>6 ||7>8;
+    boolean j = 1>5 && 4>6 && 4>6 && 4>6;
+    boolean r = 1>2 ?? 3>4 ?? 5>6 ?? 7>8;
     boolean a = true;
     boolean b = !false;
-    boolean c = 5 >4;
-    boolean d = false || true ;
+    boolean c =
+    boolean d = 5<4||  5 >4;
     boolean e = true && false;
     boolean f = 5>4 ?? 7<5;
     Objeto objeto [2][2] = {{nuevo Objeto(), nuevo Objeto()},{nuevo Objeto(), nuevo Objeto()}};
     
 	publico entero ss(entero parametro){
-        entero basicas = 1+2-3*4/5%6^8 / 0.25;
+       // entero basicas = 1+2-3*4/5%6^8 / 0.25;
 
 	}
 
@@ -29,7 +32,7 @@ clase curso hereda_de miClase{
 	publico entero atributo1;
 	protegido entero atributo3;
 	privado entero atributo2;
-	publico caracter atributoCadena = "cadenaInicio";
+	//publico caracter atributoCadena = "cadenaInicio";
 
 	publico vacio metodo(entero parametro){
 		este.atributo1 = parametro;
@@ -38,7 +41,7 @@ clase curso hereda_de miClase{
 	}
 	
 	privado vacio metodo(entero parametro,entero parametro,entero parametro){
-		este.atributo1 = parametro;
+		//este.atributo1 = parametro;
 		retorno;
 
 	}
