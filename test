@@ -14,7 +14,7 @@ clase miClase{
     boolean r = 1>2 ?? 3>4 ?? 5>6 ?? 7>8;
     boolean a = true;
     boolean b = !false;
-    boolean c =
+    boolean c = false;
     boolean d = 5<4||  5 >4;
     boolean e = true && false;
     boolean f = 5>4 ?? 7<5;
@@ -22,6 +22,7 @@ clase miClase{
     
 	publico entero ss(entero parametro){
        // entero basicas = 1+2-3*4/5%6^8 / 0.25;
+    
 
 	}
 
@@ -48,6 +49,10 @@ clase curso hereda_de miClase{
 	publico entero suma(entero nu1, entero num2){
 
 		retorno operador1+operad2;
+	}
+	
+	publico vacio metodo(miClase probando ){
+     metodo (nuevo miClase());
 	}
 
 
