@@ -2,28 +2,30 @@ clase miClase{
 	Publico entero atributo1;
 	protegido entero atributo3;
 	privado entero atributo2;
-	publico caracter atributoCadena = "cadenaInicio";
+	//publico caracter atributoCadena = "cadenaInicio";
 	publico entero b1 = 1+2;
 	publico caracter b2 = 'a'+'b';
 	publico entero b3 = true + true;
 	publico decimal b4 = 1.0+1.0;
     publico entero basicas = 7+8-9*10/11%12^13;
     publico decimal negativo = 10*-11 +4;
-    boolean m = 1>2||3>4 ||5>6 ||7>8;
-    boolean j = 1>5 && 4>6 && 4>6 && 4>6;
-    boolean r = 1>2 ?? 3>4 ?? 5>6 ?? 7>8;
-    boolean a = true;
-    boolean b = !false;
-    boolean c = false;
-    boolean d = 5<4||  5 >4;
-    boolean e = true && false;
-    boolean f = 5>4 ?? 7<5;
-    Objeto objeto [2][2] = {{nuevo Objeto(), nuevo Objeto()},{nuevo Objeto(), nuevo Objeto()}};
+    booleano m = 1>2||3>4 ||5>6 ||7>8;
+    booleano j = 1>5 && 4>6 && 4>6 && 4>6;
+    booleano r = 1>2 ?? 3>4 ?? 5>6 ?? 7>8;
+    booleano a = true;
+    booleano b = !false;
+    booleano c = false;
+    booleano d = 5<4||  5 >4;
+    booleano e = true && false;
+    booleano f = 5>4 ?? 7<5;
+   
     
 	publico entero ss(entero parametro){
        // entero basicas = 1+2-3*4/5%6^8 / 0.25;
-    
-
+       
+    entero arreglo[3][4 ][10] = {{1.5,1.56,15.5},{1.5,1.56,15.5},{1.5,1.56,15.5},{1.5,1.56,15.5}};
+		entero a  = arreglo[2][1][4];
+ Objeto objeto [2][2] = {{nuevo Objeto(), nuevo Objeto()},{nuevo Objeto(), nuevo Objeto()}};
 	}
 
 }
@@ -37,7 +39,7 @@ clase curso hereda_de miClase{
 
 	publico vacio metodo(entero parametro){
 		este.atributo1 = parametro;
-		entero prueba = entero(1,2);
+		entero prueba = 15+46;
 
 	}
 	
@@ -63,18 +65,17 @@ clase perosna hereda_de miClase{
 	publico entero atributo1;
 	protegido entero atributo3;
 	privado entero atributo2;
-	publico caracter atributoCadena = "cadenaInicio";
+	//publico caracter atributoCadena = "cadenaInicio";
 	publico curso cur;
 
 
 	publico vacio metodo(entero parametro){
 		este.atributo1 = parametro;
 		//entero prueba = entero(1,2);
-		cur =  a;
-		cur = nuevo cur(15);
+		//cur =  a;
+		//cur = nuevo cur(15);
 		Caracter perosna [20] =nada;
-		Decimal arreglo[4][3 ] = {{1.5,1.56,15.5},{1.5,1.56,15.5},{1.5,1.56,15.5},{1.5,1.56,15.5}};
-		arreglo[4][3] = 1;
+		
 		crearPuntero(int,id);
 		usuario->edad = 25;
 		Lista identifi = nuevo Lista(entero);
@@ -112,11 +113,11 @@ clase Arbol{
         este.raiz = raiz;
        
     }
-    publico agregarHijo(Nodo hijo){
+    publico vacio agregarHijo(Nodo hijo){
         this.raiz.add(hijo);
     }
     
-    publico recorrer(Nodo raiz, caracter espacio){
+    publico vacio recorrer(Nodo raiz, caracter espacio){
         imprimir(raiz.getNombre());
         Nodo hijo = raiz.childNode;
         entero n = 0 ;

@@ -1,0 +1,12 @@
+ 
+clase Operacion {
+
+	publico entero operacion(entero parametro){
+       
+    
+    booleano e = true ;
+  
+	}
+
+}
+ 

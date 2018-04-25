@@ -1,0 +1,35 @@
+ 
+clase control {
+
+	publico entero IF1(entero parametro){
+     
+        si(true) {
+            Es_verdadero {
+                entero b1 = 1;
+            }
+            
+            Es_Falso {
+             entero b1 = 1;
+            }
+        fin-si
+        
+        evaluar_si(10+10) { 
+        es_igual_a 1:
+        
+        defecto:
+        entero b1 = 1;
+        }
+        repetir_mientras(true) {
+        
+        }
+        
+        hacer { entero b1 = 1;} mientras (1<1);
+     
+     
+     repetir_contando(variable: p;desde:0;hasta:10) {
+       entero b1 = 1;
+     }
+	}
+
+}
+ 

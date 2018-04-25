@@ -1,0 +1,15 @@
+ 
+clase asignaciones{
+
+	publico entero asignaciones(entero parametro){
+       
+       entero a = 0;     
+       a = 1+2;
+       a++;
+       a--;
+       a *= 10;
+       a /= 1+2;
+       a += 10;
+	}
+
+}
