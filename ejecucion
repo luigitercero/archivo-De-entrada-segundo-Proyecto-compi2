@@ -1,64 +1,52 @@
   
 clase ejecucion {
-   
-   /*entero a = 0;
-    entero b [2][2];
-    entero c[2][2] ;
-   
-   adriaba p ;
-   */
-   ejecucion () {
-   /*
-    entero m= 0 ;
-    este.p = nuevo adriana () ;
-    */
-   }
+   // clase1 c ;
+   clase1 b ;
    principal () {
-    entero probando = 11111111;
-   adriana p;
-     p = nuevo adriana () ;
-     
-       /*
-       entero c[2][2] ;
-       c[0][0] = 3525;
-       este.b[0][0] =0;
-       este.b[0][1] =1;
-       este.b[1][0] =2;
-       este.b[1][1] =3;
-       este.c[0][0] =4;
-       este.c[0][1] =5;
-       este.c[1][0] =6;
-       este.c[1][1] =7;
-       imprimir (b[1][1]);
-       imprimir (c[0][0]);
-       */
-       imprimir(p.p.numero1);
-       imprimir(probando);
-    }
-}
-
-
-clase adriana {
-    otro p;
+   
+  
+    b = nuevo clase1();
     /*
-    entero numero2 = 2;
-    entero numero3 = 3;
-    entero numero4 = 4;
+      c = nuevo clase1();
+    entero b = 25;
+    imprimir (c.metodo2(1)+7);
+    imprimir (25);
     */
-    
-    adriana () {
-        p = nuevo otro();
+    b.c = 1000;
+    imprimir(b.a[0][0]);
+    imprimir(b.a[0][1]);
+    imprimir(b.a[1][0]);
+    imprimir(b.a[1][1]);
+ 
     }
     
-    entero saludo () {
+    
+}
+clase clase1 {
+    clase2 j;
+    entero c = 200;
+    entero a [2][2];
+    clase1 () {
+        a[0][0] = 1;
+        a[0][1] = 2;
+        a[1][0] = 3;
+        a[1][1] = 4;
+        
+    }
+    entero metodo2 (entero a) {
+        j = nuevo clase2();
+        retorno j.metodo1(a);
+    }
+}
+clase clase2 {
+    entero metodo1 (entero a) {
         imprimir ("hola");
+         entero b = 35+26;
+         imprimir (b);
+        retorno a;
     }
 }
 
 
-clase otro {
-entero numero1 = 0;
-
-}
 
 
