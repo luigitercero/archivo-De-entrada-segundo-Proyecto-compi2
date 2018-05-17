@@ -1,0 +1,56 @@
+clase recusiva {
+    
+    principal() {
+    imprimir(potencia(2,8));
+    imprimir(producto(2,8));
+    }
+        
+    publico entero potencia (entero base, entero e) {
+        si (e == 0) {
+            es_verdadero {
+                retorno 1;
+            }
+            es_falso {
+            
+            }
+        }
+         si (e == 1) {
+            es_verdadero {
+                retorno base;
+            }
+            es_falso {
+                retorno base *potencia(base,e-1);
+            }
+        }
+        
+    }
+    
+    publico entero producto(entero a,entero b) {
+        si (a==0||b==0){
+            es_verdadero {
+                retorno 0;
+            }
+            es_falso {
+        
+            }
+        } 
+    
+        si (a==1) {
+            es_verdadero {
+                retorno b;
+            }
+                es_falso {
+            }
+        } 
+        si (b==1) {
+            es_verdadero {
+                retorno a;
+            }
+            es_falso {
+            retorno a+producto(a,b-1);
+            }
+        } 
+    
+    }
+        
+}

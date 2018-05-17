@@ -1,0 +1,24 @@
+ 
+clase hola{
+    entero a;
+    principal(){
+    prueba p1 = nuevo prueba();
+   
+    imprimir(p1.num);
+    }
+}
+
+clase prueba{
+    entero num = 20;
+     prueba2 p2 = nuevo prueba2();
+      prueba2 pru [2] = { p2, nuevo prueba2() };
+}
+
+clase prueba2{
+    entero num = 30;
+    caracter cade [10] ;
+    prueba2 () {
+    cade ="prueba2";
+    }
+    
+    }

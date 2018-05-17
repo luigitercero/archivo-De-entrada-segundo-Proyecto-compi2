@@ -1,0 +1,49 @@
+clase Igualar {
+    principal () {
+        si ("luis" == "luis" ) {
+            es_verdadero {
+                imprimir ("es verdadero");
+            }
+            es_falso {
+                imprimir ("es falso");
+            }
+        }
+        si ("a" == 'a' ) {
+            es_verdadero {
+                imprimir ("es verdadero");
+            }
+            es_falso {
+                imprimir ("es falso");
+            }
+        }
+        
+        caracter cadena[25];
+        cadena = "luis";
+        si (cadena == "luis" ) {
+            es_verdadero {
+                imprimir ("es verdadero");
+            }
+            es_falso {
+                imprimir ("es falso");
+            }
+        }
+        cadena = cadena();
+        imprimir (cadena);
+        cadena[0] = 'm';
+        imprimir(cadena);
+        imprimir(cadena[0]);
+    }
+    
+     publico prueba hola () {
+    
+    }
+    
+    publico caracter [] cadena () {
+         caracter cadena[25];
+         cadena = "hola mundo";
+         retorno cadena;
+        
+    }
+    
+   
+}  

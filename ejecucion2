@@ -1,27 +1,21 @@
-  
 clase ejecucion {
  clase1 c ;
    clase1 b ;
-   principal () {
    
-  
-    b = nuevo clase1();
+   principal () {
     
-      c = nuevo clase1();
-    //entero b = 25;
-    imprimir (c.metodo2(1)+7);
-    imprimir (25);
-    
-    b.c = 1000;
-    imprimir(b.a[0][0]);
-    imprimir(b.a[0][1]);
-    imprimir(b.a[1][0]);
-    imprimir(b.a[1][1]);
-
- imprimir(c.metodo2(100));
+    clase1 arreglo [2][2];
+     arreglo[0][0] = nuevo clase1();
+     arreglo[0][1] = nuevo clase1();
+     arreglo[1][0] = nuevo clase1();
+     arreglo[1][1] = nuevo clase1();
+     arreglo[0][0].c = 100;
+     imprimir(arreglo[0][0].c);
+      imprimir(arreglo[0][1].c);
+      arreglo[1][1].metodo2(999);
+      imprimir (arreglo[1][0].metodo2(666));
     }
-    
-    
+   
 }
 clase clase1 {
     clase2 j;
@@ -47,5 +41,3 @@ clase clase2 {
         retorno a;
     }
 }
-
-

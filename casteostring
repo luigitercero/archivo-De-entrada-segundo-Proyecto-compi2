@@ -1,0 +1,42 @@
+ 
+clase Casteo {
+    principal () {
+        string a;
+        entero b;
+        caracter c[8];
+        c = "25.50";
+        imprimir(c);
+        b = convertirAEntero(c);
+        imprimir (b);
+    }
+
+    publico entero convertirAEntero (caracter a[8]) {
+        entero conta = 0; 
+        entero decena = 1;
+        entero char = 0;
+        entero numero = 0 ;
+    
+        repetir_Mientras(a[conta] != nada) {
+            char = a[conta]; 
+            si (char > 47 && char < 58 ) {
+                es_verdadero {
+                    numero = numero* decena + (char - 48) ;
+                    decena = 10;
+                }
+                es_falso {
+                    si (a[conta] == '.') {
+                        es_verdadero {
+                            romper;
+                        }
+                        es_falso {
+                           numero = numero + char;
+                        }
+                    }
+                }
+            }
+            conta++;
+        }
+        retorno numero;
+    }
+    
+}

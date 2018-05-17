@@ -1,0 +1,72 @@
+clase op {
+    principal () {
+        booleano op = true;
+        imprimir (op+1);
+        
+        si (op == true) {
+            es_verdadero {
+                imprimir(" correcta"); 
+            }
+            es_falso {
+                imprimir("malo");
+            }
+        }
+        
+        
+    booleano a = true || true ;
+    booleano b = true || true ;
+    booleano c = a || b;
+    
+      si (C) {
+            es_verdadero {
+                imprimir("esta bueno");
+            }es_falso {
+                imprimir(" esta malo"); 
+            }
+        }
+        
+        a = !false;
+        a = ( a || false);
+        
+        si (a) {
+            es_verdadero {
+                imprimir("esta bueno");
+            }es_falso {
+                imprimir(" esta malo"); 
+            }
+        }
+        
+          a =  true;    
+        si (a == (true||false)) {
+            es_verdadero {
+                imprimir("esta bueno");
+            }es_falso {
+                imprimir(" esta malo"); 
+            }
+        }
+        
+        Si(5>(1+2)){
+            es_verdadero {
+                imprimir("correcta");
+            }es_falso {
+                imprimir("falsa");
+            }
+        }
+        Si(5>(1+2)|| true ){
+            es_verdadero {
+                imprimir("correcta");
+            }es_falso {
+                imprimir("falsa");
+            }
+        }
+        
+        Si((5>(1+2) && true ) || ((5+2)-1)<10 || !(false)){
+            es_verdadero {
+                imprimir("correcta");
+            }es_falso {
+            imprimir("falsa");
+            }
+        }
+    }
+    
+} 

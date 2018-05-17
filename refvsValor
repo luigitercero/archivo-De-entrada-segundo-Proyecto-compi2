@@ -1,0 +1,82 @@
+estructura Persona [
+    caracter nombre[25];
+    caracter genero[20] = nada;
+    entero edad;
+    entero posicion;
+    Persona amigo;
+];
+estructura Persona2 [
+    caracter nombre[25];
+    caracter genero[20] = nada;
+    entero edad;
+    entero posicion;
+    Persona amigo;
+];
+clase Casteo {
+    estructura Persona3 [
+        caracter nombre[25];
+        caracter genero[20] = nada;
+        entero edad;
+        entero posicion;
+        Persona amigo;
+    ];
+    
+        estructura Persona4 [
+        caracter nombre[25];
+        caracter genero[20] = nada;
+        entero edad;
+        entero posicion;
+        Persona amigo;
+    ];
+    publico entero  a = 25;
+    crearPuntero(entero, direccion) = ObtEnerDireccion(a);
+    publico entero b= 20;
+    principal () {
+        imprimir(direccion);
+        entero tam = consultartamanio(Persona);
+        
+        imprimir(tam);
+        crearPuntero(Persona, p) =reservarMemoria(tam);
+        caracter nombre[20] ;
+        nombre = "Luis";
+        caracter genero[20] ;
+        genero = "masculino";
+       
+        p->nombre = nombre;
+        p->genero = genero;
+        p->edad = 25;
+        p->posicion = 35;
+        p->edad++;
+        imprimir(p->edad);
+        imprimir(p->posicion);
+        imprimir(p->nombre);
+        imprimir(p->genero);
+        Nodo n = nuevo Nodo();
+        entero a =20;
+        crearPuntero(entero, direccion) = ObtEnerDireccion(a);
+        imprimir(direccion);
+        crearPuntero(entero, direccion2) = direccion;
+        imprimir(direccion2);
+        crearPuntero(entero, direccion3) = ObtEnerDireccion(este.a);
+        imprimir(direccion3);
+        direccion2 = direccion3;
+        imprimir (direccion2);
+        hr(direccion2);
+        hr(A);
+        hr(este.a);
+        hr(n.a);
+        
+        
+    }
+
+    publico entero hr(entero puntero a) {
+        imprimir (a);
+    }
+    
+    
+    
+}
+
+clase Nodo {
+    publico entero a = 35;
+}

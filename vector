@@ -1,0 +1,9 @@
+ 
+clase vector {
+
+    principal () {
+        entero  tam[10][20];
+        imprimir(tam.tamanio);
+        
+    }
+}

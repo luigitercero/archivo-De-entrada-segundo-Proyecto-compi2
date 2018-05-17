@@ -1,0 +1,92 @@
+clase metodos {
+    
+    protegido vacio recorridoMatrices()  {
+        entero vector [11] = {10,9,8,7,6,5,4,3,2,1,0};
+        
+         entero contar = 10;
+imprimir("------------");       
+        Hacer{
+        	
+            imprimir("Valor en ");
+            imprimir(contar);
+            imprimir(": ");
+            imprimir(vector [contar]);
+            imprimir("------------");
+            contar--;
+        }Mientras(contar > -1);
+        
+    }
+    
+    protegido vacio multMatrices() {
+         entero vec3 [10];
+         entero vec1 [10] ={1,3,5,7,9,0,8,6,4,2};
+         entero vec2 [10] ={0,8,6,4,2,1,3,5,7,9};
+        
+        imprimir("La multiplicación es de: ");
+        repetir_contando( variable: i ; desde:0 ; hasta:10){
+            vec3 [ i ]=vec1 [ i ] * vec2 [ 10-(i+1) ];
+            imprimir(vec3[i]); 
+        }
+    }
+    
+    protegido vacio sumMatrices() {
+         entero vec3 [10];        
+         entero vec1 [10] ={1,3,5,7,9,0,8,6,4,2};
+         entero vec2 [10] ={0,8,6,4,2,1,3,5,7,9};
+        
+        imprimir("La suma es de: ");
+        repetir_contando( variable: i ; desde:0 ; hasta:10){
+            vec3 [ i ] = vec1 [ i ] + vec2 [ i ];
+            imprimir(vec3 [ i ] );
+        }
+    }
+    
+    
+    protegido vacio Hanoi(entero n, entero origen,  entero auxiliar, entero destino){
+        
+        Si(n==1) {
+        	es_verdadero{
+        	
+            	imprimir("mover disco de ");
+            	imprimir(origen);
+            	imprimir("destino");
+            	imprimir(destino);
+            	 imprimir("-----------------");
+            	
+            }es_falso{
+            	
+             	Hanoi(n-1, origen, destino, auxiliar);
+            	imprimir("mover disco de ");
+            	imprimir(origen);
+            	imprimir("destino");
+            	imprimir(destino);
+            	imprimir("-----------------");
+             	Hanoi(n-1, auxiliar, origen, destino);
+             	 
+            }
+        }
+
+    }
+    
+    
+}
+
+
+
+clase Archivo3 hereda_de metodos{
+
+    principal() {
+        
+         metodos m = nuevo metodos();
+        
+        imprimir("--------------Primera validacion-----------------");
+        recorridoMatrices();
+        imprimir("--------------Segunda validacion-----------------");
+        sumMatrices();
+        imprimir("--------------Tercera validacion-----------------");
+        multMatrices();
+        imprimir("--------------Cuarta validacion-----------------");
+        Hanoi(5, 1, 2, 3);
+    }
+    
+}

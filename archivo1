@@ -1,0 +1,133 @@
+clase funciones1 {
+    
+     decimal p = 2.1416;
+    
+    nodoFigura areaCuadradoTriangulo(entero figura, entero a, entero b){
+         nodoFigura nodo = nuevo nodoFigura();
+    
+        evaluar_si(figura){
+            es_igual_a 0: nodo.areaCuadrado = a ^ 2; romper;
+            es_igual_a 1: nodo.areaTriangulo = (a * b)/2; romper;
+            Defecto: romper;
+        }
+        
+        retorno nodo;
+    }
+    
+   publico nodoFigura areaCirculo(decimal radio){
+         nodoFigura nodo = nuevo nodoFigura();
+            
+        nodo.areaCirculo = (1 + p) * radio^2;
+    
+        retorno nodo;
+    }
+    
+    publico entero fibonacci(entero n) {
+        Si (n <= 1) {
+            es_verdadero {
+                retorno n;
+            }
+            
+            es_falso {
+                retorno  fibonacci(n-1) +  fibonacci(n-2);
+            }
+        }
+    }
+
+    
+   publico booleano Primo(entero numero){
+       entero cont = 2;
+       booleano primo=true;
+      
+      repetir_mientras ((primo) && (cont!=numero)){
+        Si (numero / cont == 0){
+            es_verdadero {
+                primo = false;
+            }
+            es_falso {
+
+            }
+        }
+        cont++;
+      }
+      retorno primo;
+    }
+    
+    
+    entero Factorial(entero numero) {
+         entero n = numero;
+         entero r = 1;
+         
+         repetir_contando(variable:m;desde: 1 ;hasta: numero) {
+           r = r * m;
+         }
+        retorno r;
+     }
+    
+}
+
+
+clase nodoFigura {
+    publico entero areaCuadrado = 0;
+    publico decimal areaTriangulo = 0;
+    publico decimal areaCirculo = 0;
+}
+
+
+
+clase main {
+
+     principal() {
+        
+        Si((5>(1+2) && true ) || ((5+2)-1)<10 || !(false)){
+            es_verdadero {
+                funciones1 f1 = nuevo funciones1();
+                imprimir("-------------------------------- Primera Validación---------------------------");
+                
+                entero areaCuadrado = f1.areaCuadradoTriangulo(0, 5, 1).areaCuadrado;
+                imprimir("El cuadrado tiene área de 25");
+
+                imprimir("El área del cuadrado es: ");
+                imprimir(areaCuadrado);
+                decimal areaTriangulo = f1.areaCuadradoTriangulo(1, 7, 5).areaTriangulo;
+                imprimir("El triangulo tiene área de 17.5");
+                imprimir("El área del triangulo es: ");
+                imprimir(areaTriangulo);
+                imprimir("------------------------------------------------------------------------------");
+            
+            
+                imprimir("-------------------------------- Segunda Validación---------------------------");
+                decimal areaCirculo = f1.areaCirculo(7.8).areaCirculo;
+                imprimir("El circulo tiene área de 191.134944");
+                imprimir("El área del circulo es: " );
+                imprimir(areaCirculo);
+                imprimir("------------------------------------------------------------------------------");
+            
+
+                imprimir("-------------------------------- Tercera Validación---------------------------");
+                imprimir("Fibinacci resultado = 1,1,2,3,5,8,13");
+                entero n = 7;
+                entero i = 0;
+                repetir {
+                    imprimir( f1.fibonacci(i));
+                    i++;
+                }hasta_que(i<n);
+                
+                imprimir("------------------------------------------------------------------------------");
+            
+                
+            
+                imprimir("-------------------------------- Quinta Validación---------------------------");
+                entero fact = f1.Factorial(7);
+                imprimir("El factorial de 7; debe ser 5040");
+                imprimir("El factorial de 7: ");
+                imprimir(fact);
+                imprimir("------------------------------------------------------------------------------");
+
+        }
+            es_falso{
+            }
+        }
+    }
+    
+}

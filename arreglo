@@ -1,13 +1,10 @@
  
 clase arreglo{
 
-	publico entero arreglo(entero parametro){
+	principal(){
        
-        entero arreglo[3][4 ][10] = {{1.5,1.56,15.5},{1.5,1.56,15.5},{1.5,1.56,15.5},{1.5,1.56,15.5}};
-		entero a  = arreglo[0][0][0];
-		arreglo[1][2][1] = a;
-		
-        Objeto objeto [2][2] = {{nuevo Objeto(), nuevo Objeto()},{nuevo Objeto(), nuevo Objeto()}};
+        decimal arreglo[2][2] = {{1.5,1.56},{1.5,1.56}};
+
 	}
 
 }

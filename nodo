@@ -1,0 +1,23 @@
+ 
+clase  nodo {
+    entero valor;
+    nodo siguiente;
+    
+    nodo (entero valor) {
+        este.valor = valor;
+        este.siguiente = nada;
+    }
+
+}
+
+
+clase ejecucion {
+
+    principal () {
+        nodo a;
+        entero numero = 100;
+        a =nuevo nodo(numero);
+        imprimir (a.valor);
+    }
+}
+ 

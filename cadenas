@@ -1,0 +1,24 @@
+ 
+  
+clase ejecucion {
+
+    principal () {
+        cadenas cad = nuevo Cadenas();
+        caracter saludo = 'A' ;
+        caracter cadena[35];
+        cadena = "hola que tal";
+        cad.cadena = "holi";
+        imprimir(cadena);
+        imprimir(saludo);
+        imprimir(cadena);
+        concatenar(cadena, cadena);
+        imprimir(cadena);
+    }
+}
+
+clase cadenas {
+    caracter cadena[35];
+}
+
+
+

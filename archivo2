@@ -1,0 +1,204 @@
+ 
+clase tipoCambio {
+    decimal dolar = 0.14;
+    decimal euro = 0.13;
+    decimal yen = 14.86;
+    decimal pero = 2.57;
+    decimal bitcoin = 0.00011;
+    decimal colon = 76.52;
+    decimal yuan = 0.94;
+    
+    CARACTER moneda [16] ;
+    tipoCambio () {
+        moneda = "";
+    }
+}
+
+clase decimales {
+
+    entero miles = 0;
+    entero ciento = 0;
+    entero decenas = 0;
+    entero unidad = 0;
+    
+}
+
+
+clase converciones {
+    
+    
+    decimal cDecimal(decimales d){
+        decimal resultado = 0;
+        
+        repetir_contando(variable: i; desde: 0 ;hasta:4 ) {
+            Si (i==0){
+                es_verdadero {
+                    resultado = resultado + d.unidad * 2^i;
+                }
+                es_falso {
+
+                }
+            }
+            Si (i==1){
+                es_verdadero {
+                   resultado = resultado + d.decenas * 2^i;
+                }
+                es_falso {
+
+
+                }
+            }
+            Si (i==2){
+                es_verdadero {
+                    resultado = resultado + d.ciento * 2^i;
+                }es_falso {
+
+                }
+                
+            }
+            Si (i==3){
+                es_verdadero {
+                    resultado = resultado + d.miles * 2^i;
+                }
+                es_falso {
+
+                }
+            }
+            
+        }
+        retorno resultado;
+    }
+    
+    decimal hDecimal(){
+      
+        decimal vec[3][2] = {{7, 16^2},{13,16^1},{14,16^0}};
+        
+        decimal resultado = (vec[0][0] * vec[0][1]) + (vec[1][0] * vec[1][1]) + (vec[2][0] * vec[2][1]);
+        
+        retorno resultado;
+    }
+    
+    
+    
+}
+
+clase cambios {
+    
+    decimal tipoCambioSimple(entero miles, entero centenas, entero decenas, entero unidades, entero centavos){
+        imprimir("Se realizará un calculo de tipo de cambio en dolares");
+        
+        tipoCambio t = nuevo tipoCambio();
+        
+        entero m = miles * 1000;
+        entero c = centenas * 100;
+        entero d = decenas * 10;
+        entero u = unidades * 1;
+        decimal cen = centavos * 0.01;
+
+        decimal resultado = (m + c + d + u + cen) * t.dolar;
+        
+        retorno resultado;
+    }
+    
+    
+    decimal tipoCambioComplejo(caracter pais[16], decimal monto){
+        tipoCambio t = nuevo tipoCambio();
+        decimal resultado = 0;
+        
+        Si (pais == "japon") {
+            es_verdadero {
+               resultado = monto * t.yen;
+            }
+            es_falso {
+           Si (pais == "estados unidos") {
+              es_verdadero {
+                resultado = monto * t.dolar; 
+              }
+                    es_falso {
+                       Si (pais == "europa") {
+                         es_verdadero{
+                          resultado = monto * t.euro;
+                         }
+                            es_falso {
+                                Si (pais == "costa rica") {
+                                    es_verdadero {
+                                      resultado = monto * t.colon;  
+                                    }
+                                    es_falso {
+                                        Si (pais == "bit") {
+                                            es_verdadero {
+                                              resultado = monto * t.bitcoin;  
+                                            }
+                                            es_falso {
+
+                                            }
+                                        }   
+                                    }   
+                                }  
+                            }
+                       }
+                    }
+                }
+            }
+        }
+        retorno resultado;
+    }
+    
+}
+
+clase Archivo2 {
+
+     principal() {
+        
+        cambios c = nuevo cambios();
+        caracter pais [20];
+        
+        imprimir("-------------------------------- Primera Validación---------------------------");
+        imprimir("Tipo de cambio simple, la respuesta es 47.924800000000005");
+        decimal cambio = c.tipoCambioSimple(0,3,4,2,32);
+        imprimir("Tipo de cambio US para Q 342.32 es " );
+        imprimir(cambio);
+        imprimir("------------------------------------------------------------------------------");
+        
+        imprimir("-------------------------------- Segunda Validación---------------------------");
+        imprimir("Todos los tipos de cambio para 1263.15 quetzales");
+        imprimir("Japon: yenes 18770.409");
+       pais ="japon";
+       imprimir( c.tipoCambioComplejo(pais, 1263.15));
+       pais = "estados unidos";
+        imprimir("Estados Unidos:  dolares 176.84100000004");
+        imprimir ( c.tipoCambioComplejo(pais, 1263.15) );
+        imprimir("Europa: euros 164.2095000000");
+       pais = "europa";
+        imprimir(c.tipoCambioComplejo(pais, 1263.15) );
+        imprimir("Costa Rica: colones 966526.238");
+        pais = "costa rica";
+        imprimir (c.tipoCambioComplejo(pais, 1263.15));
+        imprimir("Digital: bitcoins 0.1389465");
+        pais = "bit";
+        imprimir( c.tipoCambioComplejo(pais, 1263.15));
+        imprimir("------------------------------------------------------------------------------");
+        
+        
+        imprimir("-------------------------------- Tercera Validación---------------------------");
+        imprimir("Converciones");
+        
+        converciones conv = nuevo converciones();
+        decimales d = nuevo decimales();
+        d.miles = 1;
+        d.ciento = 1;
+        d.decenas = 0;
+        d.unidad = 1;
+        imprimir("Conversicón de 1101: debe salir 13 y salio" );
+        imprimir(conv.cDecimal(d));
+        imprimir("------------------------------------------------------------------------------");
+        
+        
+        
+        imprimir("-------------------------------- Cuarta Validación---------------------------");
+        imprimir("Hexadecimal resultado = 2014");
+        imprimir("7DE = " );
+        imprimir(conv.hDecimal());
+        imprimir("------------------------------------------------------------------------------");    
+    }
+}

@@ -1,0 +1,17 @@
+  
+  clase hexa {
+  
+    principal () {
+        imprimir (hDecimal());
+    }
+  decimal hDecimal(){
+      
+        decimal vec[3][2] = {{7, 16^2},{13,16^1},{14,16^0}};
+        imprimir (vec [2][0]);
+        decimal resultado = (vec[0][0] * vec[0][1]) + (vec[1][0] * vec[1][1]) + (vec[2][0] * vec[2][1]);
+        
+        retorno resultado;
+    } 
+
+  }
+  

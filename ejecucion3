@@ -1,13 +1,14 @@
+ 
   
 clase ejecucion {
  clase1 c ;
-   clase1 b ;
+   
    principal () {
    
   
-    b = nuevo clase1();
+    clase1 b = nuevo clase1();
     
-      c = nuevo clase1();
+     clase1 c  = nuevo clase1();
     //entero b = 25;
     imprimir (c.metodo2(1)+7);
     imprimir (25);

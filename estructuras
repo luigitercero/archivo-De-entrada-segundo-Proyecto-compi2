@@ -1,0 +1,75 @@
+ 
+estructura Persona [
+    caracter nombre[25];
+    caracter genero[20] = nada;
+    entero edad;
+    entero posicion;
+    Persona amigo;
+];
+
+clase estruct {
+
+    principal () {
+       
+        entero tam = consultartamanio(Persona);
+        crearPuntero(Persona, p) =reservarMemoria(tam);
+       inicializarPersona(p);
+       
+        imprimir ("datos de mi mismo");
+        imprimir(p->edad);
+        imprimir(p->posicion);
+        imprimir(p->nombre);
+        imprimir(p->genero);
+        imprimir ("-----------------");
+        caracter nombre [20];
+        nombre = "Alejandro";
+        caracter genero[25];
+        genero = "masculino";
+        
+        crearPuntero(Persona, amigo) = Crearamigo(nombre,genero,22,1);
+        imprimir(amigo->edad);
+        imprimir(amigo->posicion);
+        imprimir(amigo->nombre);
+        imprimir(amigo->genero);
+        p->amigo = amigo;
+        
+        imprimir ("Luis Ahora tiene un nuevo amigo");
+        imprimir(p->amigo->edad);
+        imprimir(p->amigo->posicion);
+        imprimir(p->amigo->nombre);
+        imprimir(p->amigo->genero);
+        
+    }
+
+    publico entero inicializarPersona(Persona puntero p) {
+        caracter nombre[20] ;
+        
+        nombre = "Luis";
+        caracter genero[20] ;
+        genero = "masculino";
+        
+        p->nombre = nombre;
+        p->genero = genero;
+        p->edad = 25;
+        p->posicion = 35;
+        p->edad++;
+        crearPuntero(Persona, m);
+        p->amigo  = m;
+        
+    }
+    
+    publico entero Crearamigo(caracter nombre [20],caracter genero[25], entero edad, entero posicion) {
+        entero tam = consultartamanio(Persona);
+        entero memoria = reservarMemoria(tam);
+        crearPuntero(Persona, p) =memoria;
+        p->nombre = nombre;
+        p->genero = genero;
+        p->edad = edad;
+        p->posicion = posicion;
+        crearPuntero(Persona, m);
+        p->amigo  = m;
+        retorno memoria;
+    }
+    
+}
+

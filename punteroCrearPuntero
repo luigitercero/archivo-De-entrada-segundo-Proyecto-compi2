@@ -1,0 +1,32 @@
+clase nodo {
+    publico entero num = 25;
+    
+}
+
+clase prin {
+    publico num = 35;
+    principal () {
+    Nodo n= nuevo nodo();
+    entero num = 30;
+        crearPuntero(entero, t13) = jajajaja(este.num);
+        crearPuntero(entero, t14) = jajajaja(n.num) ;
+        crearPuntero(entero, t15) = jajajaja(num);
+        gggg();
+        imprimir(t13);
+        imprimir(t14);
+        imprimir(t15);
+        
+    }
+    
+    
+    publico entero jajajaja(enero b) {
+        retorno  b
+    }
+    
+    publico caracter gggg() {
+        entero j = 35587978;
+        entero m = 554444;
+        retorno '0';
+    }
+    
+}

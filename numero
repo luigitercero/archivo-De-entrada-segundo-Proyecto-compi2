@@ -1,0 +1,19 @@
+ 
+clase Operacion {
+
+	principal () {
+        entero num1 = 10 ;
+        decimal num2 = 25.00;
+        entero casteoDN = 0;
+        repetir_mientras (num2 != 0) {
+            num2--;
+            casteoDN++;
+            imprimir (casteoDN);  
+        }
+        
+        
+        imprimir (num1 + num2);
+	}
+
+}
+ 

@@ -1,1 +1,70 @@
  
+clase  nodo {
+    entero valor;
+    nodo siguiente;
+    
+    nodo (entero valor) {
+        este.valor = valor;
+        este.siguiente = nada;
+    }
+
+}
+
+clase list {
+    nodo raiz;
+    
+    list () {
+        este.raiz = nada;
+    }
+    
+    publico vacio add (nodo valor) {
+        si (este.raiz == nada ) {
+            es_verdadero {
+                este.raiz = valor;
+            }
+            es_falso {
+                nodo actual = raiz;
+                repetir_mientras (actual.siguiente != nada) {
+                actual = actual.siguiente;
+                }
+                actual.siguiente = valor;
+            }
+        }
+    }
+    
+    publico vacio recorrer () {
+     nodo actual ;
+        actual  = raiz;
+        
+        si (actual == nada ) {
+            es_verdadero {
+                imprimir("no hay nada en la lista");
+            }
+            es_falso {
+                
+                imprimir(actual.valor);
+                repetir_mientras (actual.siguiente != nada) {
+                    actual = actual.siguiente;
+                   imprimir(actual.valor);
+                }
+            }
+        }
+    }
+    
+}
+
+clase ejecucion {
+
+    principal () {
+        list l ;
+        l = nuevo list();
+        nodo a;
+        a =nuevo nodo(10);
+        l.add (a);
+        a =nuevo nodo(20);
+        l.add (a);
+        a =nuevo nodo(30);
+        l.add (a);
+        l.recorrer();
+    }
+}

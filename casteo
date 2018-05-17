@@ -1,0 +1,154 @@
+clase Casteo {
+    principal () {
+        caracter valores[50];
+        valores = "el resultado es 123456 y me dio : ";
+        concatenar(valores, convertirAcadena(123456));
+        imprimir(valores);
+        
+        valores = "el resultado es 1234.566 y me dio : ";
+        concatenar(valores, convertirAcadena(1234.566));
+        imprimir(valores);
+
+        caracter c[16];
+        c = "12345.50";
+        entero b = convertirAEntero(c);
+        valores = "el resultado es 12345 y me dio : ";
+        concatenar(valores, convertirAcadena(b));
+        imprimir (valores);
+    }
+
+    publico  caracter [] convertirAcadena (decimal a) {
+        entero divisor = 0;
+        entero residuo = 0;
+        entero primero = 1;
+        entero residuo2 = 0;
+        caracter numero[16];
+        entero poss = 0;
+       
+        repetir_mientras (a >= 10) {
+            repetir_mientras (a > 10) {
+                divisor++;
+                a = a - 10;
+            }
+            si (primero == 1) {
+                es_verdadero {
+                    repetir_mientras (a >= 1) {
+                        a--;
+                        residuo++;
+                    }
+                    si (a != 0) {
+                        es_verdadero {
+                        a = a * 10;
+                        repetir_mientras (a >= 1) {
+                            repetir_mientras (a >= 1) {
+                                residuo2++;
+                                a--;
+                            }
+                            numero[poss] = residuo2+48;
+                            poss++;
+                            a = a * 10;
+                            residuo2 = 0;
+                        }
+                         numero[poss] = '.';
+                         poss++;
+                        } es_falso {
+
+                        }
+                    }
+                    primero = 0;
+                    a = residuo;
+                }es_falso {
+
+                }
+            }
+             numero[poss] = a + 48;
+             poss++;
+            a = divisor;
+            divisor = 0;
+        }
+        numero[poss] = a + 48;
+        poss++;
+        entero countCarac = poss;
+        entero c = 0;
+        entero temp = countCarac;
+        caracter salida[16];
+        repetir_mientras (c < countCarac) {
+         salida[c] = numero[temp - 1];
+         temp--;
+         c++;
+        }
+        retorno salida;
+    }
+    publico caracter  [] convertirAcadena (entero a) {
+        entero divisor = 0;
+        entero residuo = 0;
+        entero primero = 1;
+        caracter numero[16];
+        entero poss = 0;
+       
+        repetir_mientras (a > 10) {
+            repetir_mientras (a >= 10) {
+                divisor++;
+                a = a - 10;
+            }
+            si (primero == 1) {
+                es_verdadero {
+                    repetir_mientras (a >= 1) {
+                        a--;
+                        residuo++;
+                    }
+                    primero = 0;
+                    a = residuo;
+                }es_falso {
+
+                }
+            }
+            numero[poss] = a +48;
+            poss++;
+            a = divisor;
+            divisor = 0;
+        }
+        numero[poss] = a +48;
+        poss++;
+        entero countCarac = poss;
+        entero c = 0;
+        entero temp = countCarac;
+        caracter salida[16];
+        repetir_mientras (c < countCarac) {
+         salida[c] = numero[temp - 1];
+         temp--;
+         c++;
+        }
+        retorno salida;
+    }
+    
+    
+    publico entero convertirAEntero (caracter a[16]) {
+        entero conta = 0; 
+        entero decena = 1;
+        entero char = 0;
+        entero numero = 0 ;
+        repetir_Mientras(a[conta] != nada) {
+            char = a[conta]; 
+            si (char > 47 && char < 58 ) {
+                es_verdadero {
+                    numero = numero* decena + (char - 48) ;
+                    decena = 10;
+                }
+                es_falso {
+                    si (a[conta] == '.') {
+                        es_verdadero {
+                            romper;
+                        }
+                        es_falso {
+                           numero = numero + char;
+                        }
+                    }
+                }
+            }
+            conta++;
+        }
+        retorno numero;
+    }
+    
+}
