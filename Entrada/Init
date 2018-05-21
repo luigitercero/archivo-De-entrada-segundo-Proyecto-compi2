@@ -1,0 +1,465 @@
+
+ clase Inicio {
+
+    principal(){
+        Operaciones op = nuevo Operaciones();
+        op.aritmeticas_basicas();
+        op.aritmeticas_avanzadas();
+        op.operaciones_relacionales_basicas();
+        op.operaciones_relacionales_avanzadas();
+        op.operaciones_logicas_basicas();
+        op.operaciones_logicas_avanzadas();
+        op.operaciones_conjuntas();
+        
+        Funciones fun = nuevo Funciones();
+        fun.evaluar_numero();
+        fun.evaluar_caracter();
+        fun.saludo();
+        fun.ciclo_doble_cond();
+        fun.ciclo_vida();
+        Entero res_no = fun.fibonacci_no_recursivo(10);
+        caracter sal[40] = "Salida Fibonacci No Recursivo ";
+        concatenar(sal, res_no);
+        imprimir(sal);
+        Entero res = fun.fibonacci_recursivo(8);
+        imprimir("14) fibonacci_recursivo");
+        sal = "Salida Fibonacci Recursivo ";
+        concatenar(sal, res);
+        imprimir(sal);
+        
+        fun.pedir_num();
+    }
+    
+}
+
+
+
+
+
+ clase Funciones {
+    
+    privado vacio eval_num(Entero param){
+        evaluar_si (param) {
+            Es_igual_a 0:
+                imprimir("Cero");
+                romper;
+            Es_igual_a 1:
+                imprimir("Uno");
+                romper;
+            Es_igual_a (2*2)/2:
+                imprimir("Dos");
+                romper;
+            Es_igual_a 3:
+                imprimir("Tres");
+                romper;
+            Es_igual_a 4:
+                imprimir("Cuatro");
+                romper;
+          
+        }
+    }
+    
+    publico vacio evaluar_numero(){
+        imprimir("8) Evaluar Numero");
+        Repetir_contando (variable: i; desde: 0; hasta: 5){
+            eval_num(i);
+        }
+    }
+    
+    privado vacio eval_car(caracter param){
+        evaluar_si (param) {
+            Es_igual_a 'a':
+                imprimir("A");
+                romper;
+            Es_igual_a 'b':
+                imprimir("B");
+                romper;
+            Es_igual_a 'c':
+                imprimir("C");
+                romper;
+            Es_igual_a 'd':
+                imprimir("D");
+                romper;
+            Es_igual_a 'e':
+                imprimir("E");
+                romper;
+  
+        }
+    }
+    
+    publico vacio evaluar_caracter(){
+        imprimir("9) Evaluar Caracter");
+        eval_car('e');
+        eval_car('d');
+        eval_car('c');
+        eval_car('b');
+        eval_car('a');
+    }
+    
+ publico vacio saludo(){
+        imprimir("10) Saludo");
+        Entero conta = 0;
+        hacer{
+            evaluar_si(conta){
+                Es_igual_a 0: 
+                    imprimir("Esta");
+                    romper;
+                Es_igual_a 1: 
+                    imprimir(" salida");
+                    romper;
+                Es_igual_a 2:
+                    imprimir(" es");
+                    romper;
+                Es_igual_a 3: 
+                    imprimir(" CORRECTA!!");
+                    romper;
+                defecto:
+                    imprimir("Salida incorrecta!!!");
+            }
+            conta++;
+        }mientras(conta < 4);
+    }
+
+    publico vacio ciclo_doble_cond(){
+        imprimir("11) ciclo_doble_cond");
+        booleano var1 =true;
+        booleano var2 =false;
+        booleano res = false;
+        si ((var1==var2 && var1!=var2 && true==var1) || var1==var2)
+            es_verdadero{
+                res = false;
+            }
+            es_falso{
+                si (((var1==var2 && var1) || var1) || var1==var2)
+                    es_verdadero{
+                        res = true;
+                    }
+                    es_falso{
+                        res = false;
+                    }
+                fin-si
+            }
+        fin-si
+
+        booleano var3 = false;
+        Entero conta = 0;
+        Ciclo_doble_condicion(res, var3){
+            var3 = true;
+            conta++;
+            si(conta == 10)
+                es_verdadero{
+                    var3=false;
+                }  
+            fin-si
+        }
+        caracter sal[60] = "Resultado: ";
+        concatenar(sal, conta);
+        imprimir(sal);
+    }
+    
+
+    publico vacio ciclo_vida(){
+        imprimir("12) ciclo_vida");
+        Persona Carlos = nuevo Persona(16, "Carlos", "Martinez", 'M');
+        Persona Josefina = nuevo Persona(15, "Josefina", "Tobar", 'F');
+        Persona Carlitos = nuevo Persona();
+        Entero cont = 0;
+        Repetir_Mientras(cont < 4){
+            cont++;
+            si(cont ==4)
+                es_verdadero{
+                    Carlitos = Carlos.reproducir(Josefina, "Carlitos");
+                    Josefina.matrimonio(Carlos);
+                    caracter text[100] = "Nombre Hijo: ";
+                    concatenar(text, Carlitos.nombre);
+                    concatenar(text, Carlitos.apellido);
+                    imprimir(text);
+                    text = "Nombre esposa: ";
+                    concatenar(text, Josefina.nombre);
+                    concatenar(text, Josefina.apellido);
+                    imprimir(text);
+                }
+            fin-si
+        }
+    }
+    
+    publico Entero fibonacci_no_recursivo(Entero n) {
+        imprimir("13) fibonacci_no_recursivo");
+        
+        entero actual;
+        entero ant1;
+        entero ant2;
+        entero i;
+        ant1 = 1;
+        ant2 = 1;
+        actual = 0;
+        si((n == 0)||(n == 1))
+            es_verdadero{
+                actual = 1;
+            }
+            es_falso{
+                Repetir_contando (variable: i; desde: 2; hasta: n){
+                    actual = ant1 + ant2;
+                    ant2 = ant1;
+                    ant1 = actual;
+                }
+            }
+        fin-si
+        retorno actual;
+    }
+    
+    Entero fibonacci_recursivo(Entero n){
+        si (n==0)
+            es_verdadero{
+                retorno 0;
+            }
+            es_falso{
+                si (n==1)
+                    es_verdadero{
+                        retorno 1;
+                    } 
+                    es_falso{
+                        si(n>1)
+                            es_verdadero{
+                                retorno fibonacci_recursivo(n-1) + fibonacci_recursivo(n-2);
+                            }
+                            es_falso {
+                            
+                            }
+                        fin-si
+                    }
+                fin-si 
+            }
+        fin-si 
+        retorno -1;
+    }
+    publico vacio pedir_num(){
+        imprimir("15) Pedir num");
+        Entero num = 0;
+        hacer 
+        {
+            Leer_Teclado ("Ingrese numero diferente de 5", num); 
+        } mientras (!(num == 5));
+    }
+}
+
+
+ clase Operaciones {
+    
+    publico vacio aritmeticas_basicas(){
+        imprimir("1) Operaciones Aritmeticas Basicas");
+        //1765
+        Entero temp1 = 10+45*78/2;
+        caracter texto[25] = "1.1) 30 >>> ";
+        concatenar(texto, " #E", temp1);
+        imprimir(texto);
+        //80
+        Entero temp2 = 0+(10*8);
+        texto = "1.2) 30 >>> ";
+        concatenar(texto, " #E", temp2);
+        imprimir(texto);
+        //9
+        Entero temp3 =  (8-7+2^(3));
+        texto = "1.3) 40 >>> ";
+        concatenar(texto, " #E", temp3);
+        imprimir(texto);
+    }
+    
+    publico vacio aritmeticas_avanzadas(){
+        imprimir("2) Operaciones Aritmeticas Avanzadas");
+        //112
+        Entero temp1 = 15*7-2/2-8*(5-6);
+        caracter texto[25] = "2.1) 30 >>> ";
+        concatenar(texto, " #E", temp1);
+        imprimir(texto);
+        //143
+        Entero temp2 =  (0+(10*8)-18 + 3^(4));
+        texto = "2.2) 30 >>> ";
+        concatenar(texto, " #E", temp2);
+        imprimir(texto);
+        //14
+        Entero temp3 =  ((8-7+2^(3)/3)*4);
+        texto = "2.3) 40 >>> ";
+        concatenar(texto, " #E", temp3);
+        imprimir(texto);
+    }
+    
+    publico vacio operaciones_relacionales_basicas(){
+        imprimir("3) Operaciones Relacionales Basicas");
+        Entero salida = 0;
+        Si(salida < 10)
+            Es_Verdadero{
+                salida = 5*9;
+                si(salida > 44)
+                    es_verdadero{
+                        salida++;
+                    }
+                 fin-si
+                
+            }
+            Es_falso{
+                salida = 1;
+            }
+        Fin-si
+        Si (salida != 1)
+            Es_verdadero{
+                Si(salida == 46)
+                    Es_verdadero{
+                        imprimir("Salida CORRECTA!!");
+                    }
+                    Es_falso{
+                        imprimir("Salida incorrecta!!");
+                    }
+                fin-si
+            }
+            Es_falso{
+                imprimir("Salida incorrecta!!");
+            }
+        fin-si
+    }
+    
+    publico vacio operaciones_relacionales_avanzadas(){
+        imprimir("4)Operaciones Relacionales Avanzadas");
+        si(10-15 >= 0)
+            es_verdadero{
+                imprimir("Salida incorrecta!!");
+            }
+            es_falso{
+                si(15+8 == 22-10+5*3-4)
+                    es_verdadero{
+                        si(10 != 11-2)
+                            es_verdadero{
+                                imprimir("Salida CORRECTA!!");
+                            }
+                            es_falso{
+                                imprimir("Salida incorrecta!!");
+                            }
+                        fin-si
+                    }
+                    es_falso{
+                        si (1 == 1)
+                            es_verdadero{
+                                imprimir("Salida incorrecta!!");
+                            }
+                            es_falso{
+                                imprimir("Salida incorrecta!!");
+                            }
+                        fin-si
+                    }
+                fin-si
+            }
+        fin-si   
+    }
+    
+    publico vacio operaciones_logicas_basicas(){
+        imprimir("5) Operaciones Logicas Basicas");
+        si(((true == true) && (true != false)) || (1 > 10) && (!(true) == true))
+            es_verdadero{
+                imprimir("Salida CORRECTA!!");
+            }
+            es_falso{
+                imprimir("Salida incorrecta!!");
+            }
+        fin-si
+    }
+    
+    publico vacio operaciones_logicas_avanzadas(){
+        imprimir("6) Operaciones Logicas Avanzadas");
+        si((15 == 14) || (((15*2 >= 15) ?? (12 < 24))||((98/2 == 15)||(!(15 != 6-1)))))
+            es_verdadero{
+                imprimir("Salida CORRECTA!!");
+            }
+            es_falso{
+                imprimir("Salida incorrecta!!");
+            }
+        fin-si
+    }
+    
+    publico vacio operaciones_conjuntas(){
+        imprimir("7) Operaciones Conjuntas");
+        si(!(5*3-1 == 14) && !(!(15 == 6-1)))
+            es_verdadero{
+                imprimir("Salida incorrecta!!");
+            }
+            es_falso{
+                Entero var = -1*(58/6+9+9-1*8/2*17);
+                Entero var2 = 48/4*79-2+8;
+                Caracter salida[10] = convertirAcadena(var);
+                concatenar(salida, "#E",var2);
+                si(salida == "41954")
+                    es_verdadero{
+                        imprimir("Resultado: 41954");
+                    }
+                    es_falso{
+                        imprimir("Salida incorrecta!!");
+                    }
+                fin-si
+            }
+        fin-si
+    }
+}
+
+
+clase Humano {
+    Entero edad;
+    Caracter nombre[15];
+    
+    publico vacio nacer(){
+        este.edad = 0;
+    }
+}
+
+ clase Persona hereda_de Humano{
+    caracter genero;
+    caracter DPI[15];
+    Caracter apellido[20];
+    
+    Persona(){
+        nacer();
+        nombre = "";
+        genero = 'M';
+    }
+    
+    Persona(Entero edad, Caracter nombre[15], Caracter apellido[15], caracter genero){
+        este.edad= edad;
+        este.nombre = nombre;
+        este.apellido = apellido;
+        este.genero = genero;
+    }
+   
+    privado Caracter[] concat(Caracter nombres[15], Caracter apellidos[15]){
+        Caracter ret[30] = nombre;
+        concatenar(ret, " ");
+        concatenar(ret, apellidos);
+        retorno ret;
+    }
+    
+    publico Persona reproducir(Persona pareja, Caracter nombre[15]){
+        si(este.genero != pareja.genero)
+            es_verdadero{
+                Persona bebe = nuevo Persona();
+                bebe.nombre = nombre;
+                concatenar (bebe.apellido,este.apellido);
+                imprimir(bebe.apellido);
+                
+                concatenar(bebe.apellido, " ");
+                concatenar(bebe.apellido, pareja.apellido);
+                retorno bebe;
+            }es_falso {
+            }
+        fin-si
+        retorno nada;
+    }
+    
+    publico vacio matrimonio(Persona conyuge){
+        si(este.genero == 'F')
+            es_verdadero{
+                concatenar(este.apellido, " de ");
+                concatenar(este.apellido, conyuge.apellido);
+            }es_falso {
+            }
+        fin-si
+    }
+}
+
+

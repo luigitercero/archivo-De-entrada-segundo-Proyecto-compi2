@@ -1,0 +1,51 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package archivoentrada;
+
+/**
+ *
+ * @author Compiladores Calificacion
+ */
+publico clase BNode {
+    entero t = 4;  //variable to determine order of tree
+    entero count; // number of keys in node
+    entero key[ 2 * t - 1 ];  // array of key values
+    Contacto contacto[ 2 * t - 1 ];
+    BNode child[ 2 * t ]; //array of references
+    boolean leaf; //is node a leaf or not
+    BNode parent;  //parent of current node.
+
+
+    publico BNode() {
+    }
+// ----------------------------------------------------
+// initial value constructor for new node             |
+// will be called from BTree.java                     |
+// ----------------------------------------------------
+    publico BNode(entero t, BNode parent) {
+        //this.t = t;
+        este.parent = parent;
+        //key = new int[2 * t - 1];
+        //child = new BNode[2 * t];
+        leaf = true;
+        count = 0;
+        //contacto = new Contacto[2* t - 1];
+
+    }
+// -----------------------------------------------------
+// this is method to return key value at index position|
+// -----------------------------------------------------
+    publico entero getValue(entero index) {
+        retorno key[index];
+    }
+    
+// ----------------------------------------------------
+// this is method to get ith child of node            |
+// ----------------------------------------------------
+    publico BNode getChild(entero index) {
+        retorno child[index];
+    }
+}

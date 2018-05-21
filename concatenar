@@ -1,0 +1,11 @@
+clase Casteo {
+    principal () {
+        caracter destino [12] = " LLuis ";
+        concatenar (destino, " adriana ");
+        imprimir (destino);
+        
+    }
+
+
+    
+}

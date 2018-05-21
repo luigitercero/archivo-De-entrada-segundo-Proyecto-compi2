@@ -1,0 +1,175 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+ importar("Pais.gcc");
+
+publico clase Matriz {
+    privado entero n;
+    privado entero matriz [5][5];
+    
+    privado Pais pais_m [5][5];
+    
+    /**
+     * Constructor de clase
+     * @param n numero de nodos
+     */
+    publico Matriz(entero n) {
+        //se inicializa matriz en 0
+        Repetir_contando (variable: i; desde: 0; hasta: 4){
+            Repetir_contando (variable: j; desde: 0; hasta: 4){
+                matriz[i][j] = 0;
+                pais_m[i][j] = nuevo Pais(0);
+            }
+        }
+    }
+    
+    publico vacio agregar(entero i, entero j){
+        matriz[i][j] += 1;
+        pais_m[i][j].Peso += 1;
+    }
+    
+    publico vacio AgregarPais(entero i, entero j, String pais){
+        si (pais_m[i][j].Cnt != 0) Es_verdadero{
+            imprimir ("Pais Ya fue creado... ");
+        }
+        fin-si
+        pais_m[i][j].Pais(pais);
+    }
+    
+    publico vacio AgregarPersona(entero i, entero j, String nombre, entero numero){
+        pais_m[i][j].AddPersona(nombre, numero);
+    }
+    
+    publico vacio remover(entero i, entero j){
+        si (matriz[i][j]>0) Es_verdadero{
+            matriz[i][j] -= 1;
+        }
+        fin-si
+    }
+    
+    publico vacio imprimir_i(){
+        caracter cadena [30] = "";
+        Repetir_contando (variable: i; desde: 0; hasta: 4){
+            Repetir_contando (variable: j; desde: 0; hasta: 4){
+                Concatenar (cadena, "#E ", pais_m[i][j].Peso);
+            }
+            Imprimir (cadena);
+        }
+    }
+    
+    publico vacio ImprimirPersonas(entero i, entero j){
+        Pais pa = pais_m[i][j];
+        
+        si (pa.Cnt < 1) Es_verdadero{
+            Imprimri ("NO tiene Listado de Personas.....");
+            retorno;
+        }
+        fin-si
+        
+        Imprimir (concatenar("Pais: ----> ", pa.Pais));
+        Imprimir (concatenar("Cant: ----> ", ConvertirACadena(pa.Cnt)));
+        Imprimir (concatenar("Peso: ----> ", ConvertirACadena(pa.Peso)));
+        Imprimir ("------------- Listado De Persona ------------");
+        Persona aux = pa.Inicial;
+        
+        Repetir_Mientras(aux != nada){
+            Imprimir (concatenar("Nombre: -----> ", pa.Pais));
+            Imprimir (concatenar("Id: ---------> ", ConvertirACadena(aux.identi)));
+            Imprimir (concatenar("Numero: -----> ", ConvertirACadena(aux.numero)));
+
+            Imprimir ("------------- Siguiente ------------");
+            Imprimir("");
+            aux = aux.Sig;
+        }
+    }
+    
+    publico vacio ImprimirPersonas2(entero i, entero j){
+        Pais pa = pais_m[i][j];
+        
+        si (pa.Cnt < 1) Es_verdadero{
+            Imprimri ("NO tiene Listado de Personas.....");
+            retorno;
+        }
+        fin-si
+        
+        Imprimir (concatenar("Pais: ----> ", pa.Pais));
+        Imprimir (concatenar("Cant: ----> ", ConvertirACadena(pa.Cnt)));
+        Imprimir (concatenar("Peso: ----> ", ConvertirACadena(pa.Peso)));
+        Imprimir ("------------- Listado De Persona ------------");
+        Persona aux = pa.Final;
+        
+        Repetir_Mientras(aux != nada){
+            Imprimir (concatenar("Nombre: -----> ", pa.Pais));
+            Imprimir (concatenar("Id: ---------> ", ConvertirACadena(aux.identi)));
+            Imprimir (concatenar("Numero: -----> ", ConvertirACadena(aux.numero)));
+
+            Imprimir ("------------- Anterior ------------");
+            Imprimir("");
+            aux = aux.Ant;
+        }
+    }
+    
+    publico vacio ListadoBusquerda(entero i, entero j, entero p){
+        Pais pa = pais_m[i][j];
+        
+        si (pa.Cnt < 1) Es_verdadero{
+            Imprimir ("NO tiene Listado de Personas.....");
+            retorno;
+        }
+        fin-sin
+        si (pa.Cnt < p) Es_verdadero{
+            Imprimir ("No existe esa posicion.....");
+            retorno;
+        }
+        fin-si
+        
+        Imprimir (concatenar("Pais: ----> ", pa.Pais));
+        Imprimir (concatenar("Cant: ----> ", ConvertirACadena(pa.Cnt)));
+        Imprimir (concatenar("Peso: ----> ", ConvertirACadena(pa.Peso)));
+        Imprimir ("------------- Listado De Persona - Busqueda ------------");
+        Persona aux = pa.Dpt_Lista.obtener(p);
+        
+        Repetir_Mientras(aux != nada){
+            Imprimir (concatenar("Nombre: -----> ", pa.Pais));
+            Imprimir (concatenar("Id: ---------> ", ConvertirACadena(aux.identi)));
+            Imprimir (concatenar("Numero: -----> ", ConvertirACadena(aux.numero)));
+
+            Imprimir ("------------- Siguiente ------------");
+            Imprimir("");
+            aux = aux.Sig;
+        }
+    }
+    
+    publico vacio ListadoBusquerda2(entero i, entero j, entero p){
+        Pais pa = pais_m[i][j];
+        
+        si (pa.Cnt < 1) Es_verdadero{
+            Imprimir ("NO tiene Listado de Personas.....");
+            retorno;
+        }
+        fin-sin
+        si (pa.Cnt < p) Es_verdadero{
+            Imprimir ("No existe esa posicion.....");
+            retorno;
+        }
+        fin-si
+        
+        Imprimir (concatenar("Pais: ----> ", pa.Pais));
+        Imprimir (concatenar("Cant: ----> ", ConvertirACadena(pa.Cnt)));
+        Imprimir (concatenar("Peso: ----> ", ConvertirACadena(pa.Peso)));
+        Imprimir ("------------- Listado De Persona - Busqueda ------------");
+        Persona aux = pa.Dpt_Lista.obtener(p);
+        
+        Repetir_Mientras(aux != nada){
+            Imprimir (concatenar("Nombre: -----> ", pa.Pais));
+            Imprimir (concatenar("Id: ---------> ", ConvertirACadena(aux.identi)));
+            Imprimir (concatenar("Numero: -----> ", ConvertirACadena(aux.numero)));
+
+            Imprimir ("------------- Anterior ------------");
+            Imprimir("");
+            aux = aux.Ant;
+        }
+    }
+}

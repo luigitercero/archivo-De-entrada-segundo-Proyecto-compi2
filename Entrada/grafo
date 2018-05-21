@@ -1,0 +1,430 @@
+
+ clase GrafoMatriz {
+
+
+    
+    Matriz matriz = Nuevo Matriz(6);
+    
+    principal() {
+        // TODO code application logic here
+        // Y, X
+        /*
+        */
+        entero y = 0;
+        entero x = 0;
+        entero pos = 0;
+        
+        CrearGrafoMatriz();
+        AddPersona();
+
+        matriz. imprimir_i();
+        matriz.ImprimirPersonas(0,0);
+        matriz.ListadoBusquerda(0,0, 2);
+        
+        Enciclar id {
+            Menu();
+            leer_teclado("ingresar numero",pos);
+            
+            
+            Evaluar_si(pos){
+                Es_igual_a 1:
+                    matriz.AgregarPersona(Posicion(1), Posicion(2), Posicion(), Posicion(3));
+                    romper;
+                Es_igual_a 2:
+                    matriz.imprimir_i();
+                    romper;
+                Es_igual_a 3:
+                    matriz.ImprimirPersonas(Posicion(1),Posicion(2));
+                    romper;
+                Es_igual_a 4:
+                    matriz.ImprimirPersonas2(Posicion(1),Posicion(2));
+                    romper;
+                Es_igual_a 5:
+                    matriz.ListadoBusquerda(Posicion(1), Posicion(2), Posicion(3));
+                    romper;
+                Es_igual_a 6:
+                    matriz.ListadoBusquerda2(Posicion(1), Posicion(2), Posicion(3));
+                    romper;
+                Es_igual_a 7:
+                    retorno;
+            }
+            
+        }
+        
+        
+    }
+    
+    publico entero Posicion(entero pos){
+        entero a = 0;
+        caracter ax[30];
+        concatenar(ax, "Ingrese Posicion #E", pos);
+
+        Leer_Teclado(ax, a);
+        retorno a;
+    }
+    
+    publico Caracter [] Posicion(){
+        caracter ax[20];
+        Leer_Teclado("Ingrese Nombre: ", ax);
+
+        retorno ax;
+    }
+    
+    publico vacio Menu(){
+        imprimir("----------- Seleccione ------------");
+        imprimir("Nodos Pre-Cargados (0,0) - (1,2) - (2,1) - (3,1)");
+        imprimir("----------- ===================== ------------");
+        imprimir("1. Insertar - Personas");
+        imprimir("2. Imprimir - Mostrar proceso para Relacionar personas");
+        imprimir("3. Imprimri - Mostrar salida de personas ya relacionadas en orden - A");
+        imprimir("4. Imprimri - Mostrar salida de personas ya relacionadas en orden - B");
+        imprimir("5. Imprimri - Mostrar salida de personas ordenadas por algún dato persona - A");
+        imprimir("6. Imprimri - Mostrar salida de personas ordenadas por algún dato persona - B");
+        imprimir("7. Salir");
+    }
+    
+    publico vacio CrearGrafoMatriz(){
+        matriz.AgregarPais(0, 0, "Guatemala");
+        matriz.AgregarPais(0, 1, "Mexico");
+        matriz.AgregarPais(0, 2, "Salvador");
+        matriz.AgregarPais(0, 3, "Panama");
+        
+        matriz.AgregarPais(1, 0, "Costa Rica");
+        matriz.AgregarPais(1, 1, "Honduras");
+        matriz.AgregarPais(1, 2, "Rusia");
+        matriz.AgregarPais(1, 3, "Brazil");
+        
+        matriz.AgregarPais(2, 1, "Japon");
+        matriz.AgregarPais(2, 2, "Espana");
+        matriz.AgregarPais(2, 3, "China");
+        matriz.AgregarPais(2, 4, "Venezuela");
+        
+        matriz.AgregarPais(3, 1, "Italia");
+        matriz.AgregarPais(3, 2, "Grecia");
+        matriz.AgregarPais(3, 3, "EEUU");
+        matriz.AgregarPais(3, 4, "Canada");
+        
+        matriz.AgregarPais(4, 1, "A");
+        matriz.AgregarPais(4, 2, "B");
+        matriz.AgregarPais(4, 3, "C");
+        matriz.AgregarPais(4, 4, "D");
+        
+        matriz.agregar(0, 1);
+        matriz.agregar(0, 1);
+        matriz.agregar(0, 2);
+        matriz.agregar(0, 2);
+        matriz.agregar(0, 0);
+        matriz.agregar(0, 1);
+        matriz.agregar(0, 2);
+        matriz.agregar(0, 2);
+
+        matriz.agregar(1, 0);
+        matriz.agregar(1, 0);
+        matriz.agregar(1, 4);
+        matriz.agregar(1, 1);
+        matriz.agregar(1, 2);
+        matriz.agregar(1, 3);
+        
+        matriz.agregar(2, 0);
+        matriz.agregar(2, 3);
+        matriz.agregar(2, 4);
+        matriz.agregar(2, 1);
+        matriz.agregar(2, 2);
+        matriz.agregar(2, 3);
+        
+        matriz.agregar(3, 0);
+        matriz.agregar(3, 2);
+        matriz.agregar(3, 0);
+        matriz.agregar(3, 2);
+        
+        matriz.agregar(4, 1);
+        matriz.agregar(4, 2);
+        matriz.agregar(4, 4);
+        matriz.agregar(4, 4);
+        matriz.agregar(4, 0);
+        matriz.agregar(4, 2);
+        matriz.agregar(4, 3);
+        matriz.agregar(4, 4);
+    }
+    
+    publico vacio AddPersona(){
+        matriz.AgregarPersona(0, 0, "a", 1);
+        matriz.AgregarPersona(0, 0, "b", 2);
+        matriz.AgregarPersona(0, 0, "c", 65);
+        matriz.AgregarPersona(0, 0, "d", 36);
+        matriz.AgregarPersona(0, 0, "e", 5);
+        matriz.AgregarPersona(0, 0, "f", 3);
+        
+        
+        matriz.AgregarPersona(1, 2, "g", 6);
+        matriz.AgregarPersona(1, 2, "h", 7);
+        matriz.AgregarPersona(1, 2, "i", 8);
+        matriz.AgregarPersona(1, 2, "j", 10);
+        matriz.AgregarPersona(1, 2, "k", 5);
+        matriz.AgregarPersona(1, 2, "l", 258);
+        
+        matriz.AgregarPersona(2, 1, "m", 369);
+        matriz.AgregarPersona(2, 1, "n", 963);
+        matriz.AgregarPersona(2, 1, "o", 852);
+        matriz.AgregarPersona(2, 1, "p", 741);
+        matriz.AgregarPersona(2, 1, "r", 147);
+        matriz.AgregarPersona(2, 1, "s", 258);
+        matriz.AgregarPersona(2, 1, "t", 456);
+        matriz.AgregarPersona(2, 1, "u", 789);
+       
+        matriz.AgregarPersona(3, 1, "m", 369);
+        matriz.AgregarPersona(3, 1, "n", 963);
+        matriz.AgregarPersona(3, 1, "o", 852);
+        matriz.AgregarPersona(3, 1, "p", 741);
+        matriz.AgregarPersona(3, 1, "r", 147);
+        matriz.AgregarPersona(3, 1, "s", 258);
+        matriz.AgregarPersona(3, 1, "t", 456);
+        matriz.AgregarPersona(3, 1, "u", 789);
+    }
+}
+
+
+ clase Matriz {
+    privado entero n;
+    privado entero matriz [6][6];
+    
+    privado Pais pais_m [6][6];
+    
+
+    publico Matriz(entero n) {
+        //se inicializa matriz en 0
+        Repetir_contando (variable: i; desde: 0; hasta: 6){
+            Repetir_contando (variable: j; desde: 0; hasta: 6){
+                matriz[i][j] = 0;
+                pais_m[i][j] = nuevo Pais(0);
+            }
+        }
+    }
+    
+    publico vacio agregar(entero i, entero j){
+        matriz[i][j] += 1;
+        pais_m[i][j].Peso += 1;
+    }
+    
+    publico vacio AgregarPais(entero i, entero j, caracter pais[30]){
+        si (pais_m[i][j].Cnt != 0) Es_verdadero{
+            imprimir ("Pais Ya fue creado... ");
+        }
+        fin-si
+        pais_m[i][j].Pais(pais);
+    }
+    
+    publico vacio AgregarPersona(entero i, entero j, caracter nombre[30], entero numero){
+        pais_m[i][j].AddPersona(nombre, numero);
+    }
+    
+    publico vacio remover(entero i, entero j){
+        si (matriz[i][j]>0) Es_verdadero{
+            matriz[i][j] =  matriz[i][j] -1;
+        }
+        fin-si
+    }
+    
+    publico vacio imprimir_i(){
+     
+        Repetir_contando (variable: i; desde: 0; hasta: 6){
+            caracter cadena [100] = "";
+            Repetir_contando (variable: j; desde: 0; hasta: 6){
+                Concatenar (cadena, " ", pais_m[i][j].Peso);
+            }
+            Imprimir (cadena);
+           
+        }
+    }
+    
+    publico vacio ImprimirPersonas(entero i, entero j){
+        Pais pa = pais_m[i][j];
+        
+        si (pa.Cnt < 1) Es_verdadero{
+            Imprimir ("NO tiene Listado de Personas.....");
+            retorno;
+        }
+        fin-si
+        caracter resultado[80] = "";
+        concatenar(resultado, "Pais: ----> ");
+        concatenar(resultado,pa.Pais );
+        Imprimir(resultado);
+
+
+        caracter resultado2[80] = "";
+        
+        concatenar(resultado2, "Cant: ----> ");
+        concatenar(resultado2, ConvertirACadena(pa.Cnt));
+        Imprimir(resultado2);
+
+        Imprimir (concatenar("Cant: ----> ", ConvertirACadena(pa.Cnt)));
+        caracter resultado2[30] = "";
+        concatenar(resultado, "Pais: ----> ");
+        concatenar(resultado,pa.Pais );
+        Imprimir(resultado2);
+
+
+        Imprimir (concatenar("Peso: ----> ", ConvertirACadena(pa.Peso)));
+        Imprimir ("------------- Listado De Persona ------------");
+        Persona aux = pa.Inicial;
+        
+        Repetir_Mientras(aux != nada){
+            Imprimir (concatenar("Nombre: -----> ", pa.Pais));
+            Imprimir (concatenar("Id: ---------> ", ConvertirACadena(aux.identi)));
+            Imprimir (concatenar("Numero: -----> ", ConvertirACadena(aux.numero)));
+
+            Imprimir ("------------- Siguiente ------------");
+            Imprimir("");
+            aux = aux.Sig;
+        }
+    }
+    
+    publico vacio ImprimirPersonas2(entero i, entero j){
+        Pais pa = pais_m[i][j];
+        
+        si (pa.Cnt < 1) Es_verdadero{
+            Imprimir ("NO tiene Listado de Personas.....");
+            retorno;
+        }
+        fin-si
+        
+        Imprimir (concatenar("Pais: ----> ", pa.Pais));
+        Imprimir (concatenar("Cant: ----> ", ConvertirACadena(pa.Cnt)));
+        Imprimir (concatenar("Peso: ----> ", ConvertirACadena(pa.Peso)));
+        Imprimir ("------------- Listado De Persona ------------");
+        Persona aux = pa.Final;
+        
+        Repetir_Mientras(aux != nada){
+            Imprimir (concatenar("Nombre: -----> ", pa.Pais));
+            Imprimir (concatenar("Id: ---------> ", ConvertirACadena(aux.identi)));
+            Imprimir (concatenar("Numero: -----> ", ConvertirACadena(aux.numero)));
+
+            Imprimir ("------------- Anterior ------------");
+            Imprimir("");
+            aux = aux.Ant;
+        }
+    }
+    
+    publico vacio ListadoBusquerda(entero i, entero j, entero p){
+        Pais pa = pais_m[i][j];
+        
+        si (pa.Cnt < 1) Es_verdadero{
+            Imprimir ("NO tiene Listado de Personas.....");
+            retorno;
+        }
+        fin-si
+        si (pa.Cnt < p) Es_verdadero{
+            Imprimir ("No existe esa posicion.....");
+            retorno;
+        }
+        fin-si
+        
+        Imprimir (concatenar("Pais: ----> ", pa.Pais));
+        Imprimir (concatenar("Cant: ----> ", ConvertirACadena(pa.Cnt)));
+        Imprimir (concatenar("Peso: ----> ", ConvertirACadena(pa.Peso)));
+        Imprimir ("------------- Listado De Persona - Busqueda ------------");
+        Persona aux = pa.Dpt_Lista.obtener(p);
+        
+        Repetir_Mientras(aux != nada){
+            Imprimir (concatenar("Nombre: -----> ", pa.Pais));
+            Imprimir (concatenar("Id: ---------> ", ConvertirACadena(aux.identi)));
+            Imprimir (concatenar("Numero: -----> ", ConvertirACadena(aux.numero)));
+
+            Imprimir ("------------- Siguiente ------------");
+            Imprimir("");
+            aux = aux.Sig;
+        }
+    }
+    
+    publico vacio ListadoBusquerda2(entero i, entero j, entero p){
+        Pais pa = pais_m[i][j];
+        
+        si (pa.Cnt < 1) Es_verdadero{
+            Imprimir ("NO tiene Listado de Personas.....");
+            retorno;
+        }
+        fin-si
+        si (pa.Cnt < p) Es_verdadero{
+            Imprimir ("No existe esa posicion.....");
+            retorno;
+        }
+        fin-si
+        
+        Imprimir (concatenar("Pais: ----> ", pa.Pais));
+        Imprimir (concatenar("Cant: ----> ", ConvertirACadena(pa.Cnt)));
+        Imprimir (concatenar("Peso: ----> ", ConvertirACadena(pa.Peso)));
+        Imprimir ("------------- Listado De Persona - Busqueda ------------");
+        Persona aux = pa.Dpt_Lista.obtener(p);
+        
+        Repetir_Mientras(aux != nada){
+            Imprimir (concatenar("Nombre: -----> ", pa.Pais));
+            Imprimir (concatenar("Id: ---------> ", ConvertirACadena(aux.identi)));
+            Imprimir (concatenar("Numero: -----> ", ConvertirACadena(aux.numero)));
+
+            Imprimir ("------------- Anterior ------------");
+            Imprimir("");
+            aux = aux.Ant;
+        }
+    }
+}
+
+ clase Pais {
+    Caracter Pais [30];
+    Persona Per;
+    Lista Dpt_Lista;
+    entero Peso = 0;
+    
+    Persona Inicial;
+    Persona Final;
+    entero Cnt = 0;
+    
+    publico Pais(){
+        
+    }
+    
+    publico Pais(entero pos){
+        este.Peso = pos;
+    }
+    
+    publico vacio Pais(caracter pais [25]){
+        este.Pais = pais;
+        este.Cnt = 0;
+        Dpt_Lista = nuevo Lista(entero);
+        este.Per = nuevo Persona(pais, Cnt, 0);
+        este.Inicial = este.Per;
+        este.Final = este.Per;
+        
+        AddLista();
+        Cnt++;
+    }
+    
+    privado vacio AddLista(){
+        Dpt_Lista.insertar(este.Final);
+    }
+    
+    //inserta al final de la lista
+    publico vacio AddPersona(caracter ciudad [25], entero numero){
+        este.Final.Sig = nuevo Persona(ciudad, Cnt, numero);
+        este.Final.Sig.Ant = este.Final;
+        este.Final = este.Final.Sig;
+        
+        AddLista();
+        este.Cnt ++;
+    }
+}
+
+ clase Persona {
+    Caracter Nombre [25];
+    entero identi;
+    entero numero;
+    Persona Sig;
+    Persona Ant;
+    
+    publico Persona(Caracter nombre[25], entero identi, entero numero){
+        este.Nombre = nombre;
+        este.identi = identi;
+        este.numero = numero;
+        este.Sig = nada;
+        este.Ant = nada;
+    }
+}

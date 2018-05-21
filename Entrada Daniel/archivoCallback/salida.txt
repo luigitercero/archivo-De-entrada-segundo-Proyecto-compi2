@@ -1,0 +1,91 @@
+		Ingrese un número para la fila= noFila
+        Ingrese un número para la columna= noColumna
+    	Ingrese un cadena cualquiera= cadenaIngresada
+    	Ingrese un carácter(**'_)(*&^%$#se tomará el valor del ascci??><>:{{+_)(***) como nuevo valor del lado= Id_3
+    	Ingrese verdadero o falso para seleccionar un Lado a cambiar de valor posteriormente= Id_4
+
+
+Auxiliar ingresará esta letra: d
+la salida:	
+	Inicializando obj
+	Salida para el curso de compiladores es -140
+	0
+	cambio a positivo
+	1
+
+	Inicializando obj
+	Salida para el curso de compiladores es -139
+	1
+	cambio a positivo
+	1
+
+	Inicializando obj
+	Salida para el curso de compiladores es -138
+	2
+	cambio a positivo
+	3
+
+	Inicializando obj
+	Salida para el curso de compiladores es -137
+	3
+	cambio a positivo
+	3
+
+	Inicializando obj
+	Salida para el curso de compiladores es -136,134,132,130,128, con estos valores si deberia cambiar los valores
+	4
+	cambio a positivo
+	5
+	.........
+	Inicializando obj
+	Salida para el curso de compiladores es -127
+	13
+	cambio a positivo
+	13
+
+
+
+Auxiliar ingresará esta letra: a
+si la fila ingresada anteriormente es diferente de 5, deberia tirar un error semantico que el objeto es nulo.
+caso contrario la salida sería:
+salida:	
+	"cambio a positivo"
+	//deberá imprimir el ascii del caracter ingresado anteriormente si ingreso verdadero y si es falso debera imprimir el cuadrado del ascci ingresado.
+
+
+
+Auxiliar ingresará esta letra: n
+salida:
+	no debería mostrar nada, solo los errores semanticos de visibilidad por ser privadas
+
+///cambiar el archivo llamado callbackPadre y cambiar la visibilidad de privado a publico para que deje guardar los valores.
+Auxiliar ingresará esta letra: n
+salida:
+	mostrar el primer valor ingresado
+	mostrar el segundo valor ingresado
+
+
+
+Auxiliar ingresará esta letra: i
+
+si la fila ingresada anteriormente es diferente de 5, deberia tirar un error semantico que el objeto es nulo.
+caso contrario la salida sería:
+salida:
+	"cambio a positivo"	
+	//deberá imprimir el primer valor ingresado de los ultimos dos solicitados.
+
+Auxiliar ingresará esta letra: e
+salida:
+	"15.22999"
+	"verdadero"
+Auxiliar ingresará esta letra: c
+salida:	
+	"el triangulo es lo ultimo, ya casi!!!!!!!!!!!"
+	"10.123"
+	"100"
+	"falso"
+
+	
+Auxiliar ingresará esta letra: l
+salida:
+	"fin de la calificacion!!!!!!!!!!!!!!!! felicidades x llegar hasta aqui!!!"

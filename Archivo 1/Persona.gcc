@@ -1,0 +1,59 @@
+p
+publico clase Humano {
+    Entero edad;
+    Caracter nombre[15];
+    
+    publico vacio nacer(){
+        este.edad = 0;
+    }
+}
+
+
+publico clase Persona extends Humano{
+    caracter genero;
+    caracter DPI[15];
+    Caracter apellido[15];
+    
+    Persona(){
+        nacer();
+        nombre = "";
+        genero = 'M';
+    }
+    
+    Persona(Entero edad, Caracter nombre[15], Caracter apellido[15], caracter genero){
+        este.edad= edad;
+        este.nombre = nombre;
+        este.apellido = apellido;
+        este.genero = genero;
+    }
+   
+    private Caracter[30] concat(Caracter nombres[15], Caracter apellidos[15]){
+        Caracter ret[30] = nombre;
+        concatenar(ret, " ");
+        concatenar(ret, apellidos);
+        retornar ret;
+    }
+    
+    publico Persona reproducir(Persona pareja, Caracter nombre[15]){
+        si(este.genero != pareja.genero)
+            es_verdadero{
+                Persona bebe = new Persona();
+                bebe.nombre = nombre;
+                bebe.apellido = este.apellido;
+                concatenar(bebe.apellido, " ");
+                concatenar(bebe.apellido, pareja.apellido);
+                retornar bebe;
+            }
+        fin-si
+        retornar nulo;
+    }
+    
+    publico vacio matrimonio(Persona conyuge){
+        si(este.genero == 'F')
+            es_verdadero{
+                concatenar(este.apellido, " de ");
+                concatenar(este.apellido, conyuge.apellido);
+            }
+        fin-si
+    }  
+}

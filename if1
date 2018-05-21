@@ -1,0 +1,21 @@
+clase nueva  {
+    principal () {
+    caracter b[10] = "hola";
+    imprimir (b);
+        booleano a = true;
+        si (a)
+            es_verdadero {
+            
+            }
+            es_falso {
+            
+            }
+        fin-si
+        cad("25");
+    }
+    
+    publico vacio cad (caracter b [10]) {
+        imprimir (b);
+    }
+
+}

@@ -1,0 +1,35 @@
+ 
+clase matrices {
+principal () {
+entero vec3 [10];
+vec3[0] = 10;
+imprimir(vec3[0]);
+multMatrices();
+sumMatrices();
+}
+
+protegido vacio multMatrices() {
+         entero vec3 [10];
+         entero vec1 [10] ={1,3,5,7,9,0,8,6,4,2};
+         entero vec2 [10] ={0,8,6,4,2,1,3,5,7,9};
+        
+        imprimir("La multiplicación es de: ");
+        repetir_contando( variable: i ; desde:0 ; hasta:10){
+            vec3 [ i ]=vec1 [ i ] * vec2 [ 10-(i+1) ];
+            imprimir(vec3[i]); 
+        }
+    }
+    
+    protegido vacio sumMatrices() {
+         entero vec3 [10];        
+         entero vec1 [10] ={1,3,5,7,9,0,8,6,4,2};
+         entero vec2 [10] ={0,8,6,4,2,1,3,5,7,9};
+        
+        imprimir("La suma es de: ");
+        repetir_contando( variable: i ; desde:0 ; hasta:10){
+            vec3 [ i ] = vec1 [ i ] + vec2 [ i ];
+            imprimir(vec3 [ i ] );
+        }
+    }
+}
+/**/

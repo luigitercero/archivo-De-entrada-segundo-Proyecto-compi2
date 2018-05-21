@@ -1,0 +1,155 @@
+
+publico clase Operaciones {
+    
+    publico vacio aritmeticas_basicas(){
+        imprimir("1) Operaciones Aritmeticas Basicas");
+        //1765
+        Entero temp1 = 10+45*78/2;
+        caracter texto[25] = "1.1) 30 >>> ";
+        concatenar(texto, " #E", temp1);
+        imprimir(texto);
+        //80
+        Entero temp2 = 0+(10*8);
+        texto = "1.2) 30 >>> ";
+        concatenar(texto, " #E", temp2);
+        imprimir(texto);
+        //9
+        Entero temp3 =  (8-7+2^(3));
+        texto = "1.3) 40 >>> ";
+        concatenar(texto, " #E", temp3);
+        imprimir(texto);
+    }
+    
+    publico vacio aritmeticas_avanzadas(){
+        imprimir("2) Operaciones Aritmeticas Avanzadas");
+        //112
+        Entero temp1 = 15*7-2/2-8*(5-6);
+        caracter texto[25] = "2.1) 30 >>> ";
+        concatenar(texto, " #E", temp1);
+        imprimir(texto);
+        //143
+        Entero temp2 =  (0+(10*8)-18 + 3^(4));
+        texto = "2.2) 30 >>> ";
+        concatenar(texto, " #E", temp2);
+        imprimir(texto);
+        //14
+        Entero temp3 =  ((8-7+2^(3)/3)*4);
+        texto = "2.3) 40 >>> ";
+        concatenar(texto, " #E", temp3);
+        imprimir(texto);
+    }
+    
+    publico vacio operaciones_relacionales_basicas(){
+        imprimir("3) Operaciones Relacionales Basicas");
+        Entero salida = 0;
+        Si(salida < 10)
+            Es_Verdadero{
+                salida = 5*9;
+                si(salida > 44)
+                    es_verdadero{
+                        salida++;
+                    }
+                }
+            }
+            Es_falso{
+                salida = 1;
+            }
+        Fin-si
+        Si (salida != 1)
+            Es_verdadero{
+                Si(salida == 46)
+                    Es_verdadero{
+                        imprimir("Salida CORRECTA!!");
+                    }
+                    Es_falso{
+                        imprimir("Salida incorrecta!!");
+                    }
+                fin-si
+            }
+            Es_falso{
+                imprimir("Salida incorrecta!!");
+            }
+        fin-si
+    }
+    
+    publico vacio operaciones_relacionales_avanzadas(){
+        imprimir("4)Operaciones Relacionales Avanzadas");
+        si(10-15 >= 0){
+            es_verdadero{
+                imprimir("Salida incorrecta!!");
+            }
+            es_falso{
+                si(15+8 == 22-10+5*3-4){
+                    es_verdadero{
+                        si(10 != 11-2)
+                            es_verdadero{
+                                imprimir("Salida CORRECTA!!");
+                            }
+                            es_falso{
+                                imprimir("Salida incorrecta!!");
+                            }
+                        fin-si
+                    }
+                    es_falso{
+                        si (1 == 1)
+                            es_verdadero{
+                                imprimir("Salida incorrecta!!");
+                            }
+                            es_falso{
+                                imprimir("Salida incorrecta!!");
+                            }
+                        fin-si
+                    }
+                fin-si
+            }
+        fin-si   
+    }
+    
+    publico vacio operaciones_logicas_basicas(){
+        imprimir("5) Operaciones Logicas Basicas");
+        si(((true == true) && (true != false)) || (1 > 10) && (!(true) == true))
+            es_verdadero{
+                imprimir("Salida CORRECTA!!");
+            }
+            es_falso{
+                imprimir("Salida incorrecta!!");
+            }
+        fin-si
+    }
+    
+    publico vacio operaciones_logicas_avanzadas(){
+        imprimir("6) Operaciones Logicas Avanzadas");
+        si((15 == 14) || (((15*2 >= 15) ?? (12 < 24))||((98/2 == 15)||(!(15 != 6-1)))))
+            es_verdadero{
+                imprimir("Salida CORRECTA!!");
+            }
+            es_falso{
+                imprimir("Salida incorrecta!!");
+            }
+        fin-si
+    }
+    
+    publico vacio operaciones_conjuntas(){
+        imprimir("7) Operaciones Conjuntas");
+        si(!(5*3-1 == 14) && !(!(15 == 6-1)))
+            es_verdadero{
+                imprimir("Salida incorrecta!!");
+            }
+            es_falso{
+                Entero var = -1*(58/6+9+9-1*8/2*17);
+                Entero var2 = 48/4*79-2+8;
+                Caracter salida[10] = convertirAcadena(var);
+                concatenear(salida, "#E",var2);
+                si(salida == "41954")
+                    es_verdadero{
+                        imprimir("Resultado: 41954");
+                    }
+                    es_falso{
+                        imprimir("Salida incorrecta!!");
+                    }
+                fin-si
+            }
+        fin-si
+    }
+}
+

@@ -1,0 +1,9 @@
+clase incio {
+    principal () {
+        caracter m[25] = "luis";
+        concatenar(m," ");
+        imprimir (m);
+        
+    }
+    
+} 

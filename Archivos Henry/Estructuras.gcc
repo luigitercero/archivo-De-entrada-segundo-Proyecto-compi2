@@ -1,0 +1,81 @@
+publico clase Entrada {
+
+    Principal{
+        
+        Operaciones operar = nuevo Operaciones();
+        
+        imprimir("================= Funcion 1 ====================");
+        operar.iniciar_vectores(10,5);
+        imprimir("================= Funcion 1 ====================");
+        operar.iniciar_vectores(7,10);
+        imprimir("================================================");
+        
+        imprimir("================= Funcion 2 ====================");
+        operar.iniciar_lista(10,5);
+        imprimir("================= Funcion 2 ====================");
+        operar.iniciar_lista(7,10);
+        imprimir("================================================");
+        
+        imprimir("================= Funcion 3 ====================");
+        operar.iniciar_pila(10,5,0);
+        imprimir("================= Funcion 3 ====================");
+        //operar.iniciar_pila(10,5,1);
+        imprimir("================================================");
+        
+        imprimir("================= Funcion 4 ====================");
+        operar.iniciar_cola(10,5,0);
+        imprimir("================= Funcion 4 ====================");
+        //operar.iniciar_cola(10,5,1);
+        imprimir("================================================");
+        
+        imprimir("================= Funcion 5 ====================");
+        operar.iniciar_matriz(3 , 3 , 10);
+        imprimir("================= Funcion 5 ====================");
+        operar.iniciar_matriz(10 , 6 , 203);
+        imprimir("================================================");
+        
+        
+        imprimir("================= Vector a Lista ====================");
+        operar.vector_a_lista(3 , 3);
+        imprimir("================= Vector a Lista ====================");
+        operar.vector_a_lista(10 , 6);
+        imprimir("=====================================================");
+        
+        imprimir("================= Vector a Pila ====================");
+        operar.vector_a_pila(3 , 3 , 0);
+        imprimir("================= Vector a Pila ====================");
+        //operar.vector_a_pila(10 , 6 , 1);
+        imprimir("=====================================================");
+        
+        imprimir("================= Vector a Cola ====================");
+        operar.vector_a_cola(3 , 3 , 0);
+        imprimir("================= Vector a Cola ====================");
+        //operar.vector_a_cola(10 , 6 , 1);
+        imprimir("=====================================================");
+        
+        imprimir("================= Vector a Cola ====================");
+        operar.matriz_a_vector(3 , 3 , 0);
+        imprimir("================= Vector a Cola ====================");
+        //operar.matriz_a_vector(10 , 6 , 1);
+        imprimir("=====================================================");
+        
+        imprimir("================= Vaciar Cola ====================");
+        operar.iniciar_cola(50,5,1);
+        imprimir("================================================");
+        
+        imprimir("================= Vaciar Pila ====================");
+        operar.iniciar_pila(30,5,1);
+        imprimir("=================================================");
+        
+        imprimir("================= Compara Lista Vector ====================");
+        operar.vector_compara_lista(10,3,10,3);
+        imprimir("================= Compara Lista Vector ====================");
+        operar.vector_compara_lista(10,6,10,3);
+        imprimir("================================================");
+        
+        imprimir("================= Copia lista matriz ====================");
+        operar.copiar_lista_matriz(3,5,1);
+        imprimir("================================================");
+    }
+    
+}

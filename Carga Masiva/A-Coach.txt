@@ -1,0 +1,733 @@
+{% 
+	Titulo {
+		Clases E Instancias
+	} 
+	Descripcion { 
+		Creacion de una clase e Instancia de una
+	} 
+	Ejemplo 
+{
+		clase Entrada_1{ 
+			publico vacio Llenar_Arreglo(){
+		        Objeto obj[5];
+
+		        obj [0] = Insertar(5, 1);
+		        obj [1] = Insertar(4, 2);
+		        obj [2] = Insertar(3, 3);
+		        obj [3] = Insertar(2, 4);
+		        obj [4] = Insertar(1, 5);
+		        
+		        caracter salida [50];
+		        Repetir_contando (variable: i; desde: 0; hasta: 4){
+		        	concatenar (salida, "Salida Posicion #E : X = ", i);
+		        	concatenar (salida, convertirAcadena(obj[i].x));
+		        	imprimir (salida);
+
+		        	salida = "";
+		        	concatenar (salida, "; Y = #E ;  X*Y = Z = ",  obj[i].y);
+		        	concatenar (salida, convertirAcadena(obj[i].SacarZ()));
+		        	imprimir (salida);
+		        }
+		    }
+		    
+		    privado Objeto Insertar(entero x, entero y){
+		        retorno nuevo Objeto(x, y);
+		    }
+
+			principal()
+			{
+				Llenar_Arreglo();
+			}
+		}
+		clase Objeto{
+		    publico entero x = 0;
+		    publico entero y = 0;
+		    privado entero z = 0;
+		    
+		    publico Objeto(entero x, entero y){
+		        este.x = x;
+		        este.y = y;
+		        este.z = x*y;
+		    }
+		    
+		    publico entero SacarZ(){
+		        retorno este.z;
+		    }
+		}
+
+}
+	Tipo {
+	A-Coach 
+	}
+	Tarea {
+		realizar un ejemplo de clase, instanciar el objeto crear un objeto enviar los parametros y retornar la suma de ambos
+	} 
+	Resultado { 
+		objeto_retorno(25, 20, 5) = 50
+	}
+%}
+
+
+
+
+{% 
+	Titulo {
+		Arreglos en metodos
+	} 
+	Descripcion { 
+		llamada a un metod este metodo llenara un arreglos y lo imprimira
+	} 
+	Ejemplo 
+{
+		clase Entrada_2{ 
+			publico vacio Llenar_Arreglo(){
+		        entero Numeros [6][6];
+		        
+		        Numeros[1][0] = 1;
+		        Numeros[2][0] = 2;
+		        Numeros[3][0] = 3;
+		        Numeros[4][0] = 4;
+		        Numeros[5][0] = 5;
+		        Numeros[0][1] = 5;
+		        Numeros[0][2] = 4;
+		        Numeros[0][3] = 3;
+		        Numeros[0][4] = 2;
+		        Numeros[0][5] = 1;
+		        Numeros[1][1] = Numeros[1][0] * Numeros[0][1];
+		        Numeros[2][2] = Numeros[2][0] * Numeros[0][2];
+		        Numeros[3][3] = Numeros[3][0] * Numeros[0][3];
+		        Numeros[4][4] = Numeros[4][0] * Numeros[0][4];
+		        Numeros[5][5] = Numeros[5][0] * Numeros[0][5];
+		        
+		        Repetir_contando (variable: a; desde: 1; hasta: 5){
+		        	concatenar (salida, "Salida Posicion #E : X = ", i);
+		        	concatenar (salida, convertirAcadena(Numeros[i][0]));
+		        	imprimir (salida);
+
+		        	salida = "";
+		        	concatenar (salida, "; Y = #E ;  X*Y = Z = ",  Numeros[0][i]);
+		        	concatenar (salida, convertirAcadena(Numeros[i][i]));
+		        	imprimir (salida);
+		        }
+		    }
+
+			principal()
+			{
+				Llenar_Arreglo();
+			}
+		}
+}
+	Tipo {
+	A-Coach 
+	}
+	Tarea {
+		relizar un arreglo de 3 dimensiones de 3*3*3, llenar cada posicion con el valor de un numero correctivo, es decir 0,1,2,3,4,5...26, volver a recorrer este arreglo y retornar la suma de todas las posiciones
+	} 
+	Resultado { 
+		llenarArreglo() = 351
+	}
+%}
+
+
+
+{% 
+	Titulo {
+		Funciones
+	} 
+	Descripcion { 
+		Funciones con tipos de datos diferentes, se hace la llamda y retornara un valor dependiendo del tipo de dato
+	} 
+	Ejemplo 
+{
+		clase Entrada_3{ 
+			publico vacio Imprimir__(){
+				Caracter salida[60];
+
+		        imprimir(Concatenar ("Salida: ", Cadenas("Calificacion ", " Compiladores", 2, 50.123456, 'A')) );
+
+		        salida = "";
+		        concatenar(salida, "Division 0: #E --", Division(10, 10, 0));
+		        imprimir(salida);
+
+		        salida = "";
+		        concatenar(salida, "Multiplicacion: #E --", Multiplicar(10.5, 10.5, 10));
+		        imprimir(salida);
+
+		        salida = "";
+		        concatenar(salida, "Suma: #E --", Suma(123.1234, 10.1010, 10));
+		        imprimir(salida);
+		        
+		        salida = "";
+		        concatenar(salida, "Resta: #E --", Resta(123.123, 124.124, 247));
+		        imprimir(salida);
+		    }
+		    
+		    publico Caracter [] Cadenas(caracter X [20], caracter Y [20], entero N, decimal D, caracter C){
+		    	caracter salida[60];
+		    	concatenar (X, Y);
+		    	
+		    	salida = X;
+
+		    	concatenar(salida, " #E --- ", N);
+		    	concatenar(salida, " #E --- ", (D+C));
+
+		        retorno salida;
+		    }
+		    
+		    publico decimal Multiplicar (decimal x, decimal y, entero z){
+		        returno x * y * z;
+		    }
+		    
+		    publico decimal Division (decimal x, decimal y, entero z){
+		        returno (x + y)/z;
+		    }
+		    
+		    publico decimal Suma(decimal x, decimal y, entero z){
+		        returno (x + y)+z;
+		    }
+		    
+		    publico decimal Resta(decimal x, decimal y, entero z){
+		        returno (x + y)-z;
+		    }
+			principal()
+			{
+				Imprimir__();
+			}
+		}
+}
+	Tipo {
+	A-Coach 
+	}
+	Tarea {
+		realizar un metodo que haga la operacion XOR con solo uso de los operadores &&, ||, !, y retorne el resulado de los valores enviado
+	} 
+	Resultado { 
+		XOR(verdadero, falso) = verdadero
+	}
+%}
+
+
+
+
+
+{% 
+	Titulo {
+		Funcion del metodo leer teclado con una sentencia de flujo
+	} 
+	Descripcion { 
+		"" Metodo que solicita un numero y  resta un numero""
+	} 
+	Ejemplo 
+{
+		clase Entrada_4{ 
+			publico vacio Contador__(){
+		        entero x = 0;
+		        entero y = 0;
+		        Imprimir("Desea - Salir Presion 0");
+
+		        Repetir_Mientras(Pedir() != 0){
+		        	y = Pedir();
+		            Repetir_Mientras(y > 0){
+		                y -= 10;
+		                Imprimir(concatenar("Contador 10 en 10: ", y));
+		            }
+		            Imprimir("Desea - Salir Presion 0");
+		        }
+		        
+		    }
+		    publico entero Pedir(){
+		        entero x = 0;
+		        Leer_Teclado("Ingrese un Numero ", x);
+		        retorno x;
+		    }
+			principal()
+			{
+				Contador__();
+			}
+		}
+}
+	Tipo {
+	A-Coach 
+	}
+	Tarea {
+		relizar una funcion que pida palabras, y retorno el valor pedido desde el teclado
+	} 
+	Resultado { 
+		Pedir("Ingrese una Cadena") = "Calificacion Compiladores"
+	}
+%}
+
+
+
+
+
+
+
+{% 
+	Titulo {
+		Funcion del metodo leer teclado
+	} 
+	Descripcion { 
+		+-*/=-)(*&^%$#@!) "" Metodo que solicita un numero y  resta un numero"" +-*/=-)(*&^%$#@!)
+	} 
+	Ejemplo 
+{
+		clase Entrada_5{ 
+			publico vacio Contador__(){
+		        entero x = 0;
+		        entero y = 0;
+		        Imprimir("Desea - Salir Presion 0");
+
+		        Repetir_Mientras(Pedir() != 0){
+		            y = Pedir();
+
+		            Repetir_Mientras(y > 0){
+		                y = Contador__(y);
+		                imprimir(concatenar("Contador 10 en 10: ", y));
+		            }
+		            Imprimir("Desea - Salir Presion 0");
+		        }
+		    }
+		    publico entero Pedir(){
+		        entero x = 0;
+		        Leer_Teclado("Ingrese un Numero ", x);
+		        retorno x;
+		    }
+		    privado entero Contador__(entero x){
+		    	entero i = x;
+		    	i *= 10;
+		    	i /= 10;
+		        retorno i - 10;
+		    }
+			principal()
+			{
+				Contador__();
+			}
+		}
+}
+	Tipo {
+	A-Coach 
+	}
+	Tarea {
+		relizar una funcion que pida palabras, y retorno el valor pedido desde el teclado
+	} 
+	Resultado { 
+		Pedir("Ingrese una Cadena") = "Calificacion Compiladores"
+	}
+%}
+
+
+
+
+{% 
+	Titulo {
+		Recursividad
+	} 
+	Descripcion { 
+		Ejemplo de recursividad, recibe un numero y un caracter, este retornara el resultado
+	} 
+	Ejemplo 
+{
+		clase Ejemplo_If_Anidado{ 
+
+			publico vacio Multiplicaciones(decimal x){
+				caracter salida_[35];
+				concatenar(salida_, "Salida 288.0 y salio ------> #D", Salidas(x, 'd'))
+		        imprimir(salida_);
+		    }
+		    
+		    publico decimal Salidas(decimal x, caracter y){
+		        si(x < 1) Es_verdadero{
+		            retorno 9;
+		        }
+		        Fin-si
+		        retorno Salidas((x - 1), y) * (y - 99) + Salidas((x - 1), y);
+		    }
+
+			principal()
+			{
+				Multiplicaciones(5);
+			}
+		}
+}
+	Tipo {
+	A-Coach 
+	}
+	Tarea {
+		realizar la funcion de factorial
+	} 
+	Resultado { 
+		Factorial(6) = 720
+	}
+%}
+
+
+{% 
+	Titulo {
+		Recursividad
+	} 
+	Descripcion { 
+		Ejemplo de recursividad, recibe un numero y un caracter, este retornara el resultado
+	} 
+	Ejemplo 
+{
+		clase Ejemplo_If_Anidado{ 
+
+			publico vacio Divisiones(decimal x){
+				caracter salida_[35];
+				concatenar(salida_, "Salida 17.71875 y salio ------> #D ", Salidas(x, 'd'))
+		        imprimir(salida_);
+		    }
+		    
+		    publico decimal Salidas(decimal x, caracter y){
+		        si(x < 1) Es_verdadero{
+		            retorno 9;
+		        }
+		        Fin-si
+		        retorno Salidas(-1 * (x - 1), y) / (y - 99) + Salidas((x - 1), y)/2;
+		    }
+
+			principal()
+			{
+				Divisiones(5);
+			}
+		}
+}
+	Tipo {
+	A-Coach 
+	}
+	Tarea {
+		realizar la funcion de factorial
+	} 
+	Resultado { 
+		Factorial(6) = 720
+	}
+%}
+
+
+
+
+{% 
+	Titulo {
+		Funcion - Operadores lOGICOS
+	} 
+	Descripcion { 
+		Funciones nativas, con el funcionamiento de los operadores basicos, usando Or, And, not
+	} 
+	Ejemplo 
+{
+		clase Entrada_8{ 
+
+			    publico vacio Salida(){
+			    	caracter salidas[50];
+			    	concatenar(salidas, "Operadores Logicos Or: #B ", O(verdadero, falso));
+			    	IMPRIMIR(salidas);
+
+			    	salidas = "";
+			    	concatenar(salidas, "Operadores Logicos And: #B ", Y(verdadero, falso));
+			    	IMPRIMIR(salidas);
+
+			    	salidas = "";
+			    	concatenar(salidas, "Operadores Logicos And: #B ", Y(verdadero, verdadero));
+			    	IMPRIMIR(salidas);
+
+			    	salidas = "";
+			    	concatenar(salidas, "Operadores Logicos Not: #B ", No(verdadero));
+			    	IMPRIMIR(salidas);
+
+			    	salidas = "";
+			    	concatenar(salidas, "Operadores Logicos Not: #B ", No(falso));
+			    	IMPRIMIR(salidas);
+			    	
+			    	salidas = "";
+			    	concatenar(salidas, "Operadores Logicos Nor: #B ", OExclusivo(falso, falso));
+			    	IMPRIMIR(salidas);
+			    	
+			    	salidas = "";
+			    	concatenar(salidas, "Operadores Logicos Nor: #B ", OExclusivo(falso, verdadero));
+			    	IMPRIMIR(salidas);
+			    	
+			    	salidas = "";
+			    	concatenar(salidas, "Operadores Logicos Nor: #B ", OExclusivo(verdadero, falso));
+			    	IMPRIMIR(salidas);
+			    	
+			    	salidas = "";
+			    	concatenar(salidas, "Operadores Logicos Nor: #B ", OExclusivo(verdadero, verdadero));
+			    	IMPRIMIR(salidas);
+
+			    	salidas = "";
+			    	concatenar(salidas, "Operadores Logicos NoY: #B ", NoY(falso, falso));
+			    	IMPRIMIR(salidas);
+
+			    	salidas = "";
+			    	concatenar(salidas, "Operadores Logicos NoY: #B ", NoY(verdadero, falso));
+			    	IMPRIMIR(salidas);
+
+			    	salidas = "";
+			    	concatenar(salidas, "Operadores Logicos NoY: #B ", NoY(falso, verdadero));
+			    	IMPRIMIR(salidas);
+
+			    	salidas = "";
+			    	concatenar(salidas, "Operadores Logicos NoY: #B ", NoY(verdadero, verdadero));
+			    	IMPRIMIR(salidas);
+
+			    	salidas = "";
+			    	concatenar(salidas, "Realizar Operacion Debera salir verdadero -----> #B ", O(NoY(falso, falso), OExclusivo(No(falso), Y(verdadero, O(No(verdadero), OExclusivo(verdadero, OExclusivo(falso, OExclusivo(falso, NoY(falso, falso)))))))));
+			        IMPRIMIR(salidas);
+
+			        salidas = "";
+			    	concatenar(salidas, "Realizar Operacion Debera salir falso -----> #B ", Y(No(No(No(O(NoY(falso, falso), OExclusivo(No(falso), Y(verdadero, O(No(verdadero), OExclusivo(verdadero, OExclusivo(falso, OExclusivo(falso, NoY(falso, falso))))))))))), verdadero));
+			        IMPRIMIR(salidas);
+			    }
+
+			    privado booleano O(booleano x, booleano y){
+			        retornO x || y;
+			    }
+			    
+			    privado booleano Y(booleano x, booleano y){
+			        retornO x && y;
+			    }
+			    privado booleano No(booleano x){
+			        retornO !x;
+			    }
+			    privado booleano OExclusivo(booleano x, booleano y){
+			        retornO (!x && y) || (x && !y);
+			    }
+			    
+			    privado booleano NoY(booleano x, booleano y){
+			        retornO !(x && y);
+			    }
+			principal()
+			{
+				Salida();
+			}
+		}
+}
+	Tipo {
+	A-Coach 
+	}
+	Tarea {
+		realizar operacion logica xor con operadores (suma, resta, multiplicacion, division)
+	} 
+	Resultado { 
+		XOR_Operadores(1,0) = 1
+	}
+%}
+
+
+{% 
+	Titulo {
+		Estructuras y Manipulacion de Puntero o direcciones
+	} 
+	Descripcion { 
+		Lista de estructuras
+	} 
+	Ejemplo 
+{
+	estructura Persona [
+	    caracter nombre[25];
+	    caracter genero[20] = nada;
+	    entero edad;
+	    Persona amigo;
+	];
+	clase estruct {
+	    entero Insertar(Caracter nombre[25], caracter genero [2], entero edad){
+	        entero reserva = reservarMemoria(   consultartamanio(Persona)   );
+	        crearPuntero(Persona, per) = reserva;
+	        per->nombre = nombre;
+	        per->genero = genero;
+	        per->edad = edad;
+	        per->amigo = nada;
+	        retorno reserva;
+	    }
+
+	    vacio EliminarPuntero (Persona puntero ptn){
+	        destruirPuntero(obtenerDireccion(ptn));
+	    }
+	    vacio Imprimir_Puntero(Persona puntero raiz){
+	        Persona temp = raiz;
+	        caracter salida [50];
+	        Repetir_Mientras(temp != nada){
+	            imprimir ("Datos de: --------------------------------> ");
+	            
+	            Concatenar(salida, "Nombre: ");
+	            Concatenar(salida, temp->nombre);
+	            imprimir(salida);
+	            salida = "";
+
+	            Concatenar(salida, "Edad: #E", p->edad);
+	            imprimir(salida);
+	            salida = "";
+
+	            Concatenar(salida, "Genero: #E", p->genero);
+	            imprimir(salida);
+	            salida = "";
+
+	            imprimir ("<-------------- Amigo ---------------> ");
+	            temp = temp->amigo;
+	        }
+	    }
+
+	    principal () {
+	        entero p1 = Insertar("Jose", "M", 15);
+	        entero p2 = Insertar("Henry", "M", 17);
+	        entero p3 = Insertar("Juan", "M", 18);
+	        entero p4 = Insertar("Daniel", "M", 19);
+	        entero p5 = Insertar("Calificacion", "M", 60);
+
+	        Persona ultimo = nada;
+	        crearPuntero(Persona, raiz) = p1;
+	        crearPuntero(Persona, am2) = p2;
+	        crearPuntero(Persona, am3) = p3;
+	        crearPuntero(Persona, am4) = p4;
+	        crearPuntero(Persona, am5) = p5;
+
+	        ultimo = am4;
+	        am4->amigo = p5;
+	        am3->amigo = p4;
+	        am2->amigo = p3;
+	        raiz->amigo = am2;
+
+
+	        imprimir ("<-------------- Listado De Personas ---------------> ");
+	        Imprimir_Puntero(raiz);
+	        imprimir ("<-------------- Se Elimino Punteros ---------------> ");
+	        EliminarPuntero(raiz->amigo->amigo);
+	        imprimir ("<-------------- Impresion Quedan ---------------> ");
+	        Imprimir_Puntero(raiz);
+	    }    
+	}
+}
+	Tipo {
+	A-Coach 
+	}
+	Tarea {
+		Realizar un Ejemplo de Estructura, que reciba un numero y un enlace a otra estructura, cada parametro es una estructura, deberan estar enlazadas, debera de impirmir en consola el cada valor de la estructura. al finalizar debera de retornar Terminado.
+	} 
+	Resultado { 
+		EDD(1,2,3,4) = "Terminado"
+	}
+%}
+
+
+{% 
+	Titulo {
+		Herencia 
+	} 
+	Descripcion { 
+		+-*/=-)(*&^%$#@!) "" Ejemplo de Herencia "" +-*/=-)(*&^%$#@!)
+	} 
+	Ejemplo 
+{
+		publico clase Entrada_9 {
+
+		    publico vacio Ejecutar() {
+		        imprimir("Se trabajara con Pepe.---> ");
+		        Regular pepe = new Regular();
+		        pepe.setNombre("Pepe");
+		        pepe.setClases("Biologia,matematicas");
+		        pepe.setGrado("2");
+		        pepe.setGrupo("G");
+		        pepe.ir_a_clase();
+		        
+		        imprimir("Se trabajara con Luis.---> ");
+		        Intercambio luis = new Intercambio("Luis", "Fisica,Ecologia", "3", "B");
+		        luis.ir_a_clase();
+		        luis.estudiar();
+		        luis.matricularse();
+		        
+		        imprimir("Informacion Pepe ----> ");
+		        imprimir(pepe.getNombre());
+		        imprimir(pepe.getGrupo());
+		        imprimir(pepe.getGrado());
+		        imprimir(pepe.getClases());
+		       
+		        imprimir("Informacion Luis ----> ");
+		        imprimir(luis.getNombre());
+		        imprimir(luis.getGrupo());
+		        imprimir(luis.getGrado());
+		        imprimir(luis.getClases());
+		    }
+		}
+
+		clase Alumno {
+
+		    publico CAracter [] getNombre() {
+		        retorno nombre;
+		    }
+		    publico CAracter [] getClases() {
+		        retorno clases;
+		    }
+		    publico CAracter [] getGrado() {
+		        retorno grado;
+		    }
+		    publico CAracter [] getGrupo() {
+		        retorno grupo;
+		    }
+		    publico vacio setNombre(CAracter nombre [25]) {
+		        este.nombre = nombre;
+		    }
+		    publico vacio setClases(CAracter clases [10]) {
+		        este.clases = clases;
+		    }
+		    publico vacio setGrado(CAracter grado [3]) {
+		        este.grado = grado;
+		    }
+		    publico vacio setGrupo(CAracter grupo [3]) {
+		        este.grupo = grupo;
+		    }
+		    privado CAracter nombre [25];
+		    privado CAracter clases [10];
+		    privado CAracter grado [3];
+		    privado CAracter grupo [3];
+
+		    protegido vacio ir_a_clase() {
+		        imprimir(" Fue a Clases...");
+		    }
+
+		    protegido vacio estudiar() {
+		        imprimir("Estudia...");
+		    }
+		}
+
+		clase Regular hereda_de Alumno {
+		    publico Regular() {
+		    }
+		    protegido vacio pagar_inscripcion() {
+		    }
+
+		    protegido vacio matricularse() {
+		    }
+		}
+
+		clase Becario hereda_de Alumno {
+		    publico Becario() {
+		    }
+		    protegido vacio pagar_inscripcion() {
+		    }
+		}
+
+		clase Intercambio hereda_de Alumno {
+		    publico Intercambio(CAracter nombre [25], CAracter clases [10], CAracter grado [3], CAracter grupo[3]) {
+		        setNombre(nombre);
+		        setClases(clases);
+		        setGrado(grado);
+		        setGrupo(grupo);
+		    }
+
+		    protegido vacio matricularse() {
+		        imprimir("Se encuentra Matriculado...");
+		    }
+		}
+
+}
+	Tipo {
+	A-Coach 
+	}
+	Tarea {
+		Realizar un ejercicio que herencia que retone Hola mundo
+	} 
+	Resultado { 
+		Herencia("HOla ") = "Hola Mundo"
+	}
+%}

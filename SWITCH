@@ -1,0 +1,45 @@
+ 
+clase Ejemplo_If_Anidado{ 
+			principal()
+			{
+				entero a = 'C';
+
+				Si(-1 == a) Es_verdadero{
+		        	Retorno;
+		        }
+		        Fin-Si
+
+		        Evaluar_si(a){
+		            Es_igual_a 1:
+		                IMPRIMIR("Se introdujo NUMERO 1");
+		                romper;
+		            Es_igual_a 2:
+		                IMPRIMIR("Se introdujo NUMERO 2");
+		                romper;
+		            Es_igual_a 3:
+		                IMPRIMIR("Se introdujo NUMERO 3");
+		                romper;
+		            Es_igual_a 4:
+		                IMPRIMIR("Se introdujo NUMERO 4");
+		                romper;
+		            Es_igual_a 5:
+		                IMPRIMIR("Se introdujo NUMERO 5");
+		                romper;
+		            Es_igual_a 67://67
+		                IMPRIMIR("Se introdujo letra C");
+		                romper;
+		            Es_igual_a 100:
+		                IMPRIMIR("Se introdujo letra F");
+		                romper;
+		            Es_igual_a 25:
+		                IMPRIMIR("Se introdujo letra P");
+		                romper;
+		            Es_igual_a 30:
+		                IMPRIMIR("Se introdujo letra a");
+		                romper;
+		            defecto:
+		                IMPRIMIR("ERROR...");
+		                    
+		        }
+			}
+		}

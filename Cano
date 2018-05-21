@@ -1,0 +1,114 @@
+ 
+     estructura Persona [caracter nombre [25 ] ;
+    caracter genero [20 ] = nada ;
+    entero edad ;
+    Persona amigo ;
+    ] ;
+    clase estruct {
+         entero Insertar ( Caracter nombre [25 ] , caracter genero [2 ] , entero edad ) {
+             entero reserva = reservarMemoria ( consultartamanio ( Persona ) ) ;
+            crearPuntero ( Persona , per ) = reserva ;
+            per -> nombre = nombre ;
+            per -> genero = genero ;
+            per -> edad = edad ;
+            per -> amigo = nada ;
+            retorno reserva ;
+            
+            }principal ( ) {
+             entero p1 = Insertar ( "Jose", "M", 15 ) ;
+            entero p2 = Insertar ( "Henry", "M", 17 ) ;
+            entero p3 = Insertar ( "Juan", "M", 18 ) ;
+            entero p4 = Insertar ( "Daniel", "M", 19 ) ;
+            entero p5 = Insertar ( "Calificacion", "M", 60 ) ;
+            crearPuntero(Persona,ultimo);
+            crearPuntero ( Persona , raiz ) = p1 ;
+            //imprimir(raiz->nombre);
+            //imprimir(raiz->genero);
+            //imprimir(raiz->edad);
+            crearPuntero ( Persona , am2 ) = p2 ;
+            //imprimir(am2->nombre);
+            //imprimir(am2->genero);
+            //imprimir(am2->edad);
+            crearPuntero ( Persona , am3 ) = p3 ;
+            //imprimir(am3->nombre);
+            //imprimir(am3->genero);
+            //imprimir(am3->edad);
+            crearPuntero ( Persona , am4 ) = p4 ;
+            //imprimir(am4->nombre);
+            //imprimir(am4->genero);
+            //imprimir(am4->edad);
+            crearPuntero ( Persona , am5 ) = p5 ;
+            imprimir(am5->nombre);
+            imprimir(am5->genero);
+            imprimir(am5->edad);
+            
+            //imprimir(raiz->nombre);
+            //imprimir(raiz->genero);
+            //imprimir(raiz->edad);
+            
+            ultimo = am4 ;
+            //imprimir(ultimo->nombre);
+            //imprimir(ultimo->genero);
+            //imprimir(ultimo->edad);
+           
+            am4 -> amigo = am5 ;
+           
+            //imprimir(am4->amigo->nombre);
+            //imprimir(am4->amigo->genero);
+            //imprimir(am4->amigo->edad);
+            am3 -> amigo = am4 ;
+            am2 -> amigo = am3 ;
+            raiz -> amigo = am2 ;
+            
+            
+            
+            imprimir ( "<-------------- Listado De Personas ---------------> ") ;
+            crearPuntero ( Persona , temp ) = raiz ;
+            temp =raiz;
+            //imprimir(raiz->nombre);
+            //imprimir(raiz->genero);
+            //imprimir(raiz->edad);
+            //imprimir(temp->nombre);
+            //imprimir(temp->genero);
+            //imprimir(temp->edad);
+    
+            temp = temp -> amigo -> amigo ;//amigo 3
+            
+            imprimir(am3->nombre);
+            imprimir(am3->genero);
+            imprimir(am3->edad);
+            
+            imprimir(temp->nombre);
+            imprimir(temp->genero);
+            imprimir(temp->edad);//se posiciono en el persona Juan 
+            caracter salida [150 ] ;
+            si ( temp != nada ) Es_verdadero {
+                Concatenar ( salida , "Nombre: ") ;
+                Concatenar ( salida , temp -> nombre ) ;
+                 Concatenar ( salida , " Genero: ") ;
+                 Concatenar ( salida , temp -> genero ) ;
+                 Concatenar ( salida , " Edad: ") ;
+                 Concatenar ( salida , temp -> edad ) ;
+                imprimir ( salida ) ;
+                caracter salida2 [150 ] ;
+                salida2 = "";
+                Concatenar ( salida2 , "Nombre: ") ;
+                Concatenar ( salida2 , raiz -> nombre ) ;
+                Concatenar ( salida2 , " Genero: ") ;
+                Concatenar ( salida2 , raiz -> genero ) ;
+                Concatenar ( salida2 , " Edad: ") ;
+                Concatenar ( salida2 , raiz -> edad ) ;
+                imprimir ( salida2 ) ;
+                
+                imprimir(temp->nombre);
+                imprimir(temp->genero);
+                imprimir(temp->edad);//se posiciono en el persona Juan 
+                imprimir(raiz->nombre);
+                imprimir(raiz->genero);
+                imprimir(raiz->edad);//se posiciono en el persona Juan 
+               
+             
+                
+                }fin-si
+            }
+        }

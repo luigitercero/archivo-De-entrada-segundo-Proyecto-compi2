@@ -1,0 +1,15 @@
+publico clase Persona {
+    Caracter Nombre [25];
+    entero identi;
+    entero numero;
+    Persona Sig;
+    Persona Ant;
+    
+    publico Persona(Caracter nombre[25], entero identi, entero numero){
+        este.Nombre = nombre;
+        este.identi = identi;
+        este.numero = numero;
+        este.Sig = {'\0'};
+        este.Ant = {"\0"};
+    }
+}

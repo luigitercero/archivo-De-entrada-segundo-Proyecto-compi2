@@ -1,0 +1,655 @@
+{% 
+	Titulo {
+		Estructuras
+	} 
+	Descripcion { 
+		Lista de estructuras
+	} 
+	Ejemplo 
+{
+	estructura Persona [
+	    caracter nombre[25];
+	    entero edad;
+	    Persona amigo;
+	];
+
+	clase estruct {
+	    principal () {
+	        crearPuntero(Persona, p3) = reservarMemoria(   consultartamanio(Persona)   );;
+	        raiz->nombre = "Calificacion Calificacion Calificacion";
+	        raiz->edad = 15;
+	        raiz->amigo = nada;
+
+	        crearPuntero(Persona, p2) = reservarMemoria(   consultartamanio(Persona)   );;
+	        raiz->nombre = "Calificacion Calificacion";
+	        raiz->edad = 10;
+	        raiz->amigo = p3;
+
+	        crearPuntero(Persona, raiz) = reservarMemoria(   consultartamanio(Persona)   );;
+	        raiz->nombre = "Calificacion ";
+	        raiz->edad = 5;
+	        raiz->amigo = p2;
+
+	        imprimir ("<-------------- Listado De Personas ---------------> ");   
+	        Persona temp = raiz;
+	        caracter salida [50];
+	        Repetir_Mientras(temp != nada){
+	            imprimir ("Datos de: --------------------------------> ");
+	            
+	            Concatenar(salida, "Nombre: ");
+	            Concatenar(salida, temp->nombre);
+	            imprimir(salida);
+	            salida = "";
+
+	            Concatenar(salida, "Edad: #E", p->edad);
+	            imprimir(salida);
+	            salida = "";
+
+	            imprimir ("<-------------- Amigo ---------------> ");
+	            temp = temp->amigo;
+	        }
+	    }    
+	}
+}
+	Tipo {
+	A-Coach 
+	}
+	Tarea {
+		Realizar un Ejemplo de Estructura, que reciba un numero y un enlace a otra estructura, cada parametro es una estructura, deberan estar enlazadas, debera de impirmir en consola el cada valor de la estructura. al finalizar debera de retornar Terminado.
+	} 
+	Resultado { 
+		EDD(1,2,3,4) = "Terminado"
+	}
+%}
+
+
+{% 
+	Titulo {
+		If Anidado
+	} 
+	Descripcion { 
+		Creacion de SI anidados es decir, sentencuas Si dentro de otras. 
+	} 
+	Ejemplo 
+{
+		clase Ejemplo_If_Anidado{ 
+			principal()
+			{
+				entero x_1 = 15;
+		        booleano b_1 = verdadero;
+		        booleano b_2 = falso;
+		        caracter s[5] = {'H', 'o', 'l', 'a'};
+		        decimal d = 25.123456788;
+		        
+		        Si(-1 != -1) Es_verdadero{
+		        	Retorno;
+		        }
+		        Fin-Si
+		        Si(verdadero) Es_verdadero{
+	        		Si((b_1 == verdadero && b_2 == falso) || (b_1 == verdadero && b_2 == verdadero)) Es_verdadero{
+		                Si(x_1 >= 10 && x_1 <= 25) Es_verdadero{
+		                    Si(d > 25.123456787 && d < 25.123456789) Es_verdadero{
+		                        Si(s[2] == 'l') Es_verdadero{
+		                            imprimir("Salida Correcta -- Verdadero...");
+		                        }
+		                        Es_falso{
+		                            imprimir("ERROR...");
+		                        }
+		                    	Fin-si
+		                    }
+		                    Es_falso{
+		                        imprimir("ERROR...");
+		                    }
+		                    Fin-si
+		                }
+		                Es_falso
+		                {
+		                    imprimir("ERROR...");
+		                }
+		                Fin-si
+		            }
+		            Es_falso
+		            {
+		                imprimir("ERROR...");
+		            }
+		            Fin-si
+	        	}
+		        Es_falso
+		        {
+		            imprimir("ERROR...");
+		        }
+		    	Fin-si
+			}
+		}
+}
+	Tipo {
+	G-Coach 
+	}
+	Tarea {
+		Realizar Una sentencia SI anidada de dos o mas if debera de retornar veerdadero
+	} 
+	Resultado { 
+		Si_Anidado() = true
+	}
+%}
+
+{% 
+	Titulo {
+		While Anidado
+	} 
+	Descripcion { 
+		Sentenca de control anidada
+	} 
+	Ejemplo 
+{
+		clase Ejemplo_If_Anidado{ 
+			principal()
+			{
+				entero x = 0;
+		        decimal d = 5.123456789;
+
+		        Si(-1 != -1) Es_verdadero{
+		        	Retorno;
+		        }
+		        Fin-Si
+
+		        Repetir_Mientras(verdadero){
+		            Repetir_Mientras(x < 10){
+		                Repetir_Mientras(d > 0){
+		                	caracter print [50];
+		                	caracter printB [50];
+		                	Concatenar(print,  "Salida X: #E ", x);
+		                	Concatenar(printB,  "---  D: #D ", e);
+
+		                    Imprimir(Concatenar(print, printB));
+		                    d--;
+		                }
+		                d = 5.123456789;
+		                x++;
+		            }
+		            romper;
+		        }
+			}
+		}
+}
+	Tipo {
+	G-Coach 
+	}
+	Tarea {
+		realizar una sentencia ciclo anidada,  y hacer uso del Ciclo_doble_condicion
+	} 
+	Resultado { 
+		WhileAnidado(5) = 1;
+	}
+%}
+
+
+{% 
+	Titulo {
+		 Break_Ciclo_Anidado - Sentencias de Flujo
+	} 
+	Descripcion { 
+		Uso de while, for y break
+	} 
+	Ejemplo 
+{
+		clase Ejemplo_If_Anidado{ 
+			principal()
+			{
+				ENTERO x = 0;
+		        ENTERO y = 0;
+		        ENTERO z = 0;
+
+		        Si(-1 != -1) Es_verdadero{
+		        	Retorno;
+		        }
+		        Fin-Si
+		        
+		        Repetir_Mientras(x < 5){
+		            y = 0;
+		            hacer{
+		                hacer(z = 0; z < 5; z++){
+		                    si(z == 3) Es_verdadero {
+			                	imprimir("Salida X:");
+			                	imprimir(convertirAcadena(x));
+			                	imprimir("------ Y:");
+			                	imprimir(convertirAcadena(y));
+			                	imprimir("------ Z:");
+			                	imprimir(convertirAcadena(z));
+		                        romper;
+		                    }
+		                    Fin-si
+		                }
+		                si(y == 2) Es_verdadero{
+		                	imprimir("Salida X:");
+		                	imprimir(convertirAcadena(x));
+		                	imprimir("------ Y:");
+		                	imprimir(convertirAcadena(y));
+		                	imprimir("------ Z:");
+		                	imprimir(convertirAcadena(z));
+		                    romper;
+		                }
+		                Fin-si
+		                y ++;
+		            }mientras(y < 5);
+		            si(x == 1) Es_verdadero {
+		            	imprimir("Terminado Salida X:");
+	                	imprimir(convertirAcadena(x));
+	                	imprimir("------ Y:");
+	                	imprimir(convertirAcadena(y));
+	                	imprimir("------ Z:");
+	                	imprimir(convertirAcadena(z));
+		                romper;
+		            }
+		            Fin-si
+		            x ++;
+		        }
+			}
+		}
+}
+	Tipo {
+	G-Coach 
+	}
+	Tarea {
+		realizar un ciclo de doble condicion que se detenga, y retorne el valor donde se quedo. Hacer uso de Ciclo_doble_condicion
+	} 
+	Resultado { 
+		ciclo(10, verdadero) = 5
+	}
+%}
+
+
+{% 
+	Titulo {
+		If_Condicion
+	} 
+	Descripcion { 
+		funcionamiento de la sentencia de contro SI
+	} 
+	Ejemplo 
+{
+		clase Ejemplo_If_Anidado{ 
+			principal()
+			{
+				Si(-1 != -1) Es_verdadero{
+		        	Retorno;
+		        }
+		        Fin-Si
+
+				si(!(falso || falso) && (verdadero || verdadero) && (falso || verdadero)) Es_verdadero {
+		            IMprimiR("Salida Verdadera....");
+		        }
+		        Es_falso{
+		            IMPRIMIR("ERROR...");
+		        }
+		        Fin-si
+			}
+		}
+}
+	Tipo {
+	G-Coach 
+	}
+	Tarea {
+	realizar una sentencia de control y retorne verdadero al ingresar a un if
+	} 
+	Resultado { 
+		SentenciaIf(verdadero, falso, falso, verdadero) = true
+	}
+%}
+
+
+{% 
+	Titulo {
+		For_Anidado
+	} 
+	Descripcion { 
+		sentencia de control for anidadas
+	} 
+	Ejemplo 
+{
+		clase Ejemplo_If_Anidado{ 
+			principal()
+			{
+				Si(-1 != -1) Es_verdadero{
+		        	Retorno;
+		        }
+		        Fin-Si
+
+				Repetir_contando (variable: a; desde: 0; hasta: 4){
+		            Repetir_contando (variable: b; desde: 0; hasta: a){
+		            	imprimir("Salida A: ");
+		            	imprimir(convertirAcadena(a));
+		            	imprimir("---  B: ");
+		            	imprimir(convertirAcadena(b));
+		            }
+		        }
+			}
+		}
+}
+	Tipo {
+	G-Coach 
+	}
+	Tarea {
+		realizar un ciclo cotador que al finalizar retorne verdadero 
+	} 
+	Resultado { 
+		ciclo_For(10) = verdadero
+	}
+%}
+
+
+{% 
+	Titulo {
+		Funcion Imprimir
+	} 
+	Descripcion { 
+		funcionamiento del metodo imprimri del lenguaje
+	} 
+	Ejemplo 
+{
+		clase Ejemplo_If_Anidado{ 
+			principal()
+			{
+				Si(-1 != -1) Es_verdadero{
+		        	Retorno;
+		        }
+		        Fin-Si
+
+				entero a = 10;
+		        decimal d = 10.123456789;
+		        booleano b = true;
+		        caracter c[20] = "Salida ";
+		        
+		        caracter cadena[50] = "";
+
+		        Concatenar (cadena, "Salida Entero ---> #E  NUMERO", a);
+		        imprimir(cadena);
+
+
+		        Concatenar (cadena, "Salida Decimal ---> #D DECIMAL", d);
+		        imprimir(cadena);
+
+
+		        Concatenar (cadena, "Salida Booleano ---> #B BOLEANO", b);
+		        imprimir(cadena);
+
+
+		        Concatenar (cadena, "Salida Cadena ---> ");
+
+		        imprimir(cadena);
+		        imprimir(c);
+			}
+		}
+}
+	Tipo {
+	G-Coach 
+	}
+	Tarea {
+		realizar un ejemplo de switch y al momento de entrar retorno el reesulado 5
+	} 
+	Resultado { 
+		switch('5') = 5
+	}
+%}
+
+
+{% 
+	Titulo {
+		Sentencia Switch
+	} 
+	Descripcion { 
+		funcionamiento de la sentencia switch  
+	} 
+	Ejemplo 
+{
+		clase Ejemplo_If_Anidado{ 
+			principal()
+			{
+				entero a = convertirANumero('C');
+
+				Si(-1 == a) Es_verdadero{
+		        	Retorno;
+		        }
+		        Fin-Si
+
+		        Evaluar_si(a){
+		            Es_igual_a 1:
+		                IMPRIMIR("Se introdujo NUMERO 1");
+		                romper;
+		            Es_igual_a 2:
+		                IMPRIMIR("Se introdujo NUMERO 2");
+		                romper;
+		            Es_igual_a 3:
+		                IMPRIMIR("Se introdujo NUMERO 3");
+		                romper;
+		            Es_igual_a 4:
+		                IMPRIMIR("Se introdujo NUMERO 4");
+		                romper;
+		            Es_igual_a 5:
+		                IMPRIMIR("Se introdujo NUMERO 5");
+		                romper;
+		            Es_igual_a '67'://67
+		                IMPRIMIR("Se introdujo letra C");
+		                romper;
+		            Es_igual_a 'F':
+		                IMPRIMIR("Se introdujo letra F");
+		                romper;
+		            Es_igual_a 'G':
+		                IMPRIMIR("Se introdujo letra P");
+		                romper;
+		            Es_igual_a 'a':
+		                IMPRIMIR("Se introdujo letra a");
+		                romper;
+		            defecto:
+		                IMPRIMIR("ERROR...");
+		                    
+		        }
+			}
+		}
+}
+	Tipo {
+	G-Coach 
+	}
+	Tarea {
+		realizar un ejemplo de switch y al momento de entrar retorno el reesulado 5
+	} 
+	Resultado { 
+		switch('5') = 5
+	}
+%}
+
+
+{% 
+	Titulo {
+		Sentencia Switch 2
+	} 
+	Descripcion { 
+		funcionamiento de la sentencia switch  
+	} 
+	Ejemplo 
+{
+		clase Ejemplo_If_Anidado{ 
+			principal()
+			{
+				caracter a = 'C';
+
+				Si(-1 == a) Es_verdadero{
+		        	Retorno;
+		        }
+		        Fin-Si
+
+		        Evaluar_si(a){
+		            Es_igual_a 1:
+		                IMPRIMIR("Se introdujo NUMERO 1");
+		                romper;
+		            Es_igual_a 2:
+		                IMPRIMIR("Se introdujo NUMERO 2");
+		                romper;
+		            Es_igual_a 3:
+		                IMPRIMIR("Se introdujo NUMERO 3");
+		                romper;
+		            Es_igual_a 4:
+		                IMPRIMIR("Se introdujo NUMERO 4");
+		                romper;
+		            Es_igual_a 5:
+		                IMPRIMIR("Se introdujo NUMERO 5");
+		                romper;
+		            Es_igual_a 'C'://67
+		                IMPRIMIR("Se introdujo letra C");
+		                romper;
+		            Es_igual_a 'F':
+		                IMPRIMIR("Se introdujo letra F");
+		                romper;
+		            Es_igual_a 'G':
+		                IMPRIMIR("Se introdujo letra P");
+		                romper;
+		            Es_igual_a 'a':
+		                IMPRIMIR("Se introdujo letra a");
+		                romper;
+		            defecto:
+		                IMPRIMIR("ERROR...");
+		                    
+		        }
+			}
+		}
+}
+	Tipo {
+	G-Coach 
+	}
+	Tarea {
+		realizar un ejemplo de switch y al momento de entrar retorno el reesulado 5
+	} 
+	Resultado { 
+		switch('5') = 5
+	}
+%}
+
+{% 
+	Titulo {
+		sentencia if else
+	} 
+	Descripcion { 
+		funcionamiento de la sentencia de contro if else
+	} 
+	Ejemplo 
+{
+		clase Ejemplo_If_Anidado{ 
+			principal()
+			{
+				Si(-1 != -1) Es_verdadero{
+		        	Retorno;
+		        }
+		        Fin-Si
+		        
+				si(!(VERDADERO && falso) && (falso) && !(falso) && (falso || VERDADERO)) Es_verdadero{
+		            IMprimir("ERROR...");
+		        }
+		        Es_falso{
+		            si(!(VERDADERO && falso) && (VERDADERO) && !(falso) && (falso || VERDADERO)) Es_verdadero{
+		                IMprimir("Salida Verdadera...");
+		            }
+		            Es_falso{
+		                IMprimir("ERROR...");
+		            }
+		            Fin-si
+		        }
+		        Fin-si
+			}
+		}
+}
+	Tipo {
+	G-Coach 
+	}
+	Tarea {
+		realizar una sentencia de control if else, al momento de compara ambos resultados retornar false
+	} 
+	Resultado { 
+		sentencia(verdadero, falso, verdadero, falso, falso) = falso
+	}
+%}
+
+
+
+{% 
+	Titulo {
+		entrada desde el teclado
+	} 
+	Descripcion { 
+		funcionamiento de entrada por teclado
+	} 
+	Ejemplo 
+{
+		clase Ejemplo_If_Anidado{ 
+			principal()
+			{
+				caracter nombre[15] = "";
+				Leer_Teclado ("Por favor ingrese su nombre", nombre);
+
+				imprimir(concatenar ("Bienvenido ", nombre));
+
+				entero edad;
+				Leer_Teclado ("Por favor ingrese su edad", edad);
+
+				caracter salida [50] = "";
+				concatenar(salida, "Saludos en 10 años usted tendrá #E años. ", (edad + 10));
+			}
+		}
+}
+	Tipo {
+	G-Coach 
+	}
+	Tarea {
+		realizar un ejemplo que reciba desde el teclado un texto y sea igual al valor retornado
+	} 
+	Resultado { 
+		entrada() = "Hola 65"
+	}
+%}
+
+
+{% 
+	Titulo {
+		Funcionamiento de operadores
+	} 
+	Descripcion { 
+		descripcion del funcionamiento de varios operadores del lenguaje
+	} 
+	Ejemplo 
+{
+		clase Ejemplo_If_Anidado{ 
+			principal()
+			{
+				entero a = 10 + 20 + 25 + 35 + 9 + ( (verdadero || falso) && (! falso) && (falso ?? falso))  + 'd';
+		        decimal d = (1.1 + 1.3 + 1.6) * 0.1013;
+		        
+		        decimal div = 10 / 0;
+
+		        caracter salida[50];
+		        concatenar (salida, "Operaciones Enteros --> #E ENTEROS #E", a);
+		        imprimir(salida);
+
+		        salida = "";
+		        concatenar (salida, "Operaciones Enteros --> #D DECIMAL #D", d);
+		        imprimir(salida);
+
+		        salida = "";
+		        concatenar (salida, "Division 0 --> #D ", div);
+		        imprimir(salida);
+			}
+		}
+}
+	Tipo {
+	G-Coach 
+	}
+	Tarea {
+		impirmir en la consola y retornar le total de los numero 
+	} 
+	Resultado { 
+		salida(10, verdadero, falso, 20, 25, 24, 15, 5) = 100
+	}
+%}
+
+
+
+
+

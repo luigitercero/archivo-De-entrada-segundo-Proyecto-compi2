@@ -1,0 +1,210 @@
+/*
+*
+*
+*
+*
+//*Comienza la clase principal.
+*
+*
+*
+*
+*/
+importar("callbackPadre.gcc");
+clase utlimoArchivo hereda_de padreArchivo{
+    /*inicio de 
+    declaracion
+     de 
+     variables globales..*******..
+    */
+     //
+     /**/
+	Entero variablCero=0;
+	Decimal pi=3.1415;
+	Booleano booleanoI=true;
+	Booleano booleanoD=1;
+	Entero error = 15.3 ^'a';//fuera de rango
+	Booleano booleanoID=(falso || verdadero && verdadero || falso);//esto debería dar verdadero
+	Decimal variableC='a'*'z'/'?';//187.841269841
+	Caracter variableCa;
+	Entero negativo=-1;
+	obj arreglo[booleanoI*10][(convertirAnumero(pi+3.8585))^(convertirAnumero('b'-( -(-9.6*((negativo)^10)) )) )];//10, 14
+    //fin de declaracion de variables globales....
+
+    principal(){
+    	Caracter primerTexto[40]="Ingrese un primer número para el area";
+    	Caracter segundoTexto[40]="Ingrese un segundo número para el area";
+
+    	Entero noFIla;
+        Decimal noColumna;
+        Caracter noOpcion[3];
+        Caracter cadenaIngresada[100];
+    	Caracter Id_3[1];    	
+    	Booleano Id_4;
+    	Leer_Teclado ( "Ingrese un número para la fila", noFila);
+        Leer_Teclado ( "Ingrese un número para la columna", noColumna);
+    	Leer_Teclado ( "Ingrese un cadena cualquiera", cadenaIngresada);
+    	Leer_Teclado ( "Ingrese un carácter(**'_)(*&^%$#se tomará el valor del ascci??><>:{{+_)(***) como nuevo valor del lado", Id_3);
+    	Leer_Teclado ( "Ingrese verdadero o falso para seleccionar un Lado a cambiar de valor posteriormente", Id_4);
+    	    	
+        Contador(convertirAnumero(pi+4.8585)){//deberia repetirse 8 veces este siclo
+            Leer_Teclado ( "Ingrese una letra de entre 'd,a,n,i,e,l' para elegir una opcion", noOpcion[2]);
+            Evaluar_si (noOpcion[2]){
+                Es_igual_a 'd':
+                    //instrucciones para inicializar el objeto global
+                    Entero repeticion=14;
+                    Entero valor=0;
+                    booleano true=verdadero;
+                    contador(repeticion){
+                        areglo[5][valor]=nuevo obj(arreglo.tamanio-valor,"CoMpIlAdOrEs ",valor);//se inicializa una fila completa del vector
+                        imprimir(arreglo[5][valor].ladoUno);//0,1,2,3....13
+                        arreglo[5][valor].cambiarLado(arreglo[5][valor].ladoUno++,true);
+                        true=!true;
+                        imprimir(arreglo[5][valor].ladoUno);//1,,139,138,137,.....127 talvez, uno si y uno  no cambian de valor
+                        valor++;
+                    }
+                    //al salir de esta opcion, ya deberia tener inicializado la fila 5 y todas sus columnas                    
+                    romper; 
+                Es_igual_a 'a': 
+                //instrucciones 
+                    arreglo[noFila][convertirAnumero(noColumna)].cambiarLado(convertirAnumero(Id_3),Id_4);//v
+                    arreglo[noFila][convertirAnumero(noColumna)].cambiarLado(convertirAnumero(Id_3)^2,!!!!!!!!!Id_4);//valor ingresado al cuadrado, f
+                    imprimir(arreglo[noFila][convertirAnumero(noColumna)].ladoUno);//imprimira el ascci del caracter ingresado con el teclado
+                    romper;
+                Es_igual_a 'n':
+                //instrucciones
+                    Leer_Teclado (primerTexto,primerValorHeredado);
+                    Leer_Teclado (segundoTexto,segundoValorHeredado);
+                    imprimir(primerValorHeredado);
+                    imprimir(segundoValorHeredado);
+                    romper;
+                Es_igual_a 'i':
+                //instrucciones
+                    arreglo[noFila][convertirAnumero(noColumna)].cambiarLado(primerValorHeredado,bandera);//v
+                    arreglo[noFila][convertirAnumero(noColumna)].cambiarLado(segundoValorHeredado,!!!!!!!!!bandera);//valor ingresado al cuadrado, f
+                    imprimir(arreglo[noFila][convertirAnumero(noColumna)].ladoUno);//imprimira el primervalorHEredado
+                    romper;
+                Es_igual_a 'e':
+                //instrucciones
+                    arreglo[noFila][convertirAnumero(noColumna)].callback(cadenaIngresada,nuevo obj(1,"ultimo archivo ",-1*-1+-1));
+                    romper;
+                defecto: 
+                //instrucciones
+                    imprimir("fin de la calificacion!!!!!!!!!!!!!!!! felicidades x llegar hasta aqui!!!");
+                    romper;
+            }
+        }        
+    }
+}
+
+
+clase obj{
+    entero ladoUno=-1;
+    entero ladoDos=1000000;
+    Caracter total[100];
+    obj(entero ladoUno,Caracter[100] total,entero ladoDos){
+    	imprimir("Inicializando obj");
+    	este.ladoUno=ladouno*(este.ladoDos*0)+ladoDos;//ladoUno tendrá el valor del parametro ladoDos siempre
+    	concatenar(este.total,"Salida para el curso de ");
+    	concatenar(este.total,total);
+    	concatenar(este.total,"es ");
+    	concatenar(este.total,ladoUno*este.ladoUno);
+        imprimir(este.total);//Salida para el curso de CoMpIlAdOrEs es el contador pero en negativo
+    }
+    publico Caracter cambiarLado(decimal nuevoValor,booleano seleccionarLado){
+    	si(seleccionarLado){
+    		es_verdadero{
+    			este.ladoUno=convertirAnumero(nuevoValor);//cambia el valor
+    		}es_falso{
+    			este.ladoDOs=convertirAnumero(nuevoValor);
+    		}
+    	}Fin-si
+
+    	si(nuevoValor<=-1){
+    		es_verdadero{
+    			retornar "cambio a negativo";
+    		}es_falso{
+    			retornar "cambio a positivo";
+    		}
+            imprimir("esta mal si imprime esto!!!!!!!!!!!!!!!!");
+    	}Fin-si
+    }
+    publico vacio callback(Caracter[100] cadenaIngresada,obj objeto){///trae la cadena ingresada con teclado
+        booleano false=falso;
+        objeto.cambiarLado(10.45,false);
+    	llamarTodasFUnciones(imprimirAreaCuadrado, imprimirAreaTriangulo, imprimirTotal,objeto.ladoDos);//mandando el 10.45
+        llamarAnidada(funcionAnidada);
+    }
+
+    booleano varUltima=("casa"=="hola");//deberia inicializarse en falso
+    publico vacio llamarAnidada(funcion anidada){
+        llamarAnidada2(anidada);
+    }
+    publico vacio llamarAnidada2(funcion anidada){
+        llamarAnidada3(anidada);
+    }
+    publico vacio llamarAnidada3(funcion anidada){
+        anidada(varUltima);
+    }
+
+    entero[10] llamarTodasFUnciones( funcion cuadradito, funcion triangulito, funcion total,Decimal objetoLado){	
+        entero vec[1]={cuadradito(cadenaIngresada,este.ladoUno,este.ladoDos,verdadero)};
+        caracter c1;
+        Leer_Teclado ("inrese un caracter",c1);
+        entero vec1[1]={triangulito(c1)};
+        total(vec[0],vec1[0]);
+    }
+
+    entero[10] imprimirAreaCuadrado(cadena caden,entero ladoUno,entero ladoDos,booleano flag){
+    	padreArchivo objLocal;
+        Repetir_Mientras(flag) { //se repetirán si la condición es verdadera
+        	si(objLocal!=NADA){
+        		es_verdadero{
+        			imprimir(objLocal.primerValorHeredado/ladoUno);
+        		}es_falso{
+        			objLocal=nuevo padreArchivo();
+        		}
+        	}
+        	si(objLocal.hh==NADA){
+        		es_verdadero{
+        			objLocal.iniciarHermano();
+        		}es_falso{
+        			imprimir(objLocal.hh.v2);///imprime verdadero
+        		}
+        	}
+        }
+    }
+
+    entero[1] imprimirAreaTriangulo(caracter valorRetornar){
+         imprimir("el triangulo es lo ultimo, ya casi!!!!!!!!!!!");
+         entero vec[1]={100};
+         Evaluar_si (valorRetornar){ 
+    	     Es_igual_a 'a': 
+    	     //instrucciones
+    		     vec[0]={97};
+    		     retornar vec;
+    		     romper; 
+    	     Es_igual_a 'b': 
+    	     //instrucciones 
+    		     vec[0]={98};
+    		     retornar vec;
+    	     Es_igual_a 'c':
+    	     //instrucciones
+    	     	 romper;
+    	     defecto: 
+    	     //instrucciones
+    	     	 vec[0]={99};
+    	     	 retornar 
+    	    retornar vec;
+    	}
+    }
+
+    vacio imprimirTotal(entero vec[1],entero vec1[1]){
+         imprimir(vec[0]);
+         imprimir(vec1[0]);
+    }
+
+    vacio funcionAnidada(booleano bool){
+        imprimir(bool);
+    }
+
+}

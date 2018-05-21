@@ -1,0 +1,203 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+importar("BTree.gcc");
+
+/**
+ *
+ * @author Compiladores Calificacion
+ */
+
+publico clase ArchivoEntrada {
+
+    /**
+     * @param args the command line arguments
+     */
+
+    principal() {
+
+        // Scanner input = new Scanner(System.in);
+        // Scanner input2 = new Scanner(System.in);
+
+        entero n;
+        entero n2;
+        entero temp;
+
+        //Imprimir("Enter the t of the Tree?  ");
+        //n = input.nextInt();
+
+        Leer_Teclado("Enter the t of the Tree?  ", n);
+
+        repetir_mientras (n < 2) {
+            //System.out.print("Please enter a integer greater than 1 : ");
+            //n = input.nextInt();//  User inputs the order of Tree and is assinged to N.
+            Leer_Teclado("Please enter a integer greater than 1 : ", n);
+        }
+
+        BTree tree = nuevo BTree(n);//  B-Tree Tree with order  N is created.
+        tree = InsertarContactos(tree);
+        
+        //System.out.print("\n How many values do you want to enter?:  ");
+        //n2 = input.nextInt();
+
+        Leer_Teclado("How many values do you want to enter?: ", n2);
+
+
+        //for (int i = 0; i < n2; i++) {
+        entero i = 0;
+        repetir_mientras( i < n2){
+            //System.out.print("\nEnter Name: ");
+            //String nombre = input2.nextLine();
+
+            caracter nombre [25];
+            Leer_Teclado("Enter Name: ", nombre);
+
+            //System.out.print("\nEnter Value:");
+            //System.out.println(i + 1);
+            //temp = input.nextInt();
+
+            Leer_Teclado("Enter Value: ", temp);
+            tree.insert(tree, temp, nombre);
+            i++;
+        }
+
+        entero choice;
+        entero k;
+
+        booleano flag;
+        flag = verdadero;
+
+        enciclar circulo {
+            ImprimirMenu();
+            imprimir("");
+
+            //System.out.print("\nElige tu Opcion::");
+            //choice = input.nextInt();
+            Leer_Teclado("Elige tu Opcion:: ", choice);
+
+            si (choice == 6) es_verdadero{
+                imprimir ("Cerrar Aplicacion ----> ");
+                //System.exit(0);
+                flag = false;
+                romper;
+                //retornar;
+            } 
+            es_falso {
+                Evaluar_si (choice) {
+                    Es_igual_a 1:
+                        //System.out.print("Cuantos Contactos Ingresar?:");
+                        //n2 = input.nextInt();
+
+                        Leer_Teclado("Cuantos Contactos Ingresar?:", n2);
+                        entero ii = 0;
+                        //for (int i = 0; i < n2; i++) {
+                        
+                        repetir_mientras(ii < n2){
+                            //System.out.print("\nEnter Name: ");
+                            //String nombre = input2.nextLine();
+
+                            //System.out.print("\nEnter Value: ");
+                            //System.out.println(i + 1);
+                            //temp = input.nextInt();
+
+                            caracter nombre_ [25];
+                            Leer_Teclado("Enter Name: ", nombre_);
+                            Leer_Teclado("Enter Value: ", temp);
+                            
+                            tree.insert(tree, temp, nombre_);
+
+                            ii++;
+                        }
+
+                        romper;
+                    Es_igual_a 2:
+                        tree.print(tree.root);
+                        imprimir("");
+                        romper;
+
+                    Es_igual_a 3:
+                        //System.out.println("Que Llave Desea Buscar.... :");
+                        //int key2 = input.nextInt();
+
+                        entero key2 = 0;
+                        Leer_Teclado("Que Llave Desea Buscar.... :", key2);
+                        tree.SearchPrintNode(tree, key2);
+
+                        romper;
+                    Es_igual_a 5:
+                        //System.out.println("Que Llave Desea Editar.... :");
+                        //int key3 = input.nextInt();
+                        //System.out.print("\nEnter Name: ");
+                        //String nombre = input2.nextLine();
+                        //System.out.print("\nEnter Value: ");
+
+                        entero key3 = 0;
+                        Leer_Teclado("Que Llave Desea Editar.... :", key3);
+
+                        caracter nombre__ [25];
+                        Leer_Teclado("Enter Name: ", nombre__);
+                        Leer_Teclado("Enter Value: ", temp);
+
+                        tree.insert(tree, temp, nombre__);
+                        tree.Modificar(tree, key3, nombre__, temp);
+                            
+                        romper;
+
+                    Es_igual_a 4:
+
+                        //System.out.println("Que Llave desea Eliminar:");
+                        //int key = input.nextInt();
+
+                        entero key = 0;
+                        Leer_Teclado("Enter Name: ", key);
+
+                        tree.deleteKey(tree, key);
+
+                        imprimir("Preorden Despues de Eliminado");
+                        tree.print(tree.root);
+                        romper;
+
+                    Es_igual_a 6:
+                        //System.exit(0);
+                        romper;
+                    defecto:
+                        imprimir("\nElegir una Opcion\n");
+                        romper;
+                }
+            }
+        }
+    }
+
+    publico vacio ImprimirMenu() {
+        imprimir("\tM\tE\tN\tU\n");
+        imprimir("1. Ingresar Nuevos Contactos");
+        imprimir("2. Imprimir en Preorden - B-Tree");
+        imprimir("3. Search for a Key and print the Node it belongs to");
+        imprimir("4. Delete a key from the leaf");
+        imprimir("5. Editar Contacto");
+        imprimir("6. Exit");
+    }
+    
+    publico BTree InsertarContactos(BTree tree){
+        tree.insert(tree, 123, "Uno dos tres");
+        tree.insert(tree, 456, "Cuatro Cinco seiss");
+        tree.insert(tree, 789, "siete ocho nueve");
+        tree.insert(tree, 321, "tres dos uno");
+        tree.insert(tree, 654, "seis cinco cuatro");
+        tree.insert(tree, 987, "nueve ocho siete");
+        tree.insert(tree, 147, "uno cuatro siete");
+        tree.insert(tree, 258, "dos cinco ocho");
+        tree.insert(tree, 369, "tres seis nueve");
+        tree.insert(tree, 741, "siete cuatro uno");
+        tree.insert(tree, 852, "ocho cinco dos");
+        tree.insert(tree, 963, "nueve seis tres");
+        tree.insert(tree, 11, "Uno Uno");
+        tree.insert(tree, 88, "Ocho Ocho");
+        tree.insert(tree, 66, "Nueve Nueve");
+        tree.insert(tree, 77, "Siete Siete");
+        return tree;
+    }
+}

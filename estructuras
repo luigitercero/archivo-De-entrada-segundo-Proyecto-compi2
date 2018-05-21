@@ -25,8 +25,9 @@ clase estruct {
         nombre = "Alejandro";
         caracter genero[25];
         genero = "masculino";
-        
-        crearPuntero(Persona, amigo) = Crearamigo(nombre,genero,22,1);
+        entero a = Crearamigo(nombre,genero,22,1);
+        imprimir (a);
+        crearPuntero(Persona, amigo) = a;
         imprimir(amigo->edad);
         imprimir(amigo->posicion);
         imprimir(amigo->nombre);

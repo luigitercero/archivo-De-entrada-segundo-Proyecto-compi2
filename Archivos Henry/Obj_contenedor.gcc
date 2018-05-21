@@ -1,0 +1,69 @@
+publico clase Obj_contenedor {
+    
+    entero id;
+    decimal mi_decimal;
+    
+    publico Obj_contenedor(){
+    
+    }
+    
+    publico vacio agregarDecimal(entero v1 , entero v2 , entero v3){
+        Evaluar_si (v3){
+            Es_igual_a 1:
+                mi_decimal = v1 + ( v2 * 0.2);
+                romper;
+            Es_igual_a 2:
+                mi_decimal = v1 + ( v2 * 0.4);
+                romper;
+            Es_igual_a 3:
+                mi_decimal = v1 + ( v2 * 0.6);
+                romper;
+            Es_igual_a 4:
+                mi_decimal = v1 + ( v2 * 0.8);
+                romper;
+            Es_igual_a 5:
+                mi_decimal = v1 + ( v2 * 0.5);
+                romper;
+        }
+    }
+    
+    publico vacio imprimirContenido(){
+        imprimir(convertirACadena(id + mi_decimal));
+    }
+    
+}
+
+publico clase Obj_contenedor {
+    
+    entero id;
+    decimal mi_decimal;
+    
+    publico Obj_contenedor(){
+    
+    }
+    
+    publico vacio agregarDecimal(entero v1 , entero v2 , entero v3){
+        Evaluar_si (v3){
+            Es_igual_a 1:
+                mi_decimal = v1 + ( v2 * 0.2);
+                romper;
+            Es_igual_a 2:
+                mi_decimal = v1 + ( v2 * 0.4);
+                romper;
+            Es_igual_a 3:
+                mi_decimal = v1 + ( v2 * 0.6);
+                romper;
+            Es_igual_a 4:
+                mi_decimal = v1 + ( v2 * 0.8);
+                romper;
+            Es_igual_a 5:
+                mi_decimal = v1 + ( v2 * 0.5);
+                romper;
+        }
+    }
+    
+    publico vacio imprimirContenido(){
+        imprimir(convertirACadena(id + mi_decimal));
+    }
+    
+}

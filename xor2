@@ -1,0 +1,71 @@
+ 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package numberastring;
+
+import java.util.ArrayList;
+
+/**
+ *
+ * @author luigitercero
+ */
+public class NumberAString {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        //esta es la entrada del archivo traducida 
+        if ((15 == 14) || ( /*esto seria un xor*/(((15 * 2 >= 15) && !(12 < 24)) || (!(15 * 2 >= 15) && (12 < 24))) /*aqui termina*/ || ((98 / 2 == 15) || (!(15 != 6 - 1))))) {
+            System.out.println("icorrecta");
+        } else {
+            System.out.println("correcta");
+        }
+        
+        /*tabla de verdad para xor
+            a b c
+            1 1 0
+            0 0 0
+            1 0 1
+            0 1 1
+        */
+        boolean a = true;
+        boolean b = true;
+
+        if (((a && !(b)) || (!(a) && (b)))) {
+            System.out.println("incorrecta");
+        } else {
+            System.out.println("coorecta");
+
+        }
+        a = false;
+        b = false;
+        if (((a && !(b)) || (!(a) && (b)))) {
+            System.out.println("incorrecta");
+        } else {
+            System.out.println("coorecta");
+        }
+        
+        a = true;
+        b = false;
+        if (((a && !(b)) || (!(a) && (b)))) {
+             System.out.println("coorecta");
+            
+        } else {
+           System.out.println("incorrecta");
+        }
+        
+        a = false;
+        b = true;
+        if (((a && !(b)) || (!(a) && (b)))) {
+             System.out.println("coorecta");
+            
+        } else {
+           System.out.println("incorrecta");
+        }
+
+    }
+    }

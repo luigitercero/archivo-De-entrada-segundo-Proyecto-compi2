@@ -1,0 +1,371 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+importar("Tree.gcc");
+importar("BNode.gcc");
+importar("Contacto.gcc");
+
+/**
+ *
+ * @author Compiladores Calificacion
+ */
+publico class BTree {
+
+    entero order = 4; // order of tree
+    BNode root;  //every tree has at least a root node
+
+    publico BTree(entero order) {
+        este.order = order;
+        root = nuevo BNode(order, {"\0"}); //nada
+    }
+
+// --------------------------------------------------------
+// this will be method to search for a given node where   |
+// we want to insert a key value. this method is called   |
+// from SearchnPrintNode.  It returns a node with key     |
+// value in it                                            |
+// --------------------------------------------------------
+    publico BNode search(BNode root, entero key) {
+        entero i = 0;//we always want to start searching the 0th index of node.
+
+        Repetir_Mientras (i < root.count && key > root.key[i]) {
+            i++;
+        }
+        si (i <= root.count && key == root.key[i]) ES_VERDADERO {
+            retorno root;
+        }
+        fin-si
+
+        si (root.leaf) es_verdadero {
+            retorno {'\0'};
+        } 
+        es_falso {
+            retorno search(root.getChild(i), key);
+        }
+        fin-si
+    }
+//  --------------------------------------------------------
+//  this will be the split method.  It will split node we  |
+//  want to insert into if it is full.                     |
+//  --------------------------------------------------------
+
+    publico vacio split(BNode x, entero i, BNode y) {
+        BNode z = nuevo BNode(order, nada);
+        z.leaf = y.leaf;
+        z.count = order - 1;
+
+        //for (entero j = 0; j < order - 1; j++) {
+        //Repetir_contando( variable: j; desde: 0; hasta: order - 2) {
+        entero j = 0;
+        Repetir_Mientras (j < order - 1){
+            z.key[j] = y.key[j + order];
+            z.contacto[j] = y.contacto[j + order];
+            j++;
+        }
+
+        si (!y.leaf) es_verdadero {
+            //for (entero k = 0; k < order; k++) {
+            //Repetir_contando( variable: k; desde: 0; hasta: order - 1) {
+
+            entero k = 0;
+            Repetir_Mientras(k < order) {
+                z.child[k] = y.child[k + order];
+                k++;
+            }
+        }
+        fin-si
+
+
+        y.count = order - 1;
+        
+        j = x.count;
+        //for (entero j = x.count; j > i; j--) {
+        Repetir_Mientras(j > i) {
+            x.child[j + 1] = x.child[j];
+
+            j--;
+        }
+
+        x.child[i + 1] = z;
+
+
+        //for (entero j = x.count; j > i; j--) {
+        j = x.count;
+        Repetir_Mientras(j > i){
+            x.key[j + 1] = x.key[j];
+            z.contacto[j + 1] = x.contacto[j];
+
+            j--;
+        }
+
+
+        x.key[i] = y.key[order - 1];
+        x.contacto[i] = y.contacto[order - 1];
+        y.key[order - 1] = 0;
+        y.contacto[order - 1] = nada;
+        
+
+        //for (entero j = 0; j < order - 1; j++) {
+
+        j = 0;
+        Repetir_Mientras(j < order - 1){
+            y.key[j + order] = 0;
+            y.contacto[j + order] = {'\0'};
+
+            i++;
+        }
+        x.count++;
+    }
+
+// ----------------------------------------------------------
+// this will be insert method when node is not full.        |
+// ----------------------------------------------------------
+    publico vacio nonfullInsert(BNode x, entero key, String nombre, Contacto contacto) {
+        entero i = x.count;
+        si (x.leaf) es_verdadero {
+            Repetir_Mientras (i >= 1 && key < x.key[i - 1]) {
+                x.key[i] = x.key[i - 1];
+                x.contacto[i] = x.contacto[i - 1];
+                i--;//decrement
+            }
+            x.key[i] = key;
+            x.contacto[i] = contacto;
+            x.count++;
+        } 
+        es_falso {
+            entero j = 0;
+            Repetir_Mientras (j < x.count && key > x.key[j]) {
+                j++;
+            }
+            si (x.child[j].count == order * 2 - 1) es_verdadero {
+                split(x, j, x.child[j]);//call split on node x's ith child
+                si (key > x.key[j]) es_verdadero {
+                    j++;
+                }
+                fin-si
+            }
+            fin-si
+            nonfullInsert(x.child[j], key, nombre, contacto);//recurse
+        }
+        fin-si
+    }
+//--------------------------------------------------------------
+//this will be the method to insert in general, it will call    |
+//insert non full if needed.                                    |
+//--------------------------------------------------------------
+
+    publico Tree insertAvl(){
+        Tree tree = nuevo Tree();
+ 
+//         Constructing tree given in the above figure 
+        tree.root = tree.insert(tree.root, 10);
+        tree.root = tree.insert(tree.root, 20);
+        tree.root = tree.insert(tree.root, 30);
+        tree.root = tree.insert(tree.root, 40);
+        tree.root = tree.insert(tree.root, 50);
+        tree.root = tree.insert(tree.root, 25);
+        retorno tree;
+    }
+    publico vacio insert(BTree t, entero key, String nombre) {
+        BNode r = t.root;
+        Tree tree = insertAvl();
+        tree.insert(tree.root, key);
+
+        Contacto contacto = nuevo Contacto(tree, key, nombre);
+        si (r.count == 2 * order - 1) es_verdadero {
+            BNode s = nuevo BNode(order, nada);//new node
+            t.root = s;
+            s.leaf = false;
+            s.count = 0;
+            s.child[0] = r;
+            split(s, 0, r);
+            nonfullInsert(s, key, nombre, contacto);
+        } 
+        es_falso {
+            nonfullInsert(r, key, nombre, contacto);
+        }
+        fin-si
+    }
+
+// ---------------------------------------------------------------------------------
+// this will be method to print out a node, or recurses when root node is not leaf |
+// ---------------------------------------------------------------------------------
+    publico vacio print(BNode n) {
+        entero i = 0;
+        //for (entero i = 0; i < n.count; i++) {
+        Repetir_Mientras(i < n.count){
+
+            imprimir(concatenar(convertirAcadena(n.getValue(i)), " "));//this part prints root node
+
+            i++;
+        }
+
+        si (!n.leaf) es_verdadero {
+            entero j = 0;
+
+            //for (entero j = 0; j <= n.count; j++) {
+            Repetir_Mientras(j <= n.count){
+                si (n.getChild(j) != nada) es_verdadero {
+                    imprimir(" ");
+                    print(n.getChild(j));
+                }
+                fin-si
+                j+++
+            }
+        }
+        fin-si
+    }
+
+    publico vacio printSolo(BNode n, entero x) {
+        entero i = 0;
+
+        //for (entero i = 0; i < n.count; i++) {
+        Repetir_Mientras(i < n.count) {
+            si (n.getValue(i) == x) es_verdadero{
+
+                imprimir("Numero: -----> ");
+                imprimir(convertirAcadena(n.contacto[i].numero));
+                imprimir(" ");//this part prints root node
+
+                imprimir("Nombre: -----> ");
+                imprimir(n.contacto[i].nombre);
+                
+                imprimir("Imprimir AVL --------> Su AVL es --->");
+                imprimir("Preorder traversal of constructed tree is : ----> ");
+                n.contacto[i].tree.preOrder(n.contacto[i].tree.root);
+            }
+            fin-si
+
+            i++;
+        }
+        si (!n.leaf) es_verdadero {
+            entero j = 0;
+            //for (entero j = 0; j <= n.count; j++) {
+            Repetir_Mientras(j <= n.count){
+
+                si (n.getChild(j) != nada) es_verdadero{
+                    si (n.getValue(j) == x) es_verdadero{
+                        imprimir("Numero: -----> ");
+                        imprimir(convertirAcadena(n.contacto[j].numero));
+                        imprimir(" ");//this part prints root node
+
+                        imprimir("Nombre: -----> ");
+                        imprimir(n.contacto[j].nombre);
+                        
+                        imprimir("Imprimir AVL --------> Su AVL es --->");
+                        imprimir("Preorder traversal of constructed tree is : ----> ");
+                        n.contacto[j].tree.preOrder(n.contacto[j].tree.root);
+                    }
+                    fin-si
+                }
+                fin-si
+
+                j++;
+            }
+        }
+        fin-si
+        
+    }
+// ------------------------------------------------------------
+// this will be method to print out a node                    |
+// ------------------------------------------------------------
+    publico vacio SearchPrintNode(BTree T, entero x) {
+        BNode temp = nuevo BNode(order, nada);
+        temp = search(T.root, x);
+        si (temp == nada) es_verdadero {
+            imprimir("The Key does not exist in this tree");
+        } 
+        es_falso {
+            imprimir("Informacion Dentro del Nodo");
+            printSolo(temp, x);
+            imprimir(" ");
+            imprimir(" ");
+            imprimir(" ");
+            imprimir("Listado completo del Nodo");
+            print(temp);
+        }
+        fin-si
+    }
+    
+    publico vacio Modificar(BTree T, entero x, caracter name [25], entero numero) {
+        BNode temp = nuevo BNode(order, {'\0'});
+        temp = search(T.root, x);
+        si (temp == nada) es_verdadero {
+            imprimir("The Key does not exist in this tree");
+        } 
+        es_falso {
+            Imprimir("Informacion A Modificar");
+            Modificar(temp, x, name, numero);
+            
+        }
+        fin-si
+    }
+    
+    publico vacio Modificar(BNode n, entero x, caracter name[25], entero numero){
+        entero i = 0;
+        //for (entero i = 0; i < n.count; i++) {
+        Repetir_Mientras(i < n.count){
+            si (n.getValue(i) == x) es_verdadero {
+                n.contacto[i].nombre = name;
+                n.contacto[i].numero = numero;
+                n.contacto[i].tree.insert(n.contacto[i].tree.root, numero);
+                retorno;
+            }
+            i++;
+        }
+        si (!n.leaf) es_verdadero{
+            entero j = 0;
+            Repetir_Mientras(j <= n.count) {
+            //for (entero j = 0; j <= n.count; j++) {
+                si (n.getChild(j) != nada) es_verdadero {
+                    si (n.getValue(j) == x) es_verdadero {
+                        n.contacto[j].nombre = name;
+                        n.contacto[j].numero = numero;
+                        n.contacto[j].tree.insert(n.contacto[j].tree.root, numero);
+                        retorno;
+                    }
+                    fin-si
+                }
+                fin-si
+                j++;
+            }
+        }
+        fin-si
+    }
+    
+//--------------------------------------------------------------
+//this method will delete a key value from the leaf node it is |
+//in.  We will use the search method to traverse through the   |
+//tree to find the node where the key is in.  We will then     |
+//iterated through key[] array until we get to node and will   |
+//assign k[i] = k[i+1] overwriting key we want to delete and   |
+//keeping blank spots out as well.  Note that this is the most |
+//simple case of delete that there is and we will not have time|
+//to implement all cases properly.                             |
+//--------------------------------------------------------------
+    publico vacio deleteKey(BTree t, entero key) {
+        BNode temp = nuevo BNode(order, nada);
+        temp = search(t.root, key);
+        si (temp.leaf && temp.count > order - 1) es_verdadero {
+            entero i = 0;
+            Repetir_Mientras (key > temp.getValue(i)) {
+                i++;
+            }
+            //for (entero j = i; j < 2 * order - 2; j++) {
+            entero j = i;
+            Repetir_Mientras (j < 2 * order - 2) {
+                temp.key[j] = temp.getValue(j + 1);
+                temp.contacto[j] = temp.contacto[j + 1];
+
+                j++;
+            }
+            temp.count--;
+        } 
+        es_falso {
+            imprimir("This node is either not a leaf or has less than order - 1 keys.");
+        }
+        fin-si
+    }
+}

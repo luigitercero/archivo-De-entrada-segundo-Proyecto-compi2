@@ -1,0 +1,78 @@
+	estructura Persona [
+	    caracter nombre[25];
+	    caracter genero[20];
+	    entero edad;
+	    Persona amigo;
+	];
+	clase estruct {
+	    entero Insertar(Caracter nombre[25], caracter genero [2], entero edad){
+	        entero reserva = reservarMemoria(   consultartamanio(Persona)   );
+	        crearPuntero(Persona, per) = reserva;
+	        per->nombre = nombre;
+	        per->genero = genero;
+	        per->edad = edad;
+	        per->amigo = nada;
+	        retorno reserva;
+	    }
+
+	    vacio EliminarPuntero (Persona puntero ptn){
+	        //destruirPuntero(obtenerDireccion(ptn));
+	    }
+	    vacio Imprimir_Puntero(Persona puntero raiz){
+	        
+	        crearPuntero(Persona,temp);
+	        temp = raiz;
+	        
+	        caracter salida [50];
+	        Repetir_Mientras(temp != nada){
+	            imprimir ("Datos de: --------------------------------> ");
+	            
+	            Concatenar(salida, "Nombre: ");
+	            Concatenar(salida, temp->nombre);
+	            imprimir(salida);
+	            salida = "";
+
+	            Concatenar(salida, "Edad: ", temp->edad);
+	            imprimir(salida);
+	            salida = "";
+
+	            Concatenar(salida, "Genero: ");
+	            Concatenar(salida,temp->genero);
+	            imprimir(salida);
+	            salida = "";
+
+	            imprimir ("<-------------- Amigo ---------------> ");
+	            temp = temp->amigo;
+	        }
+	    }
+
+	    principal () {
+	        entero p1 = Insertar("Jose", "M", 15);
+	        entero p2 = Insertar("Henry", "M", 17);
+	        entero p3 = Insertar("Juan", "M", 18);
+	        entero p4 = Insertar("Daniel", "M", 19);
+	        entero p5 = Insertar("Calificacion", "M", 60);
+
+	       
+	        crearPuntero(Persona,ultimo);
+	        crearPuntero(Persona, raiz) = p1;
+	        crearPuntero(Persona, am2) = p2;
+	        crearPuntero(Persona, am3) = p3;
+	        crearPuntero(Persona, am4) = p4;
+	        crearPuntero(Persona, am5) = p5;
+
+	        ultimo = am4;
+	        am4->amigo = p5;
+	        am3->amigo = p4;
+	        am2->amigo = p3;
+	        raiz->amigo = am2;
+
+
+	        imprimir ("<-------------- Listado De Personas ---------------> ");
+	        Imprimir_Puntero(raiz);
+	        imprimir ("<-------------- Se Elimino Punteros ---------------> ");
+	        EliminarPuntero(raiz->amigo->amigo);
+	        imprimir ("<-------------- Impresion Quedan ---------------> ");
+	        Imprimir_Puntero(raiz);
+	    }    
+	} 

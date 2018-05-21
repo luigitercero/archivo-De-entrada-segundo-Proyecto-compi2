@@ -1,0 +1,39 @@
+		clase Entrada_2{ 
+			publico vacio Llenar_Arreglo(){
+		        entero Numeros [6][6];
+		        
+		        Numeros[1][0] = 1;
+		        Numeros[2][0] = 2;
+		        Numeros[3][0] = 3;
+		        Numeros[4][0] = 4;
+		        Numeros[5][0] = 5;
+		        Numeros[0][1] = 5;
+		        Numeros[0][2] = 4;
+		        Numeros[0][3] = 3;
+		        Numeros[0][4] = 2;
+		        Numeros[0][5] = 1;
+		        Numeros[1][1] = Numeros[1][0] * Numeros[0][1];
+		        Numeros[2][2] = Numeros[2][0] * Numeros[0][2];
+		        Numeros[3][3] = Numeros[3][0] * Numeros[0][3];
+		        Numeros[4][4] = Numeros[4][0] * Numeros[0][4];
+		        Numeros[5][5] = Numeros[5][0] * Numeros[0][5];
+		        caracter salida [100];
+		        Repetir_contando (variable: i; desde: 1; hasta: 5){
+		        	concatenar (salida, "Salida Posicion   ", i);
+                    concatenar (salida, " : X = ");
+		        	concatenar (salida, Numeros[i][0] );
+		        	imprimir ( salida );
+
+		        	salida = "";
+		        	concatenar ( salida, "; Y =  ; ",  Numeros[0][i]) ;
+		        	concatenar(salida, ";  X*Y = Z = ");
+		        	concatenar (salida, Numeros[i][i]);
+		        	imprimir (salida);
+		        }
+		    }
+
+			principal()
+			{
+				Llenar_Arreglo();
+			}
+		} 

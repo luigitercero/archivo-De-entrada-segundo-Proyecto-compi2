@@ -53,9 +53,9 @@ clase Nodo {
     }
 
     vacio InsertarNodo(Nodo new) {
-        si (new.valor <= valor) {
+        si (new.valor <= valor) 
             es_verdadero {
-                si (hijoi == false) {
+                si (hijoi == false) 
                     es_verdadero {
                         izq = new;
                         hijoi = true;
@@ -63,11 +63,11 @@ clase Nodo {
                     es_falso {
                         izq.InsertarNodo(new);
                     }
-                }
+                fin-si
             }
             
             es_falso {
-                si (hijod == false) {
+                si (hijod == false) 
                     es_verdadero{
                         der = new;
                         hijod = true;
@@ -75,119 +75,74 @@ clase Nodo {
                     es_falso{
                         der.InsertarNodo(new);
                     }
-                }
+                fin-si
             }
-        }
+        fin-si
     }
     vacio ImprimirIn(){
-        si(hijoi != false) {
+        si(hijoi != false) 
             es_verdadero {
                 izq.imprimirIn();
             } es_falso {
 
             }
-        }
+        fin-si
         
         imprimir(valor);
         
-        si(hijod != false){
+        si(hijod != false)
             es_verdadero{
                 der.imprimirIn();
             }
             es_falso {
         
             }
-        }
+        fin-si
     }
     
     vacio ImprimirPost() {
-        si (hijoi != false) {
+        si (hijoi != false) 
             es_verdadero {
                  izq.imprimirPost();
             }
             es_falso {
             
             }
-        }   
+        fin-si  
 
-        si (hijod != false) {
+        si (hijod != false) 
             es_verdadero {
                  der.imprimirPost();
             }
             es_falso {
             
             }
-        }
+        fin-si
         imprimir(valor);
     }
 
     vacio ImprimirPre() {
         imprimir(valor);
         
-        si (hijoi != false) {
+        si (hijoi != false) 
             es_verdadero {
                 izq.imprimirPre();
             }
             es_falso {
             
             }
-        }
+        fin-si
 
-        si (hijod != false) {
+        si (hijod != false) 
             es_verdadero {
                 der.imprimirPre();
             }
             es_falso {
             
             }
-        }
+        fin-si
     }
 }
 
 
 
-clase main {
-
-    vacio principal() {
-        
-        Si((5>(1+2) && true ) || ((5+2)-1)<10 || !(false)){
-            funciones1 f1 = nuevo funciones1()?
-
-            
-            imprimir("-------------------------------- Primera Validación---------------------------")?
-            entero areaCuadrado = f1.areaCuadradoTriangulo(0, 5, "cuadrado").areaCuadrado?
-            imprimir("El cuadrado tiene área de 25")?
-            imprimir("El área del cuadrado es: " + areaCuadrado)?
-            decimal areaTriangulo = f1.areaCuadradoTriangulo("triangulo", 7, 5).areaTriangulo?
-            imprimir("El triangulo tiene área de 17.5")?
-            imprimir("El área del triangulo es: " + areaTriangulo)?
-            imprimir("------------------------------------------------------------------------------")?
-            
-            
-            imprimir("-------------------------------- Segunda Validación---------------------------")?
-            decimal areaCirculo = f1.areaCirculo(7.8).areaCirculo?
-            imprimir("El circulo tiene área de 191.134944")?
-            imprimir("El área del circulo es: " + areaCirculo)?
-            imprimir("------------------------------------------------------------------------------")?
-            
-
-            imprimir("-------------------------------- Tercera Validación---------------------------")?
-            imprimir("Fibinacci resultado = 1,1,2,3,5,8,13")?
-            entero n = 7?
-            Para  entero i = 1 : i <= n : i++){
-                imprimir(i + ": " + f1.fibonacci(i))?
-            }
-            imprimir("------------------------------------------------------------------------------")?
-            
-                
-            
-            imprimir("-------------------------------- Quinta Validación---------------------------")?
-            entero fact = f1.Factorial(7)?
-            imprimir("El factorial de 7? debe ser 5040")?
-            imprimir("El factorial de 7: " + fact)?
-            imprimir("------------------------------------------------------------------------------")?
-
-        }
-    }
-    
-}

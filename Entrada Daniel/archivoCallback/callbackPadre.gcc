@@ -1,0 +1,6 @@
+importar("callbackPadreHijo.gcc");
+publico clase padreArchivo hereda_de hijoPadreArchivo{
+	privado entero primeroValorHeredado=10;
+	privado entero segundoValorHeredado=100;
+	booleano bandera=falso;
+}

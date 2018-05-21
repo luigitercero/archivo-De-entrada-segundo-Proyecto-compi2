@@ -1,0 +1,9 @@
+ 
+clase pedir {
+    principal () {
+       entero a;
+        leer_Teclado ("n", a);
+        imprimir(a);
+    }
+    
+}

@@ -13,10 +13,20 @@ clase Casteo {
         c = "12345.50";
         entero b = convertirAEntero(c);
         valores = "el resultado es 12345 y me dio : ";
+        imprimir (valores);
         concatenar(valores, convertirAcadena(b));
         imprimir (valores);
     }
 
+    
+     clase Humano {
+    Entero edad;
+    Caracter nombre[15];
+    
+    publico vacio nacer(){
+        este.edad = 0;
+    }
+}
     publico  caracter [] convertirAcadena (decimal a) {
         entero divisor = 0;
         entero residuo = 0;
@@ -85,41 +95,42 @@ clase Casteo {
         entero primero = 1;
         caracter numero[16];
         entero poss = 0;
-       
-        repetir_mientras (a > 10) {
-            repetir_mientras (a >= 10) {
-                divisor++;
-                a = a - 10;
-            }
-            si (primero == 1) {
-                es_verdadero {
-                    repetir_mientras (a >= 1) {
-                        a--;
-                        residuo++;
-                    }
-                    primero = 0;
-                    a = residuo;
-                }es_falso {
-
-                }
-            }
-            numero[poss] = a +48;
-            poss++;
-            a = divisor;
-            divisor = 0;
+        entero dividendo = 1 ;
+        
+        repetir_mientras (a > dividendo) {
+            dividendo = dividendo *10;
         }
+        si (dividendo>a) {
+            es_verdadero {
+             dividendo = dividendo /10;
+             }
+            es_falso {
+            }
+        }
+        
+       repetir_mientras (1<dividendo) {
+            repetir_mientras (a >=dividendo) {
+               divisor++;
+                a = a - dividendo;
+            }
+            
+            si( divisor > 10 ) {
+                es_verdadero {
+                  dividendo = dividendo /10;
+                } 
+                es_falso {
+                	dividendo = dividendo /10;
+                    numero[poss] = divisor + 48;
+                    poss++;
+                    divisor = 0;
+                }
+            
+            }
+        }
+       
         numero[poss] = a +48;
         poss++;
-        entero countCarac = poss;
-        entero c = 0;
-        entero temp = countCarac;
-        caracter salida[16];
-        repetir_mientras (c < countCarac) {
-         salida[c] = numero[temp - 1];
-         temp--;
-         c++;
-        }
-        retorno salida;
+        retorno numero;
     }
     
     

@@ -1,0 +1,13 @@
+ clase main  {
+    principal () {
+    prueba( 10,30,30,5);
+        cara("luis","luis",'a');
+    }
+    
+    publico vacio cara(caracter nombre[23],caracter m[25],caracter a) {
+        imprimir (a);
+    }
+    publico vacio prueba(entero a, entero b, entero c, entero d) {
+    
+    }
+ }

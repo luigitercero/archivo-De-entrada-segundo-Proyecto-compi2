@@ -1,24 +1,37 @@
- 
+clase main {
+    principal() {
+    
+}
+}
+                                   
 clase  nodo {
-    entero valor;
+    luigiTercero valor;
+    entero index ;
     nodo siguiente;
     
-    nodo (entero valor) {
+    nodo (luigiTercero valor,entero index) {
         este.valor = valor;
+        este.index = index;
         este.siguiente = nada;
     }
-
+    
 }
 
-clase list {
-    nodo raiz;
+clase lista {
     
-    list () {
+    nodo raiz;
+    entero cont;
+    
+    lista () {
         este.raiz = nada;
+        este.cont = 0;
     }
     
-    publico vacio add (nodo valor) {
-        si (este.raiz == nada ) {
+    publico vacio insertar (luigiTercero elemento) {
+        este.cont ++;
+        Nodo valor = nuevo Nodo(elemento,este.cont);
+            
+        si (este.raiz == nada ) 
             es_verdadero {
                 este.raiz = valor;
             }
@@ -29,14 +42,64 @@ clase list {
                 }
                 actual.siguiente = valor;
             }
-        }
+        fin-si
     }
+    
+    publico luigiTercero obtener (entero indice) {
+        nodo actual ;
+        actual  = raiz;
+        si (actual == nada ) 
+            es_verdadero {
+                retorno nada;
+            }
+            es_falso {
+               repetir_mientras (actual.siguiente != nada) {
+                    si (actual.index == indice)
+                        es_verdadero {
+                            retorno actual.valor;
+                        }
+                        es_falso {
+                
+                        }
+                    fin-si
+                  actual = actual.siguiente;
+                }
+            }
+        fin-si
+        retorno nada;
+    }
+    
+    
+    publico luigiTercero buscar (luigiTercero valor) {
+        nodo actual ;
+        actual  = raiz;
+        si (actual == nada ) 
+            es_verdadero {
+                retorno nada;
+            }
+            es_falso {
+               repetir_mientras (actual.siguiente != nada) {
+                    si (actual.valor == valor)
+                        es_verdadero {
+                            retorno actual.valor;
+                        }
+                        es_falso {
+                
+                        }
+                    fin-si
+                  actual = actual.siguiente;
+                }
+            }
+        fin-si
+        retorno nada;
+    }
+    
     
     publico vacio recorrer () {
      nodo actual ;
         actual  = raiz;
         
-        si (actual == nada ) {
+        si (actual == nada ) 
             es_verdadero {
                 imprimir("no hay nada en la lista");
             }
@@ -48,7 +111,7 @@ clase list {
                    imprimir(actual.valor);
                 }
             }
-        }
+        fin-si
     }
     
 }
@@ -56,15 +119,229 @@ clase list {
 clase ejecucion {
 
     principal () {
-        list l ;
-        l = nuevo list();
-        nodo a;
-        a =nuevo nodo(10);
-        l.add (a);
-        a =nuevo nodo(20);
-        l.add (a);
-        a =nuevo nodo(30);
-        l.add (a);
-        l.recorrer();
+        lista l;
+        pila p;
+        cola c;
+        p = nuevo pila(caracter);
+        c = nuevo cola(caracter);
+        l = nuevo lista(caracter);
+        value valor2 = nuevo value(10);
+        value valor3 = nuevo value(20);
+        value valor4 = nuevo value(30);
+        l.insertar (1);
+        l.insertar (2);
+        l.insertar (3);
+        
+        p.apilar(4);
+        p.apilar(5);
+        p.apilar(6);
+        p.desapilar();
+        c.encolar(7);
+        c.encolar(8);
+        c.encolar(9);
+        c.desencolar();
+         l.recorrer();
+        p.recorrer();
+        c.recorrer();
+        
+        value a = l.obtener(2);
+        imprimir(a.m);
     }
+}
+
+
+
+clase Pila {
+  nodo raiz;
+    entero cont;
+    
+    pila () {
+        este.raiz = nada;
+        este.cont = 0;
+    }
+    
+    publico vacio apilar (luigiTercero elemento) {
+        este.cont ++;
+        Nodo valor = nuevo Nodo(elemento,este.cont);
+            
+        si (este.raiz == nada ) 
+            es_verdadero {
+                este.raiz = valor;
+            }
+            es_falso {
+                valor.siguiente = raiz;
+                raiz = valor;
+            }
+        fin-si
+    }
+    
+    publico luigiTercero obtener (entero indice) {
+        nodo actual ;
+        actual  = raiz;
+        si (actual == nada ) 
+            es_verdadero {
+                retorno nada;
+            }
+            es_falso {
+               repetir_mientras (actual.siguiente != nada) {
+                    si (actual.index == indice)
+                        es_verdadero {
+                            
+                            retorno actual.valor;
+                        }
+                        es_falso {
+                
+                        }
+                    fin-si
+                  actual = actual.siguiente;
+                }
+            }
+        fin-si
+        retorno nada;
+    }
+    
+    
+    publico luigiTercero desapilar () {
+        nodo actual ;
+        actual  = raiz;
+        si (actual == nada ) 
+            es_verdadero {
+                retorno nada;
+            }
+            es_falso {
+                cont--;
+                raiz = actual.siguiente;
+                retorno actual.valor;
+            }
+        fin-si
+        retorno nada;
+    }
+    
+    
+    publico vacio recorrer () {
+     nodo actual ;
+        actual  = raiz;
+        
+        si (actual == nada ) 
+            es_verdadero {
+                imprimir("no hay nada en la lista");
+            }
+            es_falso {
+                
+                imprimir(actual.valor);
+                repetir_mientras (actual.siguiente != nada) {
+                    actual = actual.siguiente;
+                   imprimir(actual.valor);
+                }
+            }
+        fin-si
+    }
+
+}
+
+
+
+clase cola {
+  nodo raiz;
+    entero cont;
+    
+    cola () {
+        este.raiz = nada;
+        este.cont = 0;
+    }
+    
+    publico vacio encolar (luigiTercero elemento) {
+        este.cont ++;
+        Nodo valor = nuevo Nodo(elemento,este.cont);
+            
+        si (este.raiz == nada ) 
+            es_verdadero {
+                este.raiz = valor;
+            }
+            es_falso {
+                nodo actual = raiz;
+                repetir_mientras (actual.siguiente != nada) {
+                actual = actual.siguiente;
+                }
+                actual.siguiente = valor;
+            }
+        fin-si
+    }
+    
+    publico luigiTercero obtener (entero indice) {
+        nodo actual ;
+        actual  = raiz;
+        si (actual == nada ) 
+            es_verdadero {
+                retorno nada;
+            }
+            es_falso {
+               repetir_mientras (actual.siguiente != nada) {
+                    si (actual.index == indice)
+                        es_verdadero {
+                            
+                            retorno actual.valor;
+                        }
+                        es_falso {
+                
+                        }
+                    fin-si
+                  actual = actual.siguiente;
+                }
+            }
+        fin-si
+        retorno nada;
+    }
+    
+    
+    publico luigiTercero desencolar () {
+        nodo actual ;
+        actual  = raiz;
+        si (actual == nada ) 
+            es_verdadero {
+                retorno nada;
+            }
+            es_falso {
+                cont--;
+                raiz = actual.siguiente;
+                retorno actual.valor;
+            }
+        fin-si
+        retorno nada;
+    }
+    
+    
+    publico vacio recorrer () {
+     nodo actual ;
+        actual  = raiz;
+        
+        si (actual == nada ) 
+            es_verdadero {
+                imprimir("no hay nada en la lista");
+            }
+            es_falso {
+                
+                imprimir(actual.valor);
+                repetir_mientras (actual.siguiente != nada) {
+                    actual = actual.siguiente;
+                   imprimir(actual.valor);
+                }
+            }
+        fin-si
+    }
+
+}
+
+
+
+
+
+
+clase value {
+	entero m ;
+    
+    value (entero m) {
+    	este.m = m;
+    }
+
 }

@@ -1,0 +1,4 @@
+privado clase hermanohijo{
+	decimal n1=10.123;
+	decimal n2=verdadero;
+}

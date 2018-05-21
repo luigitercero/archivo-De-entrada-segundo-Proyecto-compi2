@@ -1,0 +1,55 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+importar("Persona.gcc");
+
+/**
+ *
+ * @author 
+ */
+publico clase Pais {
+    Caracter Pais [25];
+    Persona Per;
+    Lista Dpt_Lista;
+    entero Peso = 0;
+    
+    Persona Inicial;
+    Persona Final;
+    entero Cnt = 0;
+    
+    publico Pais(){
+        
+    }
+    
+    publico Pais(entero pos){
+        este.Peso = pos;
+    }
+    
+    publico vacio Pais(caracter pais [25]){
+        este.Pais = pais;
+        este.Cnt = 0;
+        Dpt_Lista = nuevo Lista(Persona);
+        este.Per = nuevo Persona(pais, Cnt, 0);
+        este.Inicial = este.Per;
+        este.Final = este.Per;
+        
+        AddLista();
+        Cnt++;
+    }
+    
+    privado vacio AddLista(){
+        Dpt_Lista.insertar(este.Final);
+    }
+    
+    //inserta al final de la lista
+    publico vacio AddPersona(caracter ciudad [25], entero numero){
+        este.Final.Sig = nuevo Persona(ciudad, Cnt, numero);
+        este.Final.Sig.Ant = este.Final;
+        este.Final = este.Final.Sig;
+        
+        AddLista();
+        este.Cnt ++;
+    }
+}

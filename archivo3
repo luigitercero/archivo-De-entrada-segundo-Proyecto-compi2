@@ -86,7 +86,7 @@ clase Archivo3 hereda_de metodos{
         imprimir("--------------Tercera validacion-----------------");
         multMatrices();
         imprimir("--------------Cuarta validacion-----------------");
-        Hanoi(5, 1, 2, 3);
+        Hanoi(4, 1, 2, 3);
     }
     
 }

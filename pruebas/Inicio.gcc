@@ -1,0 +1,126 @@
+
+
+ clase Inicio {
+
+    principal(){
+        Operaciones op = nuevo Operaciones();
+        op.aritmeticas();
+
+        op.operaciones_relacionales();
+
+        op.operaciones_logicas();
+        
+        op.operaciones_conjuntas();
+        
+        Funciones fun = nuevo Funciones();
+
+        fun.saludo();
+
+        fun.ciclo_vida();
+
+        Entero res = fun.fibonacci_recursivo(15);
+        imprimir("fibonacci_recursivo");
+        sal = "Salida Fibonacci Recursivo ";
+        concatenar(sal, res);
+        imprimir(sal);
+        
+        fun.pedir_num();
+    }
+
+}
+
+
+
+
+
+
+ clase Funciones {
+
+    publico vacio saludo(){
+        imprimir("10) Saludo");
+        Entero conta = 0;
+        hacer{
+            evaluar_si(conta){
+                Es_igual_a 0: 
+                    imprimir("Esta");
+                    romper;
+                Es_igual_a 1: 
+                    imprimir(" salida");
+                    romper;
+                Es_igual_a 2:
+                    imprimir(" es");
+                    romper;
+                Es_igual_a 3: 
+                    imprimir(" CORRECTA!!");
+                    romper;
+                defecto:
+                    imprimir("Salida incorrecta!!!");
+            }
+            conta++;
+        }mientras(conta < 4);
+    }
+
+    publico vacio ciclo_vida(){
+        imprimir("12) ciclo_vida");
+        Persona Carlos = nuevo Persona(16, "Jose", "Martinez", 'M');
+        Persona Josefina = nuevo Persona(15, "Luisa", "Tobar", 'F');
+        Persona Carlitos = nuevo Persona();
+        Entero cont = 0;
+        Repetir_Mientras(cont < 4){
+            cont++;
+            si(cont ==4)
+                es_verdadero{
+                    Carlitos = Carlos.reproducir(Josefina, "Carlitos");
+                    Josefina.matrimonio(Carlos);
+                    caracter text[40] = "Nombre Hijo: ";
+                    concatenar(text, Carlitos.nombre);
+                    concatenar(text, Carlitos.apellido);
+                    imprimir(text);
+                    text = "Nombre esposa: ";
+                    concatenar(text, Josefina.nombre);
+                    concatenar(text, Josefina.apellido);
+                    imprimir(text);
+                }
+                es_falso {
+                
+                }
+            fin-si
+        }
+    }
+    
+    
+    Entero fibonacci_recursivo(Entero n){
+        si (n==0)
+            es_verdadero{
+                retorno 0;
+            }
+            es_falso{
+                si (n==1)
+                    es_verdadero{
+                        retorno 1;
+                    } 
+                    es_falso{
+                        si(n>1)
+                            es_verdadero{
+                                retorno fibonacci_recursivo(n-1) + fibonacci_recursivo(n-2);
+                            }
+                            es_falso {
+                            
+                            }
+                        fin-si
+                    }
+                fin-si 
+            }
+        fin-si 
+        retorno -1;
+    }
+    
+    publico vacio pedir_num(){
+        imprimir("Pedir num");
+        Entero num = 0;
+        hacer 
+        {
+            Leer_Teclado ("Ingrese numero diferente de 7", num); 
+        } mientras (!(num == 7));
+    }
+}

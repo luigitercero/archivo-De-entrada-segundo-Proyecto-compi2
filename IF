@@ -1,0 +1,50 @@
+ 
+	clase Ejemplo_If_Anidado{ 
+			principal()
+			{
+				entero x_1 = 15;
+		        booleano b_1 = true;
+		        booleano b_2 = false;
+		        caracter s[5] = {'H', 'o', 'l', 'a'};
+		        decimal d = 25.123456788;
+		        
+		        Si(-1 != -1) Es_verdadero{
+		        	Retorno;
+		        }
+		        Fin-Si
+		        Si(true) Es_verdadero{
+	        		Si((b_1 == true && b_2 == false) || (b_1 == true && b_2 == true)) Es_verdadero{
+		                Si(x_1 >= 10 && x_1 <= 25) Es_verdadero{
+		                    Si(d > 25.123456787 && d < 25.123456789) Es_verdadero{
+		                        Si(s[2] == 'l') Es_verdadero{
+		                            imprimir("Salida Correcta -- Verdadero...");
+		                        }
+		                        Es_falso{
+		                            imprimir("ERROR...");
+		                        }
+		                    	Fin-si
+		                    }
+		                    Es_falso{
+		                        imprimir("ERROR...");
+		                    }
+		                    Fin-si
+		                }
+		                Es_falso
+		                {
+		                    imprimir("ERROR...");
+		                }
+		                Fin-si
+		            }
+		            Es_falso
+		            {
+		                imprimir("ERROR...");
+		            }
+		            Fin-si
+	        	}
+		        Es_falso
+		        {
+		            imprimir("ERROR...");
+		        }
+		    	Fin-si
+			}
+		}

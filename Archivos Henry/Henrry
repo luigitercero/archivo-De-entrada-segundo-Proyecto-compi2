@@ -1,0 +1,546 @@
+ 
+ clase Entrada {
+
+    Principal{
+        
+        Operaciones operar = nuevo Operaciones();
+        
+        imprimir("================= Funcion 1 ====================");
+        operar.iniciar_vectores(10,5);
+        imprimir("================= Funcion 1 ====================");
+        operar.iniciar_vectores(7,10);
+        imprimir("================================================");
+        
+        imprimir("================= Funcion 2 ====================");
+        operar.iniciar_lista(10,5);
+        imprimir("================= Funcion 2 ====================");
+        operar.iniciar_lista(7,10);
+        imprimir("================================================");
+        
+        imprimir("================= Funcion 3 ====================");
+        operar.iniciar_pila(10,5,0);
+        imprimir("================= Funcion 3 ====================");
+        //operar.iniciar_pila(10,5,1);
+        imprimir("================================================");
+        
+        imprimir("================= Funcion 4 ====================");
+        operar.iniciar_cola(10,5,0);
+        imprimir("================= Funcion 4 ====================");
+        //operar.iniciar_cola(10,5,1);
+        imprimir("================================================");
+        
+        imprimir("================= Funcion 5 ====================");
+        operar.iniciar_matriz(3 , 3 , 10);
+        imprimir("================= Funcion 5 ====================");
+        operar.iniciar_matriz(10 , 6 , 203);
+        imprimir("================================================");
+        
+        
+        imprimir("================= Vector a Lista ====================");
+        operar.vector_a_lista(3 , 3);
+        imprimir("================= Vector a Lista ====================");
+        operar.vector_a_lista(10 , 6);
+        imprimir("=====================================================");
+        
+        imprimir("================= Vector a Pila ====================");
+        operar.vector_a_pila(3 , 3 , 0);
+        imprimir("================= Vector a Pila ====================");
+        //operar.vector_a_pila(10 , 6 , 1);
+        imprimir("=====================================================");
+        
+        imprimir("================= Vector a Cola ====================");
+        operar.vector_a_cola(3 , 3 , 0);
+        imprimir("================= Vector a Cola ====================");
+        //operar.vector_a_cola(10 , 6 , 1);
+        imprimir("=====================================================");
+        
+        imprimir("================= Vector a Cola ====================");
+        operar.matriz_a_vector(3 , 3 , 0);
+        imprimir("================= Vector a Cola ====================");
+        //operar.matriz_a_vector(10 , 6 , 1);
+        imprimir("=====================================================");
+        
+        imprimir("================= Vaciar Cola ====================");
+        operar.iniciar_cola(50,5,1);
+        imprimir("================================================");
+        
+        imprimir("================= Vaciar Pila ====================");
+        operar.iniciar_pila(30,5,1);
+        imprimir("=================================================");
+        
+        imprimir("================= Compara Lista Vector ====================");
+        operar.vector_compara_lista(10,3,10,3);
+        imprimir("================= Compara Lista Vector ====================");
+        operar.vector_compara_lista(10,6,10,3);
+        imprimir("================================================");
+        
+        imprimir("================= Copia lista matriz ====================");
+        operar.copiar_lista_matriz(3,5,1);
+        imprimir("================================================");
+    }
+    
+}
+
+
+
+ class Operaciones {
+    
+    publico vacio iniciar_lista(entero v_size , entero datos){
+        
+        Listas mi_lista = nuevo Lista(Obj_contenedor);
+        
+        Si(datos < v_size){
+            
+            entero contador = datos;
+            entero eleccion = 1;
+            Repetir_Mientras(contador <= v_size ){
+                Obj_contenedor nuevo = nuevo Obj_contenedor();
+                nuevo.id = contador;
+                nuevo.agregarDecimal(contador, datos, eleccion);
+                mi_lista.insertar(nuevo);
+                Si(eleccion == 5){
+                    eleccion = 1;
+                }
+                Es_falso{
+                    eleccion++;
+                }
+                contador ++;
+            }
+            
+            Obj_contenedor Aux;
+            entero indice = 0;
+            Repetir_Mientras(indice <= (v_size - datos) ){
+                Aux = mi_lista.obtener(indice);
+                Aux.imprimirContenido();
+                indice++;
+            }
+            
+        }
+        Es_falso{
+            
+            entero contador = 0;
+            entero eleccion = 1;
+            Repetir_Mientras(contador <= v_size ){
+                Obj_contenedor nuevo = nuevo Obj_contenedor();
+                nuevo.id = contador;
+                nuevo.agregarDecimal(contador, datos, eleccion);
+                mi_lista.insertar(nuevo);
+                Si(eleccion == 5){
+                    eleccion = 1;
+                }
+                Es_falso{
+                    eleccion++;
+                }
+                contador ++;
+            }
+            
+            Obj_contenedor Aux;
+            entero indice = 0;
+            Repetir_Mientras(indice <= v_size ){
+                Aux = mi_lista.obtener(indice);
+                Aux.imprimirContenido();
+                indice++;
+            }
+            
+        }
+        
+    }
+    
+    publico vacio iniciar_vectores(entero v_size , entero datos){
+        entero vector_1[];
+        vector_1 = nuevo entero[v_size];
+        
+        Si(datos < v_size){
+            
+            Repetir_contando(entero i = 0; i< v_size ; i++ ){
+                vector_1[i] = (datos * i) + v_size;
+            }
+            
+        }
+        Es_falso{
+            entero i = 0;
+            Repetir_Mientras(i < v_size ){
+                vector_1[i] = (datos + i ) + v_size;
+                i++;
+            }
+        }
+        
+        Repetir_contando(entero j = 0 ; j < vector_1.tamanio ; j++){
+            imprimir(convertirACadena(vector_1[j]));
+        }
+        
+    }
+    
+    publico vacio iniciar_pila(entero v_size , entero datos , entero vaciar)  {
+
+        Stack<enteroeger> mi_pila = nuevo Stack();       
+        
+        entero i = 0;
+        entero val;
+        imprimir("APILAR");
+        Repetir_Mientras (i < v_size){
+                val = datos * i;
+                mi_pila.Apilar(val);
+                imprimir(convertirACadena(val));
+                i++;
+        }
+        
+        entero valor;
+        
+        i = 0;
+        
+        imprimir("DESAPILAR");
+        Si(vaciar == 0){
+            Repetir_Mientras (i < v_size){
+                   valor = mi_pila.Desapilar();
+                   imprimir(convertirACadena(valor));
+                   i++;
+            }
+        }
+        Es_falso{
+            Repetir_Mientras (i <= v_size){
+                   imprimir(convertirACadena(mi_pila.Desapilar()));
+                   mi_pila.Desapilar();
+                   i++;
+            }
+        }   
+    }
+    
+    publico vacio iniciar_cola(entero v_size , entero datos , entero vaciar)  {
+
+        Queue<enteroeger> mi_Cola = nuevo LinkedList();       
+        
+        entero i = 0;
+        entero val;
+        imprimir("ENCOLAR");
+        Repetir_Mientras (i < v_size){
+            val = datos * i;
+            mi_Cola.Encolar(datos * i);
+            imprimir(convertirACadena(val));    
+            i++;
+        }
+        
+        entero valor;
+        
+        i = 0;
+        imprimir("DESENCOLAR");
+        Si(vaciar == 0){
+            Repetir_Mientras (i < v_size){
+                   valor = mi_Cola.Desencolar();
+                   imprimir(convertirACadena(valor));
+                   i++;
+            }
+        }
+        Es_falso{
+            Repetir_Mientras (i <= v_size){
+                   imprimir(convertirACadena(mi_Cola.Desencolar()));
+                   //mi_pila.Desencolar();
+                   i++;
+            }
+        }
+    }
+    
+    publico vacio iniciar_matriz(entero x , entero y , entero valor){
+        
+        entero  mi_matriz[][] = nuevo entero[x][y];
+        
+		entero i;
+		entero j;
+		
+        Repetir_contando(entero i = 0; i<x ; i++){
+            Repetir_contando(entero j = 0; j<y ; j++){
+                mi_matriz[i][j] = valor;
+                valor++;
+            }
+        }
+        
+        Repetir_contando(entero i = 0; i<x ; i++){
+            Repetir_contando(entero j = 0; j<y ; j++){
+                imprimir("-------------------------------------");
+                imprimir(convertirACadena(i));
+                imprimir(convertirACadena(j));
+                imprimir(convertirACadena(mi_matriz[i][j]));
+                imprimir("-------------------------------------");
+            }
+        }
+        
+    }
+    
+    publico vacio vector_a_cola(entero v_size , entero datos , entero vaciar){
+        entero vector_1[];
+        vector_1 = nuevo entero[v_size];
+        Queue<enteroeger> mi_Cola = nuevo LinkedList();    
+        
+        Si(datos < v_size){
+            int i
+            Repetir_contando(Variable: i; desde:0;hasta:v_size-1){
+                vector_1[i] = (datos * i) + v_size;
+            }
+            
+        }
+        Es_falso{
+            entero i = 0;
+            Repetir_Mientras(i < v_size ){
+                vector_1[i] = (datos + i ) + v_size;
+                i++;
+            }
+        }
+        
+		int j
+        Repetir_contando(j : 0 ; desde : vector_1.tamanio ; j++){
+            mi_Cola.Encolar(vector_1[j]);
+        }
+        
+        imprimir("v_size Vector");
+        imprimir(convertirACadena(vector_1.tamanio));
+        
+        entero valor;
+        entero i = 0;
+        imprimir("DESENCOLAR");
+        Si(vaciar == 0){
+            Repetir_Mientras (i < vector_1.tamanio){
+                   valor = mi_Cola.Desencolar();
+                   imprimir(convertirACadena(valor));
+                   i++;
+            }
+        }
+        Es_falso{
+            Repetir_Mientras (i <= vector_1.tamanio){
+                   imprimir(convertirACadena(mi_Cola.Desencolar()));
+                   //mi_pila.peek();
+                   i++;
+            }
+        }
+        
+    }
+    
+    publico vacio vector_a_lista(entero v_size , entero datos){
+        entero vector_1[];
+        vector_1 = nuevo entero[v_size];
+        LinkedList<enteroeger> mi_lista = nuevo LinkedList<>();
+        
+        Si(datos < v_size){
+            
+            Repetir_contando(entero i = 0; i< v_size ; i++ ){
+                vector_1[i] = (datos * i) + v_size;
+            }
+            
+        }
+        Es_falso{
+            entero i = 0;
+            Repetir_Mientras(i < v_size ){
+                vector_1[i] = (datos + i ) + v_size;
+                i++;
+            }
+        }
+        
+        Repetir_contando(entero j = 0 ; j < vector_1.tamanio ; j++){
+            mi_lista.insertar(vector_1[j]);
+        }
+        
+        imprimir("v_size Vector");
+        imprimir(convertirACadena(vector_1.tamanio));
+        
+        imprimir("v_size Lista");
+        imprimir(convertirACadena(mi_lista.size()));
+        
+        entero Aux;
+        entero indice = 0;
+        Repetir_Mientras(indice < vector_1.tamanio ){
+            Aux = mi_lista.obtener(indice);
+            imprimir(convertirACadena(Aux));
+            indice++;
+        }
+        
+    }
+        
+    publico vacio vector_a_pila(entero v_size , entero datos , entero vaciar){
+        entero vector_1[];
+        vector_1 = nuevo entero[v_size];
+        Stack<enteroeger> mi_pila = nuevo Stack();   
+        
+        Si(datos < v_size){
+            
+            Repetir_contando(entero i = 0; i< v_size ; i++ ){
+                vector_1[i] = (datos * i) + v_size;
+            }
+            
+        }
+        Es_falso{
+            entero i = 0;
+            Repetir_Mientras(i < v_size ){
+                vector_1[i] = (datos + i ) + v_size;
+                i++;
+            }
+        }
+        
+        Repetir_contando(entero j = 0 ; j < vector_1.tamanio ; j++){
+            mi_pila.Apilar(vector_1[j]);
+        }
+        
+        imprimir("v_size Vector");
+        imprimir(convertirACadena(vector_1.tamanio));
+        
+        entero valor;
+        entero i = 0;
+        imprimir("DESAPILAR");
+        Si(vaciar == 0){
+            Repetir_Mientras (i < vector_1.tamanio){
+                   valor = mi_pila.Desapilar();
+                   imprimir(convertirACadena(valor));
+                   i++;
+            }
+        }
+        Es_falso{
+            Repetir_Mientras (i <= vector_1.tamanio){
+                   imprimir(convertirACadena(mi_pila.Desapilar()));
+                   //mi_pila.Desapilar();
+                   i++;
+            }
+        }
+    }
+    
+    publico vacio matriz_a_vector(entero x , entero y , entero valor){
+        
+        entero  mi_matriz[][] = nuevo entero[x][y];
+        
+        Repetir_contando(entero i = 0; i<x ; i++){
+            Repetir_contando(entero j = 0; j<y ; j++){
+                mi_matriz[i][j] = valor;
+                valor++;
+            }
+        }
+        
+        
+        
+        entero vector[] = nuevo entero[x*y];
+        entero pos;
+        
+        Repetir_contando(entero i = 0; i<x ; i++){
+            Repetir_contando(entero j = 0; j<y ; j++){
+                pos = (x*i) + j;
+                vector[pos] = mi_matriz[i][j];
+                imprimir("-------------------------------------");
+                imprimir("Matriz:");
+                imprimir(convertirACadena(i));
+                imprimir(convertirACadena(j));
+                imprimir(convertirACadena(mi_matriz[i][j]));
+                imprimir("Vector:");
+                imprimir(convertirACadena(pos));
+                imprimir(convertirACadena(vector[pos]));
+                imprimir("-------------------------------------");
+            }
+        }
+        
+    }
+    
+    publico vacio vector_compara_lista(entero v_sizeVec , entero datosVec , entero v_sizeList , entero datosList){
+        entero[] mi_vector;
+        mi_vector = nuevo entero[v_sizeVec];
+        LinkedList<enteroeger> mi_lista = nuevo LinkedList<>();
+        
+        entero i = 0;
+        Repetir_Mientras(i < v_sizeVec ){
+            mi_vector[i] = (datosVec * i ) + v_sizeVec;
+            i++;
+        }
+        
+        entero j = 0;
+        
+        Repetir_Mientras(i < v_sizeList ){
+            mi_lista.insertar((datosList * j ) + v_sizeList);
+            i++;
+        }
+        
+        Si(mi_vector.tamanio == mi_lista.size()){
+            entero valor = 0;
+            entero ValAUX;
+            Repetir_Mientras(valor < v_sizeList ){
+                ValAUX = mi_lista.obtener(valor);
+                Si(ValAUX != mi_vector[valor]){
+                    imprimir("Son dSierentes");
+                    break;
+                }
+                valor++;
+            }
+        }Es_falso{
+            imprimir("Son dSierentes");
+        }
+        
+        imprimir("Son Iguales");
+        
+    }
+    
+    publico vacio copiar_lista_matriz(entero x , entero y , entero valor){
+    
+        entero  mi_matriz[][] = nuevo entero[x][y];
+        LinkedList<enteroeger> mi_lista = nuevo LinkedList<>();
+        
+        Repetir_contando(entero i = 0; i<x ; i++){
+            Repetir_contando(entero j = 0; j<y ; j++){
+                mi_lista.insertar(valor);
+                valor++;
+            }
+        }
+        
+        entero pos;
+        
+        Repetir_contando(entero i = 0; i<x ; i++){
+            Repetir_contando(entero j = 0; j<y ; j++){
+               pos = (x*i) + j;
+               mi_matriz[i][j] = mi_lista.obtener(pos);
+            }
+        }
+        
+        entero aux;
+        
+        Repetir_contando(entero i = 0; i<x ; i++){
+            Repetir_contando(entero j = 0; j<y ; j++){
+                
+                pos = (x*i) + j;
+                aux = mi_lista.obtener(pos);
+                imprimir("-------------------------------------");
+                imprimir("Lista:");
+                imprimir(convertirACadena(pos));
+                imprimir(convertirACadena(aux));
+                imprimir("Matriz:");
+                imprimir(convertirACadena(i));
+                imprimir(convertirACadena(j));
+                imprimir(convertirACadena(mi_matriz[i][j]));
+                imprimir("-------------------------------------");
+            }
+        }
+    }
+    
+    
+    publico vacio comparar_matriz_pila(entero x , entero y , entero valor){
+        entero  mi_matriz[][] = nuevo entero[x][y];
+        
+        Repetir_contando(entero i = 0; i<x ; i++){
+            Repetir_contando(entero j = 0; j<y ; j++){
+                mi_matriz[i][j] = valor;
+                valor++;
+            }
+        }
+        
+        Repetir_contando(entero i = 0; i<x ; i++){
+            Repetir_contando(entero j = 0; j<y ; j++){
+                imprimir("-------------------------------------");
+                imprimir(convertirACadena(i));
+                imprimir(convertirACadena(j));
+                imprimir(convertirACadena(mi_matriz[i][j]));
+                imprimir("-------------------------------------");
+            }
+        }
+    }
+    
+    
+    publico vacio imprimir(String texto){
+        System.out.prenteroln(texto);
+    }
+    
+    publico String convertirACadena(entero numero){
+        return enteroeger.toString(numero);
+    }
+    
+}

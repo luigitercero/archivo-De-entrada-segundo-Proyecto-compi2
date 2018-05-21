@@ -1,0 +1,16 @@
+
+/**
+ *
+ * @author Compiladores Calificacion
+ */
+publico clase Node {
+    entero key;
+    ENTERO height;
+    Node left;
+    Node right;
+ 
+    publico Node(entero d) {
+        key = d;
+        height = 1;
+    }
+}

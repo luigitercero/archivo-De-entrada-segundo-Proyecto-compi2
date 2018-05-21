@@ -1,0 +1,289 @@
+ 
+
+
+ clase Inicio {
+
+    principal(){
+        caracter sal[80];
+        Operaciones op = nuevo Operaciones();
+        op.aritmeticas();
+
+        op.operaciones_relacionales();
+
+        op.operaciones_logicas();
+        
+        op.operaciones_conjuntas();
+        
+        Funciones fun = nuevo Funciones();
+
+        fun.saludo();
+
+        fun.ciclo_vida();
+
+        Entero res = fun.fibonacci_recursivo(15);
+        imprimir(res);
+        imprimir("fibonacci_recursivo");
+        sal = "Salida Fibonacci Recursivo ";
+        concatenar(sal, res);
+        imprimir(sal);
+        
+        fun.pedir_num();
+    }
+
+}
+
+
+
+
+ clase Funciones {
+
+    publico vacio saludo(){
+        imprimir("10) Saludo");
+        Entero conta = 0;
+        hacer{
+            evaluar_si(conta){
+                Es_igual_a 0: 
+                    imprimir("Esta");
+                    romper;
+                Es_igual_a 1: 
+                    imprimir(" salida");
+                    romper;
+                Es_igual_a 2:
+                    imprimir(" es");
+                    romper;
+                Es_igual_a 3: 
+                    imprimir(" CORRECTA!!");
+                    romper;
+                defecto:
+                    imprimir("Salida incorrecta!!!");
+            }
+            conta++;
+        }mientras(conta < 4);
+    }
+
+    publico vacio ciclo_vida(){
+        imprimir("12) ciclo_vida");
+        caracter car[50] = "Jose";
+        caracter carA[50] = "Martinez";
+        Persona Carlos = nuevo Persona(16, car, carA, 'M');
+        caracter car0[50] = "Luisa";
+        caracter carA0[50] = "Tobar";
+        Persona Josefina = nuevo Persona(15, car0, carA0, 'F');
+        imprimir(Josefina.nombre);
+        Persona Carlitos = nuevo Persona();
+        Entero cont = 0;
+        Repetir_Mientras(cont < 4){
+            cont++;
+            si(cont ==4)
+                es_verdadero{
+                caracter carli[50] = "Carlitos";
+                    Carlitos = Carlos.reproducir(Josefina, carli);
+                    Josefina.matrimonio(Carlos);
+                    caracter text[60] = "Nombre Hijo: ";
+                    concatenar(text, Carlitos.nombre);
+                    concatenar(text, Carlitos.apellido);
+                    imprimir(text);
+                    text = "Nombre esposa: ";
+                    concatenar(text, Josefina.nombre);
+                    concatenar(text, Josefina.apellido);
+                    imprimir(text);
+                }
+                es_falso {
+                
+                }
+            fin-si
+        }
+    }
+    
+    
+    Entero fibonacci_recursivo(Entero n){
+        si (n==0)
+            es_verdadero{
+                retorno 0;
+            }
+            es_falso{
+                si (n==1)
+                    es_verdadero{
+                        retorno 1;
+                    } 
+                    es_falso{
+                        si(n>1)
+                            es_verdadero{
+                                retorno fibonacci_recursivo(n-1) + fibonacci_recursivo(n-2);
+                            }
+                            es_falso {
+                            
+                            }
+                        fin-si
+                    }
+                fin-si 
+            }
+        fin-si 
+        retorno -1;
+    }
+    
+    publico vacio pedir_num(){
+        imprimir("Pedir num");
+        Entero num = 0;
+        hacer 
+        {
+            Leer_Teclado ("Ingrese numero diferente de 7", num); 
+        } mientras (!(num == 7));
+    }
+}
+
+
+
+clase Operaciones {
+    
+    publico vacio aritmeticas(){
+        imprimir("2) Operaciones Aritmeticas Avanzadas");
+        //57
+        Entero temp1 = 3*7-8/2-8*(5-10);
+        caracter texto[80] = "2.1) 30%  57 >>> ";
+        concatenar(texto, " #E ", temp1);
+        imprimir(texto);
+        //36
+        Entero temp2 =  (0+(3*9)-18 + 3^(3));
+        texto = "2.2) 30% 35 >>> ";
+        concatenar(texto, " 36 #E ", temp2);
+        imprimir(texto);
+        //8
+        Entero temp3 =  ((8-8+2^(3)/4)*4);
+        texto = "2.3) 40% 8 >>> ";
+        concatenar(texto, " #E ", temp3);
+        imprimir(texto);
+    }
+    
+    publico vacio operaciones_relacionales(){
+        imprimir("4)Operaciones Relacionales Avanzadas");
+        si(2-10 >= 0)
+            es_verdadero{
+                imprimir("Salida incorrecta!!");
+            }
+            es_falso{
+                si(15+8-12 == 22-12+5*2-9)
+                    es_verdadero{
+                        si(10 != 11-2)
+                            es_verdadero{
+                                imprimir("Salida CORRECTA!!");
+                            }
+                            es_falso{
+                                imprimir("Salida incorrecta!!");
+                            }
+                        fin-si
+                    }
+                    es_falso{
+                        si (1 == 1)
+                            es_verdadero{
+                                imprimir("Salida incorrecta!!");
+                            }
+                            es_falso{
+                                imprimir("Salida incorrecta!!");
+                            }
+                        fin-si
+                    }
+                fin-si
+            }
+        fin-si   
+    }
+    
+    publico vacio operaciones_logicas(){
+        imprimir("6) Operaciones Logicas Avanzadas");
+        si((15 == 14) || (((15*2 >= 15) ?? (12 < 24))||((98/2 == 15)||(!(15 != 6-1)))))
+            es_verdadero{
+                imprimir("Salida CORRECTA!!");
+            }
+            es_falso{
+                imprimir("Salida incorrecta!!");
+            }
+        fin-si
+    }
+    
+    publico vacio operaciones_conjuntas(){
+        imprimir("7) Operaciones Conjuntas");
+        si(!(5*3-1 == 14) && !(!(15 == 6-1)))
+            es_verdadero{
+                imprimir("Salida incorrecta!!");
+            }
+            es_falso{
+                Entero var = -1*(58/6+9+9-1*8/2*17);
+                Entero var2 = 48/4*79-2+8;
+                Caracter salida[10] = convertirAcadena(var);
+                concatenar(salida, convertirAcadena(var2));
+                imprimir(salida);
+                si(salida == "41954")
+                    es_verdadero{
+                        imprimir("Resultado: 41954");
+                    }
+                    es_falso{
+                        imprimir("Salida incorrecta!!");
+                    }
+                fin-si
+            }
+        fin-si
+    }
+}
+
+ clase Humano {
+    Entero edad;
+    Caracter nombre[15];
+    
+    publico vacio nacer(){
+        este.edad = 0;
+    }
+}
+
+ clase Persona hereda_de Humano{
+    caracter genero;
+    caracter DPI[15];
+    Caracter apellido[20];
+    
+    Persona(){
+        nacer();
+        nombre = "";
+        genero = 'M';
+    }
+    
+    Persona(Entero edad, Caracter nombre[15], Caracter apellido[15], caracter genero){
+        este.edad= edad;
+        este.nombre = nombre;
+        este.apellido = apellido;
+        este.genero = genero;
+    }
+   
+    privado Caracter[] concat(Caracter nombres[15], Caracter apellidos[15]){
+        Caracter ret[30] = nombre;
+        concatenar(ret, " ");
+        concatenar(ret, apellidos);
+        retorno ret;
+    }
+    
+    publico Persona reproducir(Persona pareja, Caracter nombre[15]){
+        si(este.genero != pareja.genero)
+            es_verdadero{
+                Persona bebe = nuevo Persona();
+                bebe.nombre = nombre;
+                concatenar (bebe.apellido,este.apellido);
+                imprimir(bebe.apellido);
+                
+                concatenar(bebe.apellido, " ");
+                concatenar(bebe.apellido, pareja.apellido);
+                retorno bebe;
+            }es_falso {
+            }
+        fin-si
+        retorno nada;
+    }
+    
+    publico vacio matrimonio(Persona conyuge){
+        si(este.genero == 'F')
+            es_verdadero{
+                concatenar(este.apellido, " de ");
+                concatenar(este.apellido, conyuge.apellido);
+            }es_falso {
+            }
+        fin-si
+    }
+}
+

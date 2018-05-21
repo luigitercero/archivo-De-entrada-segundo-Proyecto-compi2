@@ -1,0 +1,21 @@
+ 
+ 
+clase person {
+ caracter nombre [8];
+ caracter apellido[8];
+entero edad;
+    person(){
+     
+    }
+
+}
+
+
+clase main {
+
+    principal () {
+        person p = nuevo person ();
+         caracter nombre [8];
+    }
+    
+}

@@ -1,0 +1,31 @@
+ 
+clase person {
+ caracter nombre [8];
+ caracter apellido[8];
+entero edad;
+    person(caracter nombre[8],caracter apellido [8],entero edad){
+         imprimir(nombre);
+        imprimir(apellido);
+        imprimir(edad);
+       este.nombre  = nombre ;
+        este.apellido = apellido;
+        este.edad = edad;
+        imprimir(este.nombre);
+        imprimir(este.apellido);
+        imprimir(este.apellido);
+    }
+
+}
+
+
+clase main {
+
+    principal () {
+        person p = nuevo person ("Luis","jov",10);
+        imprimir(p.nombre);
+        imprimir(p.apellido);
+        imprimir(p.edad);
+        
+    }
+    
+}

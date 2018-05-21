@@ -1,0 +1,7 @@
+importar("callbackHernanoHijo.gcc");
+privado clase hijoPadreArchivo hereda_de hermanohijo{
+	hermanohijo hh;
+	publico vacio iniciarHermano(){
+		hh=nuevo hermanohijo();
+	}
+}

@@ -1,0 +1,21 @@
+
+importar("Tree.gcc")
+/**
+ *
+ * @author Compiladores Calificacion
+ */
+publico clase Contacto {
+    entero numero;
+    Tree tree;
+    caracTER nombre[25];
+    
+    publico Contacto(){
+        Imprimir("Se Inicio constructor");
+    }
+    
+    publico Contacto (Tree tree, entero numero, caracTER nombre[25]){
+        este.numero = numero;
+        este.nombre = nombre;
+        este.tree = tree;
+    }
+}

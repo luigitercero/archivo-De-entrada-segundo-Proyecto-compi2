@@ -1,0 +1,147 @@
+ 
+clase xor {
+    principal() {
+        booleano a = true;
+        booleano b = true;
+        imprimir("av bv");
+        si (a ?? b) 
+            es_verdadero {
+                imprimir(0);
+            }
+            es_falso {
+                imprimir(1);
+            }
+        fin-si
+        
+         si (a || b) 
+            es_verdadero {
+                imprimir(1);
+            }
+            es_falso {
+                imprimir(0);
+            }
+        fin-si
+        
+         si (a && b) 
+            es_verdadero {
+                imprimir(1);
+            }
+            es_falso {
+                imprimir(0);
+            }
+        fin-si
+        /*esto cuando b es falso y a es vedadero*/
+        imprimir("av bf");
+        a= true;
+        b = false;
+         si (a ?? b) 
+            es_verdadero {
+                imprimir(1);
+            }
+            es_falso {
+                imprimir(0);
+            }
+        fin-si
+        
+         si (a || b) 
+            es_verdadero {
+                imprimir(1);
+            }
+            es_falso {
+                imprimir(0);
+            }
+        fin-si
+        
+         si (a && b) 
+            es_verdadero {
+                imprimir(0);
+            }
+            es_falso {
+                imprimir(1);
+            }
+        fin-si
+        /*cuando a y b son falsos*/
+        imprimir("af bf");
+          a = false;
+          b = false;
+         si (a ?? b) 
+            es_verdadero {
+                imprimir(0);
+            }
+            es_falso {
+                imprimir(1);
+            }
+        fin-si
+        
+         si (a || b) 
+            es_verdadero {
+                imprimir(0);
+            }
+            es_falso {
+                imprimir(1);
+            }
+        fin-si
+        
+         si (a && b) 
+            es_verdadero {
+                imprimir(0);
+            }
+            es_falso {
+                imprimir(1);
+            }
+        fin-si
+        
+     /*cuando a y falso y b verdadero*/
+     imprimir("af bv");
+          a = false;
+          b = true;
+         si (a ?? b) 
+            es_verdadero {
+                imprimir(1);
+            }
+            es_falso {
+                imprimir(0);
+            }
+        fin-si
+        
+         si (a || b) 
+            es_verdadero {
+                imprimir(1);
+            }
+            es_falso {
+                imprimir(0);
+            }
+        fin-si
+        
+         si (a && b) 
+            es_verdadero {
+                imprimir(0);
+            }
+            es_falso {
+                imprimir(1);
+            }
+        fin-si
+        
+        
+        
+        si (1>0 ?? 3>2) 
+            es_verdadero {
+                imprimir("falso");
+            }
+            es_falso {
+                imprimir("verdadero");
+            }
+        fin-si
+        
+        si ((1>0 && !(3>2) ) || (!(1>0) && (3>2) )) 
+            es_verdadero {
+                imprimir("falso");
+            }
+            es_falso {
+                imprimir("verdadero");
+            }
+        fin-si
+    
+    }
+
+}
